@@ -22,10 +22,10 @@ class PropertyController extends ApiController
 
     public function storeProperty(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'price' => 'required',
-        ]);
+        // $request->validate([
+        //     'name' => 'required',
+        //     'price' => 'required',
+        // ]);
         $property = Property::storeProperty($request);
         return $this->respond([
             'status' => true,
