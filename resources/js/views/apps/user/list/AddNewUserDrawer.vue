@@ -14,10 +14,11 @@ const emit = defineEmits(["update:isDrawerOpen", "userData"]);
 const isFormValid = ref(false);
 const refForm = ref();
 const name = ref("");
-const number = ref("");
+const market = ref("");
 const price = ref("");
-const country = ref("");
+const area_size = ref("");
 const type = ref("");
+const land = ref("");
 const status = ref();
 
 // 👉 drawer close
@@ -33,12 +34,12 @@ const onSubmit = () => {
   refForm.value?.validate().then(({ valid }) => {
     if (valid) {
       emit("userData", {
-        name: name.value,
         price: price.value,
-        country: country.value,
+        market: market.value,
         type: type.value,
-        number: number.value,
+        area_size: area_size.value,
         status: status.value,
+        land: land.value,
       });
       emit("update:isDrawerOpen", false);
       nextTick(() => {
@@ -88,21 +89,29 @@ const handleDrawerModelValueUpdate = (val) => {
           <!-- 👉 Form -->
           <VForm ref="refForm" v-model="isFormValid" @submit.prevent="onSubmit">
             <VRow>
-              <!-- 👉 Full name -->
               <VCol cols="12">
-                <VTextField
-                  v-model="name"
+                <VSelect
+                  v-model="market"
+                  label="Market"
                   :rules="[requiredValidator]"
-                  label="Name"
+                  :items="['All Market', 'UAE', 'Canada', 'USA', 'KSA']"
                 />
               </VCol>
 
               <!-- 👉 Email -->
               <VCol cols="12">
                 <VTextField
-                  v-model="number"
+                  v-model="area_size"
                   :rules="[requiredValidator]"
-                  label="Number"
+                  label="Area Size (sq.ft)"
+                />
+              </VCol>
+
+              <VCol cols="12">
+                <VSelect
+                  v-model="type"
+                  label="Type"
+                  :items="['Plaza', 'Office', 'Hotel', 'Apartment', 'Condo']"
                 />
               </VCol>
 
@@ -116,21 +125,15 @@ const handleDrawerModelValueUpdate = (val) => {
               </VCol>
 
               <!-- 👉 Country -->
-              <VCol cols="12">
-                <VTextField
-                  v-model="type"
-                  :rules="[requiredValidator]"
-                  label="Type"
-                />
-              </VCol>
 
               <!-- 👉 Plan -->
+
               <VCol cols="12">
                 <VSelect
-                  v-model="country"
-                  label="Country"
+                  v-model="land"
+                  label="Land"
                   :rules="[requiredValidator]"
-                  :items="['Pakistan', 'Canada', 'US']"
+                  :items="['Residential', 'Commercial', 'Industrial']"
                 />
               </VCol>
 

@@ -31,14 +31,13 @@ class Property extends Model
     public static function getProperties($request)
     {
 
-        $properties = Property::
-            when($request->market, function ($query, $market) {
-                if ($market == 'all_markets') {
-                    return $query->orderBy('id');
-                } else {
-                    return $query->where('market', $market);
-                }
-            })
+        $properties = Property::when($request->market, function ($query, $market) {
+            if ($market == 'All Market') {
+                return $query->orderBy('id');
+            } else {
+                return $query->where('market', $market);
+            }
+        })
             ->when($request->city, function ($query, $city) {
                 return $query->where('city', $city);
             })
@@ -62,7 +61,7 @@ class Property extends Model
                 return $query->offset($page - 1);
             })
             ->when($request->front, function ($query) {
-                return $query->where('status',1);
+                return $query->where('status', 1);
             })
             ->paginate($request->perPage);
         return $properties;
@@ -74,7 +73,8 @@ class Property extends Model
         $property->status = $request->boolean('status');
         if ($request->has('property_image')) {
             $property->property_image = self::uploadPropertyMedia($request, 'property_image');
-        } if ($request->has('property_video')) {
+        }
+        if ($request->has('property_video')) {
             $property->property_video = self::uploadPropertyMedia($request, 'property_video');
         }
         $property->save();
@@ -91,7 +91,8 @@ class Property extends Model
         }
         if ($request->has('property_image')) {
             $data['property_image'] = self::uploadPropertyMedia($request, 'property_image');
-        } if ($request->has('property_video')) {
+        }
+        if ($request->has('property_video')) {
             $data['property_video'] = self::uploadPropertyMedia($request, 'property_video');
         }
         $property->update($data);
