@@ -80,7 +80,7 @@ const resolveUserStatusVariant = (stat) => {
   if (stat === 1) return "success";
   if (stat === 0) return "secondary";
 
-  return "primary";
+  return "success";
 };
 
 const resolveStatusText = (val) => {

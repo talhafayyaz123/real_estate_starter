@@ -14,7 +14,6 @@ const router = createRouter({
         const userData = JSON.parse(localStorage.getItem('userData') || '{}')
         const userRole = userData && userData.role ? userData.role : null
 
-
         if (userRole === 'admin')
           return { name: 'dashboards-analytics' }
         if (userRole === 'client')
@@ -26,12 +25,12 @@ const router = createRouter({
     {
       path: '/home',
       name: 'home',
-      component: () => import("@/views/pages/landing/home.vue"),
+      component: () => import("@/views/pages/home/list/index.vue"),
     },
     {
       path: '/marketplace',
       name: 'marketplace',
-      component: () => import("@/views/pages/landing/propertyListing.vue"),
+      component: () => import("@/views/pages/home/list/propertyListing.vue"),
     },
 
     ...setupLayouts(routes),
