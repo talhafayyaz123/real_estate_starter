@@ -1,49 +1,8 @@
 <template>
   <div>
     <!-- ========================================== -->
-    <header class="header">
-      <VContainer>
-        <div class="fut_header">
-          <div class="fut_brand">
-            <img src="@images/img/logo.png">
-          </div>
-          <div class="fut_nav">
-            <ul class="fut_navigation">
-              <li class="nav-items">
-                <div class="nav-link">
-                  Home
-                </div>
-              </li>
-              <li class="nav-items">
-                <div class="nav-link">
-                  About
-                </div>
-              </li>
-              <li class="nav-items">
-                <div class="nav-link">
-                  List Property
-                </div>
-              </li>
-              <li class="nav-items">
-                <div class="nav-link">
-                  <RouterLink
-                    class="text-primary ms-2 mb-1"
-                    :to="{ name: 'login' }"
-                  >
-                    Login
-                  </RouterLink>
-                </div>
-              </li>
-              <li class="nav-items">
-                <div class="nav-link auth-nav-btn">
-                  Signup
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </VContainer>
-    </header>
+
+    <HeaderComponent />
     <!-- ========================================== -->
     <section class="fut_banner">
       <div class="overlay" />
@@ -62,10 +21,7 @@
                 <VSelect placeholder="City" />
               </VCol>
               <VCol sm="6">
-                <input
-                  class="input"
-                  placeholder="Location"
-                >
+                <input class="input" placeholder="Location" />
               </VCol>
               <VCol sm="2">
                 <VBtn>Search</VBtn>
@@ -82,10 +38,7 @@
           <VCol md="4">
             <div class="card-property">
               <div class="prop-img">
-                <img
-                  src="@images/img/1.webp"
-                  alt=""
-                >
+                <img src="@images/img/1.webp" alt="" />
               </div>
               <div class="content">
                 <div>
@@ -105,10 +58,7 @@
           <VCol md="4">
             <div class="card-property">
               <div class="prop-img">
-                <img
-                  src="@images/img/1.webp"
-                  alt=""
-                >
+                <img src="@images/img/1.webp" alt="" />
               </div>
               <div class="content">
                 <div>
@@ -128,10 +78,7 @@
           <VCol md="4">
             <div class="card-property">
               <div class="prop-img">
-                <img
-                  src="@images/img/1.webp"
-                  alt=""
-                >
+                <img src="@images/img/1.webp" alt="" />
               </div>
               <div class="content">
                 <div>
@@ -151,10 +98,7 @@
           <VCol md="4">
             <div class="card-property">
               <div class="prop-img">
-                <img
-                  src="@images/img/1.webp"
-                  alt=""
-                >
+                <img src="@images/img/1.webp" alt="" />
               </div>
               <div class="content">
                 <div>
@@ -174,10 +118,7 @@
           <VCol md="4">
             <div class="card-property">
               <div class="prop-img">
-                <img
-                  src="@images/img/1.webp"
-                  alt=""
-                >
+                <img src="@images/img/1.webp" alt="" />
               </div>
               <div class="content">
                 <div>
@@ -197,10 +138,7 @@
           <VCol md="4">
             <div class="card-property">
               <div class="prop-img">
-                <img
-                  src="@images/img/1.webp"
-                  alt=""
-                >
+                <img src="@images/img/1.webp" alt="" />
               </div>
               <div class="content">
                 <div>
@@ -224,19 +162,19 @@
 </template>
 
 <script>
-import header from './components/header.vue'
+import HeaderComponent from "./components/header.vue";
 
 export default {
-  components:{
-    header,
+  components: {
+    HeaderComponent,
   },
-}
+};
 </script>
 
 <route lang="yaml">
-  meta:
-    layout: blank
-    action: read
-    subject: Auth
-    redirectIfLoggedIn: false
-  </route>
+meta:
+  layout: blank
+  action: read
+  subject: Auth
+  redirectIfLoggedIn: false
+</route>

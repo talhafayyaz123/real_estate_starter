@@ -13,7 +13,7 @@ class Property extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['name','number','description','price','property_image','country','area','type','status','user_id'];
+    protected $fillable = ['name', 'number', 'description', 'price', 'property_image', 'country', 'area', 'type', 'status', 'user_id'];
 
     public static function boot()
     {
@@ -22,72 +22,76 @@ class Property extends Model
             $model->uuid = Str::uuid()->toString();
         });
     }
-    public static function getIdByUuid($uuid) {
-        return Property::where('uuid',$uuid)->value('id');
+    public static function getIdByUuid($uuid)
+    {
+        return Property::where('uuid', $uuid)->value('id');
     }
 
-    public static function getProperties($request) {
-        
+    public static function getProperties($request)
+    {
+
         $properties = Property::when($request->name, function ($query, $name) {
             return $query->where('name', 'LIKE', "%{$name}%");
         })
-        ->when($request->country, function ($query, $country) {
-            if($country == 'all_markets') {
-                return $query->orderBy('id');
-            } else {
-                return $query->where('country',$country);
-            }
-        })
-        ->when($request->type, function ($query, $type) {
-            return $query->where('type',$type);
-        })
-        ->when($request->area, function ($query, $area) {
-            return $query->where('area',$area);
-        })
-        ->when($request->new, function ($query) {
-            return $query->whereBetween('properties.created_at', [Carbon::now()->subDays(3)->startOfDay(), Carbon::now()->endofDay()])
-                ->orderBy('properties.created_at', 'asc');
-        })
-        ->when($request->all, function ($query) {
-            return $query->orderBy('properties.created_at', 'asc');
-        })
-        ->when($request->sortBy, function ($query, $sortBy) {
-            return $query->orderBy($sortBy, request('sortDesc') == 'true' ? 'asc' : 'desc');
-        })
-        ->when($request->page, function ($query, $page) {
-            return $query->offset($page - 1);
-        })
-        ->paginate($request->perPage);
+            ->when($request->country, function ($query, $country) {
+                if ($country == 'all_markets') {
+                    return $query->orderBy('id');
+                } else {
+                    return $query->where('country', $country);
+                }
+            })
+            ->when($request->type, function ($query, $type) {
+                return $query->where('type', $type);
+            })
+            ->when($request->area, function ($query, $area) {
+                return $query->where('area', $area);
+            })
+            ->when($request->new, function ($query) {
+                return $query->whereBetween('properties.created_at', [Carbon::now()->subDays(3)->startOfDay(), Carbon::now()->endofDay()])
+                    ->orderBy('properties.created_at', 'asc');
+            })
+            ->when($request->all, function ($query) {
+                return $query->orderBy('properties.created_at', 'asc');
+            })
+            ->when($request->sortBy, function ($query, $sortBy) {
+                return $query->orderBy($sortBy, request('sortDesc') == 'true' ? 'asc' : 'desc');
+            })
+            ->when($request->page, function ($query, $page) {
+                return $query->offset($page - 1);
+            })
+            ->paginate($request->perPage);
         return $properties;
     }
 
-    public static function storeProperty($request) {
-    
+    public static function storeProperty($request)
+    {
         $property = new self($request->all());
         $property->status = $request->boolean('status');
         if ($request->has('property_image')) {
-            $property->property_image = self::uploadPropertyImage($request,'property_image');
+            $property->property_image = self::uploadPropertyImage($request, 'property_image');
         }
         $property->save();
         return $property;
     }
 
-    public static function updateProperty($request) {
-       
-        $property = Property::where('uuid',$request->property_uuid)->first();
+    public static function updateProperty($request)
+    {
+
+        $property = Property::where('uuid', $request->property_uuid)->first();
         $data = $request->all();
-        if($request->has('status')) {
+        if ($request->has('status')) {
             $data['status'] = $request->boolean('status');
         }
         if ($request->has('property_image')) {
-            $data['property_image'] = self::uploadPropertyImage($request,'property_image');
+            $data['property_image'] = self::uploadPropertyImage($request, 'property_image');
         }
         $property->update($data);
         return $property;
     }
 
-    public static function deleteProperty($request) {
-        $property = Property::where('uuid',$request->property_uuid)->first();
+    public static function deleteProperty($request)
+    {
+        $property = Property::where('uuid', $request->property_uuid)->first();
         $property->delete();
         return $property;
     }
@@ -105,4 +109,3 @@ class Property extends Model
         }
     }
 }
-

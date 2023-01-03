@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 
 class PropertyController extends ApiController
 {
-    public function getProperties(Request $request) {
+    public function getProperties(Request $request)
+    {
         $properties = Property::getProperties($request);
         return $this->respond([
             'status' => true,
@@ -17,10 +18,14 @@ class PropertyController extends ApiController
                 'properties' => $properties
             ],
         ]);
-
     }
 
-    public function storeProperty(Request $request) {
+    public function storeProperty(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+        ]);
         $property = Property::storeProperty($request);
         return $this->respond([
             'status' => true,
@@ -31,7 +36,8 @@ class PropertyController extends ApiController
         ]);
     }
 
-    public function updateProperty(Request $request) {
+    public function updateProperty(Request $request)
+    {
 
         // $request->validate([
         //     'name' => 'required',
@@ -48,7 +54,8 @@ class PropertyController extends ApiController
         ]);
     }
 
-    public function deleteProperty(Request $request) {
+    public function deleteProperty(Request $request)
+    {
         Property::deleteProperty($request);
         return $this->respond([
             'status' => true,

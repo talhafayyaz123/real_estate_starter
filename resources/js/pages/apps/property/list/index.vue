@@ -1,128 +1,119 @@
 <script setup>
-import AddNewUserDrawer from '@/views/apps/user/list/AddNewUserDrawer.vue'
-import { useUserListStore } from '@/views/apps/user/useUserListStore'
-import { avatarText } from '@core/utils/formatters'
+import AddNewUserDrawer from "@/views/apps/user/list/AddNewUserDrawer.vue";
+import { useUserListStore } from "@/views/apps/user/useUserListStore";
+import { avatarText } from "@core/utils/formatters";
 
-const userListStore = useUserListStore()
-const searchQuery = ref('')
-const selectedRole = ref()
-const selectedPlan = ref()
-const selectedStatus = ref()
-const rowPerPage = ref(10)
-const currentPage = ref(1)
-const totalPage = ref(1)
-const totalUsers = ref(0)
-const users = ref([])
+const userListStore = useUserListStore();
+const searchQuery = ref("");
+const selectedRole = ref();
+const selectedPlan = ref();
+const selectedStatus = ref();
+const rowPerPage = ref(10);
+const currentPage = ref(1);
+const totalPage = ref(1);
+const totalUsers = ref(0);
+const users = ref([]);
 
 // 👉 Fetching users
 const fetchUsers = () => {
-  userListStore.fetchProperty({
-    q: searchQuery.value,
-    status: selectedStatus.value,
-    plan: selectedPlan.value,
-    role: selectedRole.value,
-    perPage: rowPerPage.value,
-    currentPage: currentPage.value,
-  }).then(response => {
-    users.value = response.data.users
-    totalPage.value = response.data.totalPage
-    totalUsers.value = response.data.totalUsers
-  }).catch(error => {
-    console.error(error)
-  })
-}
+  userListStore
+    .fetchProperty({
+      q: searchQuery.value,
+      status: selectedStatus.value,
+      plan: selectedPlan.value,
+      role: selectedRole.value,
+      perPage: rowPerPage.value,
+      currentPage: currentPage.value,
+    })
+    .then((response) => {
+      users.value = response.data.data.properties.data;
+      totalPage.value = response.data.totalPage;
+      totalUsers.value = response.data.totalUsers;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
 
-watchEffect(fetchUsers)
+watchEffect(fetchUsers);
 
 // 👉 watching current page
 watchEffect(() => {
-  if (currentPage.value > totalPage.value)
-    currentPage.value = totalPage.value
-})
+  if (currentPage.value > totalPage.value) currentPage.value = totalPage.value;
+});
 
-
-
-const status = [
-  {
-    title: 'Pending',
-    value: 'pending',
-  },
-  {
-    title: 'Active',
-    value: 'active',
-  },
-  {
-    title: 'Inactive',
-    value: 'inactive',
-  },
-]
-
-const resolveUserRoleVariant = role => {
-  if (role === 'subscriber')
+const resolveUserRoleVariant = (role) => {
+  if (role === "subscriber")
     return {
-      color: 'warning',
-      icon: 'tabler-user',
-    }
-  if (role === 'author')
+      color: "warning",
+      icon: "tabler-user",
+    };
+  if (role === "author")
     return {
-      color: 'success',
-      icon: 'tabler-circle-check',
-    }
-  if (role === 'maintainer')
+      color: "success",
+      icon: "tabler-circle-check",
+    };
+  if (role === "maintainer")
     return {
-      color: 'primary',
-      icon: 'tabler-chart-pie-2',
-    }
-  if (role === 'editor')
+      color: "primary",
+      icon: "tabler-chart-pie-2",
+    };
+  if (role === "editor")
     return {
-      color: 'info',
-      icon: 'tabler-pencil',
-    }
-  if (role === 'admin')
+      color: "info",
+      icon: "tabler-pencil",
+    };
+  if (role === "admin")
     return {
-      color: 'secondary',
-      icon: 'tabler-device-laptop',
-    }
+      color: "secondary",
+      icon: "tabler-device-laptop",
+    };
 
   return {
-    color: 'primary',
-    icon: 'tabler-user',
-  }
-}
+    color: "primary",
+    icon: "tabler-user",
+  };
+};
 
-const resolveUserStatusVariant = stat => {
-  if (stat === 'pending')
-    return 'warning'
-  if (stat === 'active')
-    return 'success'
-  if (stat === 'inactive')
-    return 'secondary'
+const resolveUserStatusVariant = (stat) => {
+  if (stat === "pending") return "warning";
+  if (stat === 1) return "success";
+  if (stat === 0) return "secondary";
 
-  return 'primary'
-}
+  return "primary";
+};
 
-const isAddNewUserDrawerVisible = ref(false)
+const resolveStatusText = (val) => {
+  if (val === 1) return "Active";
+  if (val === 0) return "Inactive";
+
+  return "Active";
+};
+
+const isAddNewUserDrawerVisible = ref(false);
 
 // 👉 watching current page
 watchEffect(() => {
-  if (currentPage.value > totalPage.value)
-    currentPage.value = totalPage.value
-})
+  if (currentPage.value > totalPage.value) currentPage.value = totalPage.value;
+});
 
 // 👉 Computing pagination data
 const paginationData = computed(() => {
-  const firstIndex = users.value.length ? (currentPage.value - 1) * rowPerPage.value + 1 : 0
-  const lastIndex = users.value.length + (currentPage.value - 1) * rowPerPage.value
+  const firstIndex = users.value.length
+    ? (currentPage.value - 1) * rowPerPage.value + 1
+    : 0;
+  const lastIndex =
+    users.value.length + (currentPage.value - 1) * rowPerPage.value;
 
-  return `Showing ${ firstIndex } to ${ lastIndex } of ${ totalUsers.value } entries`
-})
+  return `Showing ${firstIndex} to ${lastIndex} of ${totalUsers.value} entries`;
+});
 
-const addNewUser = userData => {
-  userListStore.addProperty(userData)
+const addNewUser = (userData) => {
+  userListStore.addProperty(userData);
 
   // refetch User
-  fetchUsers()
-}
+  fetchUsers();
+};
 </script>
 
 <template>
@@ -134,10 +125,7 @@ const addNewUser = userData => {
           <VDivider />
 
           <VCardText class="d-flex flex-wrap py-4 gap-4">
-            <div
-              class="me-3"
-              style="width: 80px;"
-            >
+            <div class="me-3" style="width: 80px">
               <VSelect
                 v-model="rowPerPage"
                 density="compact"
@@ -148,9 +136,11 @@ const addNewUser = userData => {
 
             <VSpacer />
 
-            <div class="app-user-search-filter d-flex align-center flex-wrap gap-4">
+            <div
+              class="app-user-search-filter d-flex align-center flex-wrap gap-4"
+            >
               <!-- 👉 Search  -->
-              <div style="width: 10rem;">
+              <div style="width: 10rem">
                 <VTextField
                   v-model="searchQuery"
                   placeholder="Search"
@@ -183,36 +173,18 @@ const addNewUser = userData => {
             <!-- 👉 table head -->
             <thead>
               <tr>
-                <th scope="col">
-                  Name
-                </th>
-                <th scope="col">
-                  Number
-                </th>
-                <th scope="col">
-                  Price
-                </th>
-                <th scope="col">
-                  Type
-                </th>
-                <th scope="col">
-                  Pakistan
-                </th>
-                <th scope="col">
-                  STATUS
-                </th>
-                <th scope="col">
-                  ACTIONS
-                </th>
+                <th scope="col">Name</th>
+                <th scope="col">Number</th>
+                <th scope="col">Price</th>
+                <th scope="col">Type</th>
+                <th scope="col">Country</th>
+                <th scope="col">STATUS</th>
+                <th scope="col">ACTIONS</th>
               </tr>
             </thead>
             <!-- 👉 table body -->
             <tbody>
-              <tr
-                v-for="user in users"
-                :key="user.id"
-                style="height: 3.75rem;"
-              >
+              <tr v-for="user in users" :key="user.id" style="height: 3.75rem">
                 <!-- 👉 User -->
                 <td>
                   <div class="d-flex align-center">
@@ -222,17 +194,17 @@ const addNewUser = userData => {
                       class="me-3"
                       size="38"
                     >
-                      <VImg
-                        v-if="user.avatar"
-                        :src="user.avatar"
-                      />
+                      <VImg v-if="user.avatar" :src="user.avatar" />
                       <span v-else>{{ avatarText(user.name) }}</span>
                     </VAvatar>
 
                     <div class="d-flex flex-column">
                       <h6 class="text-base">
                         <RouterLink
-                          :to="{ name: 'apps-property-view-id', params: { id: user.id } }"
+                          :to="{
+                            name: 'apps-property-view-id',
+                            params: { id: user.id },
+                          }"
                           class="font-weight-medium user-list-name"
                         >
                           {{ user.name }}
@@ -244,12 +216,17 @@ const addNewUser = userData => {
 
                 <!-- 👉 Role -->
                 <td>
-                  <span class="text-capitalize text-base"> {{ user.number }}</span>
+                  <span class="text-capitalize text-base">
+                    {{ user.number }}</span
+                  >
                 </td>
 
                 <!-- 👉 Plan -->
                 <td>
-                  <span class="text-capitalize text-base font-weight-semibold">{{ user.price }}</span>
+                  <span
+                    class="text-capitalize text-base font-weight-semibold"
+                    >{{ user.price }}</span
+                  >
                 </td>
 
                 <!-- 👉 Billing -->
@@ -269,60 +246,33 @@ const addNewUser = userData => {
                     size="small"
                     class="text-capitalize"
                   >
-                    {{ user.status }}
+                    {{ resolveStatusText(user.status) }}
                   </VChip>
                 </td>
 
                 <!-- 👉 Actions -->
-                <td
-                  class="text-center"
-                  style="width: 5rem;"
-                >
-                  <VBtn
-                    icon
-                    size="x-small"
-                    color="default"
-                    variant="text"
-                  >
-                    <VIcon
-                      size="22"
-                      icon="tabler-edit"
-                    />
+                <td class="text-center" style="width: 5rem">
+                  <VBtn icon size="x-small" color="default" variant="text">
+                    <VIcon size="22" icon="tabler-edit" />
                   </VBtn>
 
-                  <VBtn
-                    icon
-                    size="x-small"
-                    color="default"
-                    variant="text"
-                  >
-                    <VIcon
-                      size="22"
-                      icon="tabler-trash"
-                    />
+                  <VBtn icon size="x-small" color="default" variant="text">
+                    <VIcon size="22" icon="tabler-trash" />
                   </VBtn>
 
-                  <VBtn
-                    icon
-                    size="x-small"
-                    color="default"
-                    variant="text"
-                  >
-                    <VIcon
-                      size="22"
-                      icon="tabler-dots-vertical"
-                    />
+                  <VBtn icon size="x-small" color="default" variant="text">
+                    <VIcon size="22" icon="tabler-dots-vertical" />
 
                     <VMenu activator="parent">
                       <VList>
                         <VListItem
                           title="View"
-                          :to="{ name: 'apps-property-view-id', params: { id: user.id } }"
+                          :to="{
+                            name: 'apps-property-view-id',
+                            params: { id: user.id },
+                          }"
                         />
-                        <VListItem
-                          title="Suspend"
-                          href="javascript:void(0)"
-                        />
+                        <VListItem title="Suspend" href="javascript:void(0)" />
                       </VList>
                     </VMenu>
                   </VBtn>
@@ -333,19 +283,16 @@ const addNewUser = userData => {
             <!-- 👉 table footer  -->
             <tfoot v-show="!users.length">
               <tr>
-                <td
-                  colspan="7"
-                  class="text-center"
-                >
-                  No data available
-                </td>
+                <td colspan="7" class="text-center">No data available</td>
               </tr>
             </tfoot>
           </VTable>
 
           <VDivider />
 
-          <VCardText class="d-flex align-center flex-wrap justify-space-between gap-4 py-3 px-5">
+          <VCardText
+            class="d-flex align-center flex-wrap justify-space-between gap-4 py-3 px-5"
+          >
             <span class="text-sm text-disabled">
               {{ paginationData }}
             </span>
