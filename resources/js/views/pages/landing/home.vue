@@ -54,133 +54,223 @@
       <v-container>
         <div>
           <v-row>
-            <v-col md="4">
-              <div class="card-property">
-                <div class="prop-header">
-                  <img src="@images/img/11.png" alt="">
-                  <div class="featured_tag"><span>Featured</span></div>
+          <v-col xl="3" lg="4" md="4">
+            <div class="property_card">
+              <div class="propCard_header">
+                <img src="@images/img/11.png" alt="">
+                <div class="overlay"></div>
+                <div class="featured_tag">
+                  <span>Featured</span>
                 </div>
-                <div class="content">
-                  <div>
-                    <h2>1339 E 115th St</h2>
-                    <p>Cleveland, OH 44106</p>
-                  </div>
-                  <div>
-                    <span>8.8% IRR</span>
-                    <h2>8.8% CoC</h2>
-                  </div>
-                </div>
-                <div class="prop-footer">
-                  <span>Available: 1,998 tokens at $50</span>
+                <div class="newListing_tag">
+                  <span>New Listing</span>
                 </div>
               </div>
-            </v-col>
-            <v-col md="4">
-              <div class="card-property">
-                <div class="prop-header">
-                  <img src="@images/img/22.png" alt="">
-                  <div class="featured_tag"><span>Featured</span></div>
+              <div class="propCard_body">
+                <div>
+                  <h2>1339 E 115th St</h2>
+                  <p>Cleveland, OH 44106</p>
                 </div>
-                <div class="content">
-                  <div>
-                    <h2>1339 E 115th St</h2>
-                    <p>Cleveland, OH 44106</p>
-                  </div>
-                  <div>
-                    <span>8.8% IRR</span>
-                    <h2>8.8% CoC</h2>
-                  </div>
-                </div>
-                <div class="prop-footer">
-                  <span>Available: 1,998 tokens at $50</span>
+                <div>
+                  <span>8.8% IRR</span>
+                  <h2>8.8% CoC</h2>
                 </div>
               </div>
-            </v-col>
-            <v-col md="4">
-              <div class="card-property">
-                <div class="prop-header">
-                  <img src="@images/img/33.png" alt="">
-                  <div class="featured_tag"><span>Featured</span></div>
+              <div class="propCard_footer">
+                <span>Available: 1,998 tokens at $50</span>
+              </div>
+            </div>
+          </v-col>
+          <v-col xl="3" lg="4" md="4">
+            <div class="property_card">
+              <div class="propCard_header">
+                <img src="@images/img/22.png" alt="">
+                <div class="overlay"></div>
+                <div class="featured_tag">
+                  <span>Featured</span>
                 </div>
-                <div class="content">
-                  <div>
-                    <h2>1339 E 115th St</h2>
-                    <p>Cleveland, OH 44106</p>
-                  </div>
-                  <div>
-                    <span>8.8% IRR</span>
-                    <h2>8.8% CoC</h2>
-                  </div>
-                </div>
-                <div class="prop-footer">
-                  <span>Available: 1,998 tokens at $50</span>
+                <div class="newListing_tag">
+                  <span>New Listing</span>
                 </div>
               </div>
-            </v-col>
-            <v-col md="4">
-              <div class="card-property">
-                <div class="prop-header">
-                  <img src="@images/img/44.png" alt="">
-                  <!-- <div class="featured_tag"><span>Featured</span></div> -->
+              <div class="propCard_body">
+                <div>
+                  <h2>1339 E 115th St</h2>
+                  <p>Cleveland, OH 44106</p>
                 </div>
-                <div class="content">
-                  <div>
-                    <h2>1339 E 115th St</h2>
-                    <p>Cleveland, OH 44106</p>
-                  </div>
-                  <div>
-                    <span>8.8% IRR</span>
-                    <h2>8.8% CoC</h2>
-                  </div>
-                </div>
-                <div class="prop-footer">
-                  <span>Available: 1,998 tokens at $50</span>
+                <div>
+                  <span>8.8% IRR</span>
+                  <h2>8.8% CoC</h2>
                 </div>
               </div>
-            </v-col>
-            <v-col md="4">
-              <div class="card-property">
-                <div class="prop-header">
-                  <img src="@images/img/55.png" alt="">
-                  <!-- <div class="featured_tag"><span>Featured</span></div> -->
+              <div class="propCard_footer">
+                <span>Available: 1,998 tokens at $50</span>
+              </div>
+            </div>
+          </v-col>
+          <v-col xl="3" lg="4" md="4">
+            <div class="property_card">
+              <div class="propCard_header">
+                <img src="@images/img/33.png" alt="">
+                <div class="overlay"></div>
+                <div class="featured_tag">
+                  <span>Featured</span>
                 </div>
-                <div class="content">
-                  <div>
-                    <h2>1339 E 115th St</h2>
-                    <p>Cleveland, OH 44106</p>
-                  </div>
-                  <div>
-                    <span>8.8% IRR</span>
-                    <h2>8.8% CoC</h2>
-                  </div>
-                </div>
-                <div class="prop-footer">
-                  <span>Available: 1,998 tokens at $50</span>
+                <div class="newListing_tag">
+                  <span>New Listing</span>
                 </div>
               </div>
-            </v-col>
-            <v-col md="4">
-              <div class="card-property">
-                <div class="prop-header">
-                  <img src="@images/img/11.png" alt="">
-                  <div class="featured_tag"><span>Featured</span></div>
+              <div class="propCard_body">
+                <div>
+                  <h2>1339 E 115th St</h2>
+                  <p>Cleveland, OH 44106</p>
                 </div>
-                <div class="content">
-                  <div>
-                    <h2>1339 E 115th St</h2>
-                    <p>Cleveland, OH 44106</p>
-                  </div>
-                  <div>
-                    <span>8.8% IRR</span>
-                    <h2>8.8% CoC</h2>
-                  </div>
-                </div>
-                <div class="prop-footer">
-                  <span>Available: 1,998 tokens at $50</span>
+                <div>
+                  <span>8.8% IRR</span>
+                  <h2>8.8% CoC</h2>
                 </div>
               </div>
-            </v-col>
-          </v-row>
+              <div class="propCard_footer">
+                <span>Available: 1,998 tokens at $50</span>
+              </div>
+            </div>
+          </v-col>
+          <v-col xl="3" lg="4" md="4">
+            <div class="property_card">
+              <div class="propCard_header">
+                <img src="@images/img/55.png" alt="">
+                <div class="overlay"></div>
+                <div class="featured_tag">
+                  <span>Featured</span>
+                </div>
+                <div class="newListing_tag">
+                  <span>New Listing</span>
+                </div>
+              </div>
+              <div class="propCard_body">
+                <div>
+                  <h2>1339 E 115th St</h2>
+                  <p>Cleveland, OH 44106</p>
+                </div>
+                <div>
+                  <span>8.8% IRR</span>
+                  <h2>8.8% CoC</h2>
+                </div>
+              </div>
+              <div class="propCard_footer">
+                <span>Available: 1,998 tokens at $50</span>
+              </div>
+            </div>
+          </v-col>
+          <v-col xl="3" lg="4" md="4">
+            <div class="property_card">
+              <div class="propCard_header">
+                <img src="@images/img/55.png" alt="">
+                <div class="overlay"></div>
+                <div class="featured_tag">
+                  <span>Featured</span>
+                </div>
+                <div class="newListing_tag">
+                  <span>New Listing</span>
+                </div>
+              </div>
+              <div class="propCard_body">
+                <div>
+                  <h2>1339 E 115th St</h2>
+                  <p>Cleveland, OH 44106</p>
+                </div>
+                <div>
+                  <span>8.8% IRR</span>
+                  <h2>8.8% CoC</h2>
+                </div>
+              </div>
+              <div class="propCard_footer">
+                <span>Available: 1,998 tokens at $50</span>
+              </div>
+            </div>
+          </v-col>
+          <v-col xl="3" lg="4" md="4">
+            <div class="property_card">
+              <div class="propCard_header">
+                <img src="@images/img/55.png" alt="">
+                <div class="overlay"></div>
+                <div class="featured_tag">
+                  <span>Featured</span>
+                </div>
+                <div class="newListing_tag">
+                  <span>New Listing</span>
+                </div>
+              </div>
+              <div class="propCard_body">
+                <div>
+                  <h2>1339 E 115th St</h2>
+                  <p>Cleveland, OH 44106</p>
+                </div>
+                <div>
+                  <span>8.8% IRR</span>
+                  <h2>8.8% CoC</h2>
+                </div>
+              </div>
+              <div class="propCard_footer">
+                <span>Available: 1,998 tokens at $50</span>
+              </div>
+            </div>
+          </v-col>
+          <v-col xl="3" lg="4" md="4">
+            <div class="property_card">
+              <div class="propCard_header">
+                <img src="@images/img/55.png" alt="">
+                <div class="overlay"></div>
+                <div class="featured_tag">
+                  <span>Featured</span>
+                </div>
+                <div class="newListing_tag">
+                  <span>New Listing</span>
+                </div>
+              </div>
+              <div class="propCard_body">
+                <div>
+                  <h2>1339 E 115th St</h2>
+                  <p>Cleveland, OH 44106</p>
+                </div>
+                <div>
+                  <span>8.8% IRR</span>
+                  <h2>8.8% CoC</h2>
+                </div>
+              </div>
+              <div class="propCard_footer">
+                <span>Available: 1,998 tokens at $50</span>
+              </div>
+            </div>
+          </v-col>
+          <v-col xl="3" lg="4" md="4">
+            <div class="property_card">
+              <div class="propCard_header">
+                <img src="@images/img/55.png" alt="">
+                <div class="overlay"></div>
+                <div class="featured_tag">
+                  <span>Featured</span>
+                </div>
+                <div class="newListing_tag">
+                  <span>New Listing</span>
+                </div>
+              </div>
+              <div class="propCard_body">
+                <div>
+                  <h2>1339 E 115th St</h2>
+                  <p>Cleveland, OH 44106</p>
+                </div>
+                <div>
+                  <span>8.8% IRR</span>
+                  <h2>8.8% CoC</h2>
+                </div>
+              </div>
+              <div class="propCard_footer">
+                <span>Available: 1,998 tokens at $50</span>
+              </div>
+            </div>
+          </v-col>
+        </v-row>
         </div>
       </v-container>
     </section>
