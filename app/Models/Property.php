@@ -13,13 +13,14 @@ class Property extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['name', 'number', 'description', 'price', 'property_image', 'country', 'area', 'type', 'status', 'user_id'];
+    protected $fillable = ['description', 'price', 'property_image', 'property_video', 'market', 'city', 'land', 'type', 'area_size', 'bedroom', 'bathroom', 'status', 'user_id'];
 
     public static function boot()
     {
         parent::boot();
         self::creating(function ($model) {
             $model->uuid = Str::uuid()->toString();
+            $model->property_id = random_int(100000, 999999);
         });
     }
     public static function getIdByUuid($uuid)
@@ -30,21 +31,22 @@ class Property extends Model
     public static function getProperties($request)
     {
 
-        $properties = Property::when($request->name, function ($query, $name) {
-            return $query->where('name', 'LIKE', "%{$name}%");
-        })
-            ->when($request->country, function ($query, $country) {
-                if ($country == 'all_markets') {
+        $properties = Property::
+            when($request->market, function ($query, $market) {
+                if ($market == 'all_markets') {
                     return $query->orderBy('id');
                 } else {
-                    return $query->where('country', $country);
+                    return $query->where('market', $market);
                 }
+            })
+            ->when($request->city, function ($query, $city) {
+                return $query->where('city', $city);
             })
             ->when($request->type, function ($query, $type) {
                 return $query->where('type', $type);
             })
-            ->when($request->area, function ($query, $area) {
-                return $query->where('area', $area);
+            ->when($request->land, function ($query, $land) {
+                return $query->where('land', $land);
             })
             ->when($request->new, function ($query) {
                 return $query->whereBetween('properties.created_at', [Carbon::now()->subDays(3)->startOfDay(), Carbon::now()->endofDay()])
@@ -59,6 +61,9 @@ class Property extends Model
             ->when($request->page, function ($query, $page) {
                 return $query->offset($page - 1);
             })
+            ->when($request->front, function ($query) {
+                return $query->where('status',1);
+            })
             ->paginate($request->perPage);
         return $properties;
     }
@@ -68,7 +73,9 @@ class Property extends Model
         $property = new self($request->all());
         $property->status = $request->boolean('status');
         if ($request->has('property_image')) {
-            $property->property_image = self::uploadPropertyImage($request, 'property_image');
+            $data['property_image'] = self::uploadPropertyMedia($request, 'property_image');
+        } if ($request->has('property_video')) {
+            $data['property_video'] = self::uploadPropertyMedia($request, 'property_video');
         }
         $property->save();
         return $property;
@@ -83,7 +90,9 @@ class Property extends Model
             $data['status'] = $request->boolean('status');
         }
         if ($request->has('property_image')) {
-            $data['property_image'] = self::uploadPropertyImage($request, 'property_image');
+            $data['property_image'] = self::uploadPropertyMedia($request, 'property_image');
+        } if ($request->has('property_video')) {
+            $data['property_video'] = self::uploadPropertyMedia($request, 'property_video');
         }
         $property->update($data);
         return $property;
@@ -96,7 +105,7 @@ class Property extends Model
         return $property;
     }
 
-    public static function uploadPropertyImage($request, $file_name)
+    public static function uploadPropertyMedia($request, $file_name)
     {
         $destinationPath = 'uploads/properties/';
         if ($request->hasFile($file_name)) {
