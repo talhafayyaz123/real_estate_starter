@@ -28,6 +28,12 @@ const router = createRouter({
       name: 'home',
       component: () => import("@/views/pages/landing/home.vue"),
     },
+    {
+      path: '/marketplace',
+      name: 'marketplace',
+      component: () => import("@/views/pages/landing/propertyListing.vue"),
+    },
+
     ...setupLayouts(routes),
   ],
 })

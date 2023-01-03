@@ -3,7 +3,7 @@
     <VContainer>
       <div class="fut_header">
         <div class="fut_brand">
-          <img src="@images/img/logo.png" />
+          <img src="@images/img/logo1.png" />
         </div>
         <div class="fut_nav">
           <ul class="fut_navigation">
@@ -41,5 +41,3 @@ export default {
   components: {},
 };
 </script>
-
-<style></style>

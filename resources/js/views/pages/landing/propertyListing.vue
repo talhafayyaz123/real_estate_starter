@@ -1,59 +1,49 @@
 <template>
-  <div>
-    <!--==========================================-->
+  <div class="property-listing">
     <HeaderComp/>
-    <!--==========================================-->
-    <section class="fut_banner">
-      <div class="overlay"></div>
-      <VContainer>
-        <div class="fut_filters">
-          <div class="mb-5">
-            <v-btn class="mr-2">Buy</v-btn>
-            <v-btn class="">Rent</v-btn>
-          </div>
-          <div class="filter">
-            <div class="filter_header">
-              <v-row class="align-end">
-                <v-col sm="3">
-                  <label for="">Location</label>
-                  <v-select placeholder="City"></v-select>
-                </v-col>
-                <v-col sm="3">
-                  <label for="">Area</label>
-                  <input class="input" placeholder="Area"/>
-                </v-col>
-                <v-col sm="3">
-                  <label for="">Property</label>
-                  <v-select placeholder="Property Type"></v-select>
-                </v-col>
-                <v-col sm="2">
-                  <label for="">Square Footage</label>
-                  <input class="input" placeholder="i.e 2600"/>
-                </v-col>
-                <v-col sm="1">
-                  <v-btn>Find</v-btn>
-                </v-col>
-              </v-row>
-              <!-- <v-row class="mt-3">
-                <v-col sm="6">
-                  <label for="">Property</label>
-                  <v-select placeholder="Property Type"></v-select>
-                </v-col>
-                <v-col sm="6">
-                  <label for="">Square Footage</label>
-                  <input class="input" placeholder="i.e 2600"/>
-                </v-col>
-              </v-row> -->
-            </div>
-          </div>
-        </div>
-      </VContainer>
-    </section>
-    <!--==========================================-->
-    <section class="listing-property">
-      <v-container>
-        <div>
-          <v-row>
+    <breadcrumpHeader/>
+    <v-container>
+      <div class="property_filter mt-5 mb-5">
+        <v-row class="align-end">
+            <v-col md="3">
+              <label for="">Location</label>
+              <v-select placeholder="Location"></v-select>
+            </v-col>
+            <v-col md="2">
+              <label for="">Property Type</label>
+              <v-select placeholder="Property Type"></v-select>
+            </v-col>
+            <v-col md="2">
+              <label for="">Current Cash on Cash Return</label>
+              <div class="range-input">
+                <input type="range"/>
+              </div>
+            </v-col>
+            <v-col md="2">
+              <label for="">Current Projected IRR</label>
+              <div class="range-input">
+                <input type="range"/>
+              </div>
+            </v-col>
+            <v-col md="3">
+              <v-btn-toggle borderless class="w-100 justify-center">
+                <v-btn value="left">
+                  <span class="hidden-sm-and-down">All</span>
+                </v-btn>
+
+                <v-btn value="center">
+                  <span class="hidden-sm-and-down">New</span>
+                </v-btn>
+
+                <v-btn value="right">
+                  <span class="hidden-sm-and-down">Upcoming</span>
+                </v-btn>
+              </v-btn-toggle>
+            </v-col>
+        </v-row>
+      </div>
+      <div class="pt-5 pb-5">
+        <v-row>
           <v-col xl="3" lg="4" md="4">
             <div class="property_card">
               <div class="propCard_header">
@@ -271,17 +261,18 @@
             </div>
           </v-col>
         </v-row>
-        </div>
-      </v-container>
-    </section>
+      </div>
+    </v-container>
   </div>
 </template>
 
 <script>
 import HeaderComp from './components/header.vue';
+import breadcrumpHeader from './components/breadcrumpHeader.vue';
 export default {
   components:{
     HeaderComp,
+    breadcrumpHeader
   }
 }
 </script>
