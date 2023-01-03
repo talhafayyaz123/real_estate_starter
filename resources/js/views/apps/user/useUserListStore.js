@@ -5,7 +5,7 @@ export const useUserListStore = defineStore('UserListStore', {
   actions: {
     // 👉 Fetch users data
     fetchUsers(params) { return axios.get('/apps/users/list', { params }) },
-    fetchProperty(params) { return axios.get('/apps/users/property', { params }) },
+    fetchProperty(params) { return axios.get('/api/get-properties', { params }) },
 
     // 👉 Add User
     addUser(userData) {
@@ -18,14 +18,18 @@ export const useUserListStore = defineStore('UserListStore', {
           .catch(error => reject(error))
       })
     },
-    addProperty(userData) {
+    addProperty(params) {
 
       return new Promise((resolve, reject) => {
-        axios.post('/apps/users/property', {
-          user: userData,
-        }).then(response => resolve(response))
-          .catch(error => reject(error))
-      })
+        axios
+          .post(`/api/store-property`, params)
+          .then((response) => {
+            resolve(response);
+          })
+          .catch((error) => reject(error))
+          .finally(() => {
+          });
+      });
     },
     searchProperty(name) {
 

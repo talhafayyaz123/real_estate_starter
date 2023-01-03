@@ -1,63 +1,57 @@
 <script setup>
-import {
-  requiredValidator,
-} from '@validators'
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { requiredValidator } from "@validators";
+import { PerfectScrollbar } from "vue3-perfect-scrollbar";
 
 const props = defineProps({
   isDrawerOpen: {
     type: Boolean,
     required: true,
   },
-})
+});
 
-const emit = defineEmits([
-  'update:isDrawerOpen',
-  'userData',
-])
+const emit = defineEmits(["update:isDrawerOpen", "userData"]);
 
-const isFormValid = ref(false)
-const refForm = ref()
-const name = ref('')
-const number = ref('')
-const price = ref('')
-const country = ref('')
-const type = ref('')
-const status = ref()
+const isFormValid = ref(false);
+const refForm = ref();
+const name = ref("");
+const number = ref("");
+const price = ref("");
+const country = ref("");
+const type = ref("");
+const status = ref();
 
 // 👉 drawer close
 const closeNavigationDrawer = () => {
-  emit('update:isDrawerOpen', false)
+  emit("update:isDrawerOpen", false);
   nextTick(() => {
-    refForm.value?.reset()
-    refForm.value?.resetValidation()
-  })
-}
+    refForm.value?.reset();
+    refForm.value?.resetValidation();
+  });
+};
 
 const onSubmit = () => {
   refForm.value?.validate().then(({ valid }) => {
     if (valid) {
-      emit('userData', {
-        id: 0,
+      emit("userData", {
         name: name.value,
         price: price.value,
         country: country.value,
         type: type.value,
         number: number.value,
         status: status.value,
-      })
-      emit('update:isDrawerOpen', false)
+      });
+      emit("update:isDrawerOpen", false);
       nextTick(() => {
-        refForm.value?.reset()
-        refForm.value?.resetValidation()
-      })
+        refForm.value?.reset();
+        refForm.value?.resetValidation();
+      });
     }
-  })
-}
+  });
+};
 
-const handleDrawerModelValueUpdate = val => {
-  emit('update:isDrawerOpen', val)
-}
+const handleDrawerModelValueUpdate = (val) => {
+  emit("update:isDrawerOpen", val);
+};
 </script>
 
 <template>
@@ -71,9 +65,7 @@ const handleDrawerModelValueUpdate = val => {
   >
     <!-- 👉 Title -->
     <div class="d-flex align-center pa-6 pb-1">
-      <h6 class="text-h6">
-        Add Property
-      </h6>
+      <h6 class="text-h6">Add Property</h6>
 
       <VSpacer />
 
@@ -86,22 +78,15 @@ const handleDrawerModelValueUpdate = val => {
         class="rounded"
         @click="closeNavigationDrawer"
       >
-        <VIcon
-          size="18"
-          icon="tabler-x"
-        />
-      </VBTn>
+        <VIcon size="18" icon="tabler-x" />
+      </VBtn>
     </div>
 
     <PerfectScrollbar :options="{ wheelPropagation: false }">
       <VCard flat>
         <VCardText>
           <!-- 👉 Form -->
-          <VForm
-            ref="refForm"
-            v-model="isFormValid"
-            @submit.prevent="onSubmit"
-          >
+          <VForm ref="refForm" v-model="isFormValid" @submit.prevent="onSubmit">
             <VRow>
               <!-- 👉 Full name -->
               <VCol cols="12">
@@ -139,7 +124,6 @@ const handleDrawerModelValueUpdate = val => {
                 />
               </VCol>
 
-
               <!-- 👉 Plan -->
               <VCol cols="12">
                 <VSelect
@@ -156,18 +140,16 @@ const handleDrawerModelValueUpdate = val => {
                   v-model="status"
                   label="Select Status"
                   :rules="[requiredValidator]"
-                  :items="[{ title: 'Active', value: 'active' }, { title: 'Inactive', value: 'inactive' }]"
+                  :items="[
+                    { title: 'Active', value: 'active' },
+                    { title: 'Inactive', value: 'inactive' },
+                  ]"
                 />
               </VCol>
 
               <!-- 👉 Submit and Cancel -->
               <VCol cols="12">
-                <VBtn
-                  type="submit"
-                  class="me-3"
-                >
-                  Submit
-                </VBtn>
+                <VBtn type="submit" class="me-3"> Submit </VBtn>
                 <VBtn
                   type="reset"
                   variant="tonal"
