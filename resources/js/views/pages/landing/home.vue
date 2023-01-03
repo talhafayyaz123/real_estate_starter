@@ -274,6 +274,28 @@
         </div>
       </v-container>
     </section>
+    <!--==========================================-->
+    <section class="our-property">
+      <v-container>
+        <div class="partners">
+            <a href="">
+              <img src="@images/img/partner1.png" alt=""/>
+            </a>
+            <a href="">
+              <img src="@images/img/partner5.png" alt=""/>
+            </a>
+            <a href="">
+              <img src="@images/img/partner2.png" alt=""/>
+            </a>
+            <a href="">
+              <img src="@images/img/partner3.png" alt=""/>
+            </a>
+            <a href="">
+              <img src="@images/img/partner4.png" alt=""/>
+            </a>
+        </div>
+      </v-container>
+    </section>
   </div>
 </template>
 

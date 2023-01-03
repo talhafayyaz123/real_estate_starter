@@ -182,15 +182,22 @@ body{
 }
 
 ///////////////////////////////////////////////////////////////////////////
-.breadcrup_header{
-  min-height: 300px;
-  background: #F7F5FF;
-  position: relative;
+.our-property{
+  padding: 50px 0px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  h1{
-    font-size: 44px;
-    color: #7a60e0;
+  background: #F3F2FF;
+  .partners{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    a{
+      padding: 0px 50px;
+      img{
+        width: 70%;
+      }
+    }
   }
+  
 }
