@@ -173,13 +173,15 @@ const addNewUser = (userData) => {
             <!-- 👉 table head -->
             <thead>
               <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Number</th>
-                <th scope="col">Price</th>
+                <th scope="col">Image</th>
+                <th scope="col">Property ID</th>
+                <th scope="col">Market</th>
+                <th scope="col">Land</th>
                 <th scope="col">Type</th>
-                <th scope="col">Country</th>
-                <th scope="col">STATUS</th>
-                <th scope="col">ACTIONS</th>
+                <th scope="col">Area (Sq.ft)</th>
+                <th scope="col">Price</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
               </tr>
             </thead>
             <!-- 👉 table body -->
@@ -194,30 +196,18 @@ const addNewUser = (userData) => {
                       class="me-3"
                       size="38"
                     >
-                      <VImg v-if="user.avatar" :src="user.avatar" />
-                      <span v-else>{{ avatarText(user.name) }}</span>
+                      <VImg
+                        v-if="user.property_image"
+                        :src="user.property_image"
+                      />
                     </VAvatar>
-
-                    <div class="d-flex flex-column">
-                      <h6 class="text-base">
-                        <RouterLink
-                          :to="{
-                            name: 'apps-property-view-id',
-                            params: { id: user.id },
-                          }"
-                          class="font-weight-medium user-list-name"
-                        >
-                          {{ user.name }}
-                        </RouterLink>
-                      </h6>
-                    </div>
                   </div>
                 </td>
 
                 <!-- 👉 Role -->
                 <td>
                   <span class="text-capitalize text-base">
-                    {{ user.number }}</span
+                    {{ user.property_id }}</span
                   >
                 </td>
 
@@ -225,17 +215,22 @@ const addNewUser = (userData) => {
                 <td>
                   <span
                     class="text-capitalize text-base font-weight-semibold"
-                    >{{ user.price }}</span
+                    >{{ user.market }}</span
                   >
                 </td>
 
                 <!-- 👉 Billing -->
                 <td>
+                  <span class="text-base">{{ user.land }}</span>
+                </td>
+                <td>
                   <span class="text-base">{{ user.type }}</span>
                 </td>
-
                 <td>
-                  <span class="text-base">{{ user.country }}</span>
+                  <span class="text-base">{{ user.area_size }}</span>
+                </td>
+                <td>
+                  <span class="text-base">{{ user.price }}</span>
                 </td>
 
                 <!-- 👉 Status -->

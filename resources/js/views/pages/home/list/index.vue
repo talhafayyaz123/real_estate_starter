@@ -15,35 +15,31 @@
             <div class="filter_header">
               <v-row class="align-end">
                 <v-col sm="3">
-                  <label for="">Location</label>
-                  <v-select placeholder="City"></v-select>
+                  <VSelect
+                    v-model="market"
+                    label="Market"
+                    :items="['All Market', 'UAE', 'Canada', 'USA', 'KSA']"
+                  />
                 </v-col>
                 <v-col sm="3">
-                  <label for="">Area</label>
-                  <input class="input" placeholder="Area" />
+                  <VSelect
+                    v-model="land"
+                    label="Land"
+                    :items="['Residential', 'Commercial', 'Industrial']"
+                  />
                 </v-col>
                 <v-col sm="3">
-                  <label for="">Property</label>
-                  <v-select placeholder="Property Type"></v-select>
+                  <VSelect
+                    v-model="type"
+                    label="Type"
+                    :items="['Plaza', 'Office', 'Hotel', 'Apartment', 'Condo']"
+                  />
                 </v-col>
-                <v-col sm="2">
-                  <label for="">Square Footage</label>
-                  <input class="input" placeholder="i.e 2600" />
-                </v-col>
+
                 <v-col sm="1">
-                  <v-btn>Find</v-btn>
+                  <v-btn @click="fetchUsers">Find</v-btn>
                 </v-col>
               </v-row>
-              <!-- <v-row class="mt-3">
-                <v-col sm="6">
-                  <label for="">Property</label>
-                  <v-select placeholder="Property Type"></v-select>
-                </v-col>
-                <v-col sm="6">
-                  <label for="">Square Footage</label>
-                  <input class="input" placeholder="i.e 2600"/>
-                </v-col>
-              </v-row> -->
             </div>
           </div>
         </div>
@@ -54,7 +50,13 @@
       <v-container>
         <div>
           <v-row>
-            <v-col xl="3" lg="4" md="4" v-for="(property, index) in users">
+            <v-col
+              xl="3"
+              lg="4"
+              md="4"
+              v-for="(property, index) in users"
+              v-if="users.length"
+            >
               <div class="property_card">
                 <div class="propCard_header">
                   <img src="@images/img/33.png" alt="" />
@@ -63,13 +65,13 @@
                     <span>Featured</span>
                   </div>
                   <div class="newListing_tag">
-                    <span> {{ property.name }}</span>
+                    <span> {{ property.land }}</span>
                   </div>
                 </div>
                 <div class="propCard_body">
                   <div>
-                    <h2>{{ property.number }}</h2>
-                    <p>{{ property.country }}</p>
+                    <h2>{{ property.area_size }} (sq.ft)</h2>
+                    <p>{{ property.market }}</p>
                   </div>
                   <div>
                     <span>{{ property.type }}</span>
@@ -80,6 +82,8 @@
                 </div>
               </div>
             </v-col>
+
+            <v-col v-else>Not Record Found</v-col>
           </v-row>
         </div>
       </v-container>
@@ -101,6 +105,9 @@ const currentPage = ref(1);
 const totalPage = ref(1);
 const totalUsers = ref(0);
 const users = ref([]);
+const market = ref("");
+const land = ref("");
+const type = ref("");
 
 // 👉 Fetching users
 const fetchUsers = () => {
@@ -113,6 +120,9 @@ const fetchUsers = () => {
       perPage: rowPerPage.value,
       currentPage: currentPage.value,
       front: 1,
+      market: market.value,
+      land: land.value,
+      type: type.value,
     })
     .then((response) => {
       users.value = response.data.data.properties.data;
