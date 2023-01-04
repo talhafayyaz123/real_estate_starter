@@ -1,19 +1,50 @@
 .header{
-  padding: 4px 0px;
   width: 100%;
-  background: #fff;
   .v-container{
     padding-top: 0;
     padding-bottom: 0;
   }
 }
+.upper_header{
+  min-height: 60px;
+  background: #5271FE;
+  display: flex;
+  align-items: center;
+  .up_head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .right_upper_side{
+      a{
+        color: #fbfbfb;
+      }
+    }
+  }
+  .upper_nav{
+    display: flex;
+    align-items: center;
+    li{
+      margin: 0px 10px;
+      a{
+        color: #fbfbfb;
+        font-size: 16px;
+        svg{
+          vertical-align: bottom;
+        }
+      }
+    }
+  }
+}
+.bottom_header{
+  padding: 4px 0px;
+}
 .fut_header{
   display: flex;
   align-items: center;
-  justify-content: space-between;
   .fut_brand{
+    width: 12%;
     img{
-      width: 35%;
+      width: 80%;
     }
   }
   .fut_nav{
