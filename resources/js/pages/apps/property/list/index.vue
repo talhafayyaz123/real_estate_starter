@@ -110,8 +110,20 @@ const paginationData = computed(() => {
 
 const addNewUser = (userData) => {
   userListStore.addProperty(userData);
-
   // refetch User
+  fetchUsers();
+};
+
+const deleteProperty = (uuid) => {
+  userListStore.deleteProperty(uuid);
+  fetchUsers();
+};
+
+const updatePropertyStatus = (uuid, status) => {
+  userListStore.propertyStatusChange({
+    property_uuid: uuid,
+    status: status,
+  });
   fetchUsers();
 };
 </script>
@@ -251,7 +263,13 @@ const addNewUser = (userData) => {
                     <VIcon size="22" icon="tabler-edit" />
                   </VBtn>
 
-                  <VBtn icon size="x-small" color="default" variant="text">
+                  <VBtn
+                    icon
+                    size="x-small"
+                    color="default"
+                    variant="text"
+                    @click="deleteProperty(user.uuid)"
+                  >
                     <VIcon size="22" icon="tabler-trash" />
                   </VBtn>
 
@@ -261,13 +279,9 @@ const addNewUser = (userData) => {
                     <VMenu activator="parent">
                       <VList>
                         <VListItem
-                          title="View"
-                          :to="{
-                            name: 'apps-property-view-id',
-                            params: { id: user.id },
-                          }"
+                          :title="user.status == 1 ? 'Inactive' : 'Active'"
+                          @click="updatePropertyStatus(user.uuid, user.status)"
                         />
-                        <VListItem title="Suspend" href="javascript:void(0)" />
                       </VList>
                     </VMenu>
                   </VBtn>

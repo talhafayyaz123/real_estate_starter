@@ -22,3 +22,4 @@ Route::get('get-properties', [PropertyController::class, 'getProperties']);
 Route::post('store-property', [PropertyController::class, 'storeProperty']);
 Route::post('update-property', [PropertyController::class, 'updateProperty']);
 Route::delete('delete-property', [PropertyController::class, 'deleteProperty']);
+Route::post('update-property-status', [PropertyController::class, 'updatePropertyStatus']);
