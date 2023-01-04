@@ -1,16 +1,14 @@
 .site_footer{
-  background: #2F3349;
+  background: #C7D9E3;
   padding: 2rem 0 1rem;
 }
 .fut_footer{
-  max-width: 1400px;
-  margin: auto;
   .fut_upper_footer{
     .widgets{
       h4{
         font-size: 1.5rem;
-        color: #fff;
-        margin-bottom: 1rem;
+        color: #375260;
+        margin-bottom: 0.5rem;
       }
       .quick_nav{
         list-style: none;
@@ -21,7 +19,7 @@
             text-decoration: none;
             font-size: 16px;
             line-height: 1.7rem;
-            color: #fbfbfb;
+            color: #333;
           }
         }
       }
@@ -29,12 +27,12 @@
         svg{
           margin-right: 10px;
           path{
-            fill: #fbfbfb !important;
+            fill: #375260 !important;
           }
         }
         p{
           margin: 0px;
-          color: #fbfbfb;
+          color: #333;
           font-size: 16px;
         }
       }
@@ -43,7 +41,7 @@
   .fut_bottom_footer{
     margin-top: 70px;
     p{
-      color: #fbfbfb;
+      color: #000;
       font-size: 18px;
     }
   }
@@ -53,15 +51,20 @@
   a{
     width: 40px;
     height: 40px;
-    background: #fbfbfb;
+    background: #375260;
+    border: 1px solid #375260;
     border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 10px;
+    color: #fff;
+    font-size: 14px;
     &:hover{
       transition: 0.4s all ease-in-out;
       box-shadow: #ccc 0px 5px 15px;
+      background: transparent;
+      color: #375260;
     }
   }
 }

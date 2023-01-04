@@ -1,38 +1,82 @@
 <template>
   <header class="header">
-    <VContainer>
-      <div class="fut_header">
-        <div class="fut_brand">
-          <img src="@images/img/logo1.png" />
-        </div>
-        <div class="fut_nav">
-          <ul class="fut_navigation">
-            <li class="nav-items">
-              <div class="nav-link">Home</div>
+    <div class="upper_header">
+      <v-container>
+        <div class="up_head">
+          <ul class="upper_nav">
+            <li  class="upper_nav_item">
+              <RouterLink :to="{ name: 'login' }" class="upper_nav_link home_icon"> 
+                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
+                </svg>
+              </RouterLink>
             </li>
-            <li class="nav-items">
-              <div class="nav-link">About</div>
+            <li  class="upper_nav_item">
+              <RouterLink :to="{ name: 'login' }" class="upper_nav_link"> Properties </RouterLink>
             </li>
-            <li class="nav-items">
-              <div class="nav-link">List Property</div>
+            <li  class="upper_nav_item">
+              <RouterLink :to="{ name: 'login' }"  class="upper_nav_link"> Plot Finder </RouterLink>
             </li>
-            <li class="nav-items">
-              <div class="nav-link">
-                <RouterLink
-                  class="text-primary ms-2 mb-1"
-                  :to="{ name: 'login' }"
-                >
-                  Login
-                </RouterLink>
-              </div>
+            <li  class="upper_nav_item">
+              <RouterLink :to="{ name: 'login' }" class="upper_nav_link"> Area Guides </RouterLink>
             </li>
-            <li class="nav-items">
-              <div class="nav-link auth-nav-btn">Signup</div>
+            <li  class="upper_nav_item">
+              <RouterLink :to="{ name: 'login' }" class="upper_nav_link"> Blog </RouterLink>
+            </li>
+            <li  class="upper_nav_item">
+              <RouterLink :to="{ name: 'login' }" class="upper_nav_link"> Maps </RouterLink>
             </li>
           </ul>
+          <div class="right_upper_side">
+            <div class="search_field">
+              <input type="text" placeholder="Property ID">
+            </div>
+            <div class="add_btn_prop">
+              <v-btn>+ Add Property</v-btn>
+            </div>
+            <a href="">
+              <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
+              </svg>
+            </a>
+          </div>
         </div>
-      </div>
-    </VContainer>
+      </v-container>
+    </div>
+    <div class="bottom_header">
+      <VContainer>
+        <div class="fut_header">
+          <div class="fut_brand">
+            <img src="@images/img/logo1.png" />
+          </div>
+          <div class="fut_nav">
+            <ul class="fut_navigation">
+              <li class="nav-items">
+                <RouterLink class="nav-link" :to="{ name: 'login' }">MarketPlace</RouterLink>
+              </li>
+              <li class="nav-items">|</li>
+              <li class="nav-items">
+                <RouterLink class="nav-link" :to="{ name: 'login' }">About</RouterLink>
+              </li>
+              <li class="nav-items">|</li>
+              <li class="nav-items">
+                <RouterLink class="nav-link" :to="{ name: 'login' }">List Property</RouterLink>
+              </li>
+              <li class="nav-items">|</li>
+              <li class="nav-items">
+                <RouterLink class="nav-link auth-nav-btn" :to="{ name: 'login' }" >
+                    Login
+                </RouterLink>
+              </li>
+              <li class="nav-items">|</li>
+              <li class="nav-items" >
+                <RouterLink class="nav-link auth-nav-btn" :to="{ name: 'login' }">Signup</RouterLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </VContainer>
+    </div>
   </header>
 </template>
 
