@@ -3,7 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,6 +24,13 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $this->call(UserSeeder::class);
-        $this->call(PropertySeeder::class);
+        $this->call(RoleSeeder::class);
+        // $this->call(PropertySeeder::class);
+        foreach (Role::all() as $role) {
+            $users = User::where('name', $role->name)->get();
+            foreach ($users as $user) {
+                $user->assignRole($role);
+            }
+        }
     }
 }
