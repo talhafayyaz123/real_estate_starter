@@ -89,9 +89,11 @@
     display: flex;
     align-items: center;
     .fut_brand{
-      width: 12%;
+      width: 15%;
+      display: flex;
+      align-items: center;
       img{
-        width: 80%;
+        width: 90%;
       }
     }
     .fut_nav{
