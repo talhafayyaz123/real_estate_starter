@@ -26,8 +26,15 @@ class UserSeeder extends Seeder
                 'created_at' => now(),
             ],
             [
-                'name' => 'Theo',
-                'email' => 'theo@cloudrep.ai',
+                'name' => 'Owner',
+                'email' => 'owner@cloudrep.ai',
+                'email_verified_at' => now(),
+                'password' => Hash::make(123456789),
+                'created_at' => now(),
+            ],
+            [
+                'name' => 'Dealer',
+                'email' => 'dealer@cloudrep.ai',
                 'email_verified_at' => now(),
                 'password' => Hash::make(123456789),
                 'created_at' => now(),
