@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Resources\PropertyResource;
 use App\Models\Property;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PropertyController extends ApiController
 {
@@ -22,10 +23,12 @@ class PropertyController extends ApiController
 
     public function storeProperty(Request $request)
     {
-        // $request->validate([
-        //     'name' => 'required',
-        //     'price' => 'required',
-        // ]);
+        $validator = Validator::make($request->all(), [
+            'price' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
         $property = Property::storeProperty($request);
         return $this->respond([
             'status' => true,
@@ -38,12 +41,12 @@ class PropertyController extends ApiController
 
     public function updateProperty(Request $request)
     {
-
-        // $request->validate([
-        //     'name' => 'required',
-        //     'description' => 'required',
-        // ]);
-
+        $validator = Validator::make($request->all(), [
+            'price' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
         $property = Property::updateProperty($request);
         return $this->respond([
             'status' => true,

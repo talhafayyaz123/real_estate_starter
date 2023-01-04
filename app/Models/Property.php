@@ -72,10 +72,10 @@ class Property extends Model
         $property = new self($request->all());
         $property->status = $request->boolean('status');
         if ($request->has('property_image')) {
-            $data['property_image'] = self::uploadPropertyImage($request, 'property_image');
+            $property->property_image = self::uploadPropertyMedia($request, 'property_image');
         }
         if ($request->has('property_video')) {
-            $data['property_video'] = self::uploadPropertyVideo($request, 'property_video');
+            $property->property_video = self::uploadPropertyMedia($request, 'property_video');
         }
         $property->save();
         return $property;
@@ -90,10 +90,10 @@ class Property extends Model
             $data['status'] = $request->boolean('status');
         }
         if ($request->has('property_image')) {
-            $data['property_image'] = self::uploadPropertyImage($request, 'property_image');
+            $data['property_image'] = self::uploadPropertyMedia($request, 'property_image');
         }
         if ($request->has('property_video')) {
-            $data['property_video'] = self::uploadPropertyVideo($request, 'property_video');
+            $data['property_video'] = self::uploadPropertyMedia($request, 'property_video');
         }
         $property->update($data);
         return $property;
@@ -120,19 +120,8 @@ class Property extends Model
     }
 
 
-    public static function uploadPropertyImage($request, $file_name)
-    {
-        $destinationPath = 'uploads/properties/';
-        if ($request->hasFile($file_name)) {
-            $file = $request->file($file_name);
-            $name = time() . random_int(1, 1000000000) . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path($destinationPath), $name);
-            return $destinationPath . $name;
-        } else {
-            return NULL;
-        }
-    }
-    public static function uploadPropertyVideo($request, $file_name)
+
+    public static function uploadPropertyMedia($request, $file_name)
     {
         $destinationPath = 'uploads/properties/';
         if ($request->hasFile($file_name)) {
