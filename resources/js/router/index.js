@@ -52,11 +52,11 @@ router.beforeEach(to => {
     if (to.meta.redirectIfLoggedIn && isLoggedIn)
       return '/'
   }
-  else {
-    if (isLoggedIn)
-      return { name: 'not-authorized' }
-    else if(to.name !='home')
-      return { name: 'login', query: { to: to.name !== 'index' ? to.fullPath : undefined } }
-  }
+  // else {
+  //   if (isLoggedIn)
+  //     return { name: 'not-authorized' }
+  //   else if(to.name !='home')
+  //     return { name: 'login', query: { to: to.name !== 'index' ? to.fullPath : undefined } }
+  // }
 })
 export default router

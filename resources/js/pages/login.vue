@@ -16,15 +16,18 @@ import {
   emailValidator,
   requiredValidator,
 } from '@validators'
-import { VForm } from 'vuetify/components'
+import { VForm } from 'vuetify/components';
+
 
 const authThemeImg = useGenerateImageVariant(authV2LoginIllustrationLight, authV2LoginIllustrationDark, authV2LoginIllustrationBorderedLight, authV2LoginIllustrationBorderedDark, true)
 const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 const isPasswordVisible = ref(false)
 const route = useRoute()
 const router = useRouter()
-const email = ref('admin@demo.com')
-const password = ref('admin')
+// const email = ref('admin@demo.com')
+const email = ref()
+// const password = ref('admin')
+const password = ref()
 const rememberMe = ref(false)
 const loginFormRef = ref()
 
@@ -45,24 +48,24 @@ const onSubmit = () => {
 }
 
 const login = () => {
-  axios.post('/auth/login', {
+  // axios.post('/auth/login', {
+  axios.post('/api/login', {
     email: email.value,
     password: password.value,
-  }).then(r => {
-    const { accessToken, userData, userAbilities } = r.data
+  }).then(response => {
+    const { data: { data } } = response
+    const { accessToken, userData } = data
+    // localStorage.setItem('userAbilities', JSON.stringify(userData.ability))
 
-    localStorage.setItem('userAbilities', JSON.stringify(userAbilities))
-
-    ability.update(userAbilities)
+    // ability.update(userAbilities)
+    ability.update(userData.ability)
     localStorage.setItem('userData', JSON.stringify(userData))
     localStorage.setItem('accessToken', JSON.stringify(accessToken))
 
     // Redirect to `to` query if exist or redirect to index route
     router.replace(route.query.to ? String(route.query.to) : '/')
-  }).catch(e => {
-    const { errors: formErrors } = e.response.data
-
-    errors.value = formErrors
+  }).catch(error => {
+    loginFormRef.setErrors(error.response.data.errors)
   })
 }
 </script>
