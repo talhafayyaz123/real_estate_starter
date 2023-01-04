@@ -106,6 +106,21 @@ class Property extends Model
         return $property;
     }
 
+    public static function updatePropertyStatus($request)
+    {
+        $property_status = $request->status;
+        if ($property_status == 1) {
+            $status = 0;
+        } else {
+            $status = 1;
+        }
+        $data['status'] = $status;
+        self::where('uuid', $request->property_uuid)->update($data);
+        return true;
+    }
+
+
+
     public static function uploadPropertyMedia($request, $file_name)
     {
         $destinationPath = 'uploads/properties/';

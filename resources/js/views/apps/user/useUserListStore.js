@@ -31,6 +31,31 @@ export const useUserListStore = defineStore('UserListStore', {
           });
       });
     },
+    deleteProperty(uuid) {
+      return new Promise((resolve, reject) => {
+        axios
+          .delete(`/api/delete-property?property_uuid=${uuid}`)
+          .then((response) => {
+            resolve(response);
+          })
+          .catch((error) => reject(error))
+          .finally(() => {
+          });
+      });
+    },
+    propertyStatusChange(params) {
+
+      return new Promise((resolve, reject) => {
+        axios
+          .post(`/api/update-property-status`, params)
+          .then((response) => {
+            resolve(response);
+          })
+          .catch((error) => reject(error))
+          .finally(() => {
+          });
+      });
+    },
     searchProperty(name) {
 
       return new Promise((resolve, reject) => {

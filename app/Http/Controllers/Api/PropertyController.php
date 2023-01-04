@@ -66,4 +66,14 @@ class PropertyController extends ApiController
             'data' => [],
         ]);
     }
+
+    public function updatePropertyStatus(Request $request)
+    {
+        Property::updatePropertyStatus($request);
+        return $this->respond([
+            'status' => true,
+            'message' => 'Property has been deleted successfully!',
+            'data' => [],
+        ]);
+    }
 }
