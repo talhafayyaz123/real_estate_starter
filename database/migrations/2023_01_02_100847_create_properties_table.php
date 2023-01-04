@@ -16,16 +16,19 @@ return new class extends Migration
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid');
-            $table->string('name')->nullable();
-            $table->string('number')->nullable();
+            $table->string('property_id')->nullable();
             $table->longText('description')->nullable();
             $table->integer('price')->nullable();
             $table->string('property_image')->nullable();
-            $table->string('country')->nullable();
-            $table->string('area')->nullable();
+            $table->string('property_video')->nullable();
+            $table->string('market')->nullable();
+            $table->string('city')->nullable();
+            $table->string('land')->nullable();
             $table->string('type')->nullable();
+            $table->integer('area_size')->nullable();
+            $table->integer('bedroom')->nullable();
+            $table->integer('bathroom')->nullable();
             $table->boolean('status')->default(false);
-            $table->boolean('location')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->softDeletes();
