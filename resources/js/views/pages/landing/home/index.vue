@@ -398,8 +398,8 @@
 
 <script setup>
 import { useHomeStore } from "../useHomeStore";
-import HeaderComp from "./components/header.vue";
-import FooterComp from "./components/footer.vue";
+import HeaderComp from "../components/header.vue";
+import FooterComp from "../components/footer.vue";
 
 const userHomeStore = useHomeStore();
 const searchQuery = ref("");

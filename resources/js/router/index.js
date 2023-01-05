@@ -25,17 +25,17 @@ const router = createRouter({
     {
       path: '/home',
       name: 'home',
-      component: () => import("@/views/pages/home/list/index.vue"),
-    },
-    {
-      path: '/home-2',
-      name: 'home2',
-      component: () => import("@/views/pages/landing/home.vue"),
+      component: () => import("@/views/pages/landing/home/index.vue"),
     },
     {
       path: '/marketplace',
       name: 'marketplace',
-      component: () => import("@/views/pages/home/list/propertyListing.vue"),
+      component: () => import("@/views/pages/landing/property/marketPlace.vue"),
+    },
+    {
+      path: '/property-deal',
+      name: 'property-deal',
+      component: () => import("@/views/pages/landing/property/propertyDeal.vue"),
     },
 
     ...setupLayouts(routes),

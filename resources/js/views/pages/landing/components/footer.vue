@@ -1,7 +1,7 @@
 <template>
     <footer class="site_footer">
       <div class="fut_footer">
-        <v-container>
+        <div class="container">
           <div class="fut_upper_footer">
             <v-row>
               <v-col lg="3">
@@ -100,7 +100,7 @@
           <div class="fut_bottom_footer">
             <p>© Copyright 2022 - 2023 futurerealstate.com. All Rights Reserved</p>
           </div>
-        </v-container>
+        </div>
       </div>
     </footer>
 </template>
