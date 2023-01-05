@@ -11,39 +11,74 @@
           <p>We are a real estate agency that will help you find the best residence you dream of, let’s <br> discuss for your dream house?</p>
           <div class="filter">
             <div class="filter_header">
-              <v-btn class="filter_tab_btn active">Sell</v-btn>
-              <v-btn class="filter_tab_btn">Rent</v-btn>
+              <VTabs v-model="FilterTab">
+                <VTab>Sell</VTab>
+                <VTab>Rent</VTab>
+              </VTabs>
             </div>
-            <div class="filter_body">
-              <div class="filter_grid">
-                <div class="filter_s">
-                  <VSelect
-                    v-model="market"
-                    label="Market"
-                    :items="['All Market', 'UAE', 'Canada', 'USA', 'KSA']"
-                  />
+            <VWindow  v-model="FilterTab">
+              <VWindowItem>
+                <div class="filter_body">
+                  <div class="filter_grid">
+                    <div class="filter_s">
+                      <VSelect
+                        v-model="market"
+                        label="Market"
+                        :items="['All Market', 'UAE', 'Canada', 'USA', 'KSA']"
+                      />
+                    </div>
+                    <div class="filter_s">
+                      <VSelect
+                        v-model="land"
+                        label="Land"
+                        :items="['Residential', 'Commercial', 'Industrial']"
+                      />
+                    </div>
+                    <div class="filter_s">
+                      <VSelect
+                        v-model="type"
+                        label="Type"
+                        :items="['Plaza', 'Office', 'Hotel', 'Apartment', 'Condo']"
+                      />
+                    </div>
+                    <div class="filter_b">
+                      <v-btn @click="fetchUsers">Find</v-btn>
+                    </div>
+                  </div>
                 </div>
-                <div class="filter_s">
-                  <VSelect
-                    v-model="land"
-                    label="Land"
-                    :items="['Residential', 'Commercial', 'Industrial']"
-                  />
+              </VWindowItem>
+              <VWindowItem>
+                <div class="filter_body">
+                  <div class="filter_grid">
+                    <div class="filter_s">
+                      <VSelect
+                        v-model="market"
+                        label="Market"
+                        :items="['All Market', 'UAE', 'Canada', 'USA', 'KSA']"
+                      />
+                    </div>
+                    <div class="filter_s">
+                      <VSelect
+                        v-model="land"
+                        label="Land"
+                        :items="['Residential', 'Commercial', 'Industrial']"
+                      />
+                    </div>
+                    <div class="filter_s">
+                      <VSelect
+                        v-model="type"
+                        label="Type"
+                        :items="['Plaza', 'Office', 'Hotel', 'Apartment', 'Condo']"
+                      />
+                    </div>
+                    <div class="filter_b">
+                      <v-btn @click="fetchUsers">Find</v-btn>
+                    </div>
+                  </div>
                 </div>
-                <div class="filter_s">
-                  <VSelect
-                    v-model="type"
-                    label="Type"
-                    :items="['Plaza', 'Office', 'Hotel', 'Apartment', 'Condo']"
-                  />
-                </div>
-                <div class="filter_b">
-                  <v-btn @click="fetchUsers">Find</v-btn>
-                </div>
-              </div>
-            </div>
+              </VWindowItem>
+            </VWindow>
           </div>
-
         </div>
     </section>
     <!--==========================================-->
@@ -414,7 +449,7 @@ const users = ref([]);
 const market = ref("");
 const land = ref("");
 const type = ref("");
-
+const FilterTab = ref(0)
 // 👉 Fetching users
 const fetchUsers = () => {
   userHomeStore

@@ -106,13 +106,10 @@ const login = () => {
         class="mt-12 mt-sm-0 pa-4"
       >
         <VCardText>
-          <VNodeRenderer
-            :nodes="themeConfig.app.logo"
-            class="mb-6"
-          />
+          <img src="@images/img/logo1.png" alt="" class="mb-3 w-75"/>
 
           <h5 class="text-h5 font-weight-semibold mb-1">
-            Welcome to {{ themeConfig.app.title }}! 👋🏻
+            Welcome to Future State 👋🏻
           </h5>
           <p class="mb-0">
             Please sign-in to your account and start the adventure

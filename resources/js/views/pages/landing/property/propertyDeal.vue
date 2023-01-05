@@ -1,6 +1,9 @@
 <script lang="ts" setup>
+import HeaderComp from '../components/header.vue';
+import FooterComp from '../components/footer.vue';
+import DetailTab from './components/detailTab.vue';
+
 const currentTab = ref(0)
-const tabItemContent = 'Candy canes donut chupa chups candy canes lemon drops oat cake wafer. Cotton candy candy canes marzipan carrot cake. Sesame snaps lemon drops candy marzipan donut brownie tootsie roll. Icing croissant bonbon biscuit gummi bears. Pudding candy canes sugar plum cookie chocolate cake powder croissant.'
 
 // import HeaderComp from './components/header.vue';
 // export default {
@@ -10,25 +13,18 @@ const tabItemContent = 'Candy canes donut chupa chups candy canes lemon drops oa
 // }
 </script>
 <template>
-  <div class="property_deal">
-    <HeaderComp/>
-    <section class="property_deal_images">
-      <div class="property-image">
-        <img src="@images/img/11.png" alt="">
-      </div>
-      <div class="property-image">
-        <img src="@images/img/22.png" alt="">
-      </div>
-      <div class="property-image">
-        <img src="@images/img/33.png" alt="">
-      </div>
-      <div class="property-image">
-        <img src="@images/img/44.png" alt="">
-      </div>
-      <div class="view-all-image">
-        <v-btn color="primary">View All Images</v-btn>
-      </div>
-    </section>
+  <!--==================================-->
+  <HeaderComp/>
+  <!--==================================-->
+  <div class="property_deal mb-10">
+    <div class="container">
+      <section class="property_deal_images">
+          <img src="@images/img/44.png" alt=""/>
+          <div class="view-all-image">
+            <v-btn color='gradient-primary'>View all photos</v-btn>
+          </div>
+      </section>
+    </div>
     <section class="property_details">
       <div class="container">
         <v-row class="property_grid">
@@ -69,26 +65,28 @@ const tabItemContent = 'Candy canes donut chupa chups candy canes lemon drops oa
               </div>
               <!--//////////Price Per Token End////////////-->
               <!--=========================================-->
-              <VTabs v-model="currentTab">
-                <VTab>Details</VTab>
-                <VTab>Financials</VTab>
-                <VTab>Documents</VTab>
-                <VTab>Buying Process</VTab>
-                <VTab>Market</VTab>
-              </VTabs>
-              <VDivider />
+              <div class="property_tabs">
+                <VTabs v-model="currentTab">
+                  <VTab>Details</VTab>
+                  <VTab>Financials</VTab>
+                  <VTab>Documents</VTab>
+                  <VTab>Buying Process</VTab>
+                  <VTab>Market</VTab>
+                </VTabs>
+                <VDivider />
 
-              <VWindow  v-model="currentTab"  class="mt-5" >
-                <VWindowItem>
-                  1
-                </VWindowItem>
-                <VWindowItem>
-                  2
-                </VWindowItem>
-                <VWindowItem>
-                  3
-                </VWindowItem>
-              </VWindow>
+                <VWindow  v-model="currentTab"  class="mt-5" >
+                  <VWindowItem>
+                    <DetailTab/>
+                  </VWindowItem>
+                  <VWindowItem>
+                    2
+                  </VWindowItem>
+                  <VWindowItem>
+                    3
+                  </VWindowItem>
+                </VWindow>
+              </div>
               <!--=========================================-->
             </div>
           </v-col>
@@ -96,30 +94,56 @@ const tabItemContent = 'Candy canes donut chupa chups candy canes lemon drops oa
           <v-col  md="4" class="property_det_right">
             <div class="projected_card">
               <div class="projected_card_header">
-                <h1>Starting Price <v-icon size="26"> mdi-help-circle-outline </v-icon></h1>
-                <span class="price_starting">$ 45.00</span>
+                <h1>Starting Price</h1>
+                <span class="price_starting">$ 50.00/Sq.ft</span>
               </div>
               <div class="projected_card_body">
                 <ul>
                   <li>
-                    <h3>Projected IRR<v-icon size="22" class="ml-2"> mdi-help-circle-outline </v-icon></h3>
-                    <span>8.81%</span>
+                    <h3>Projected IRR</h3>
+                    <span>13.81%</span>
                   </li>
                   <li>
-                    <h3>CoC return<v-icon size="22" class="ml-2"> mdi-help-circle-outline </v-icon></h3>
-                    <span>8.81%</span>
+                    <h3>CoC return</h3>
+                    <span>10.81%</span>
                   </li>
+                  <li class="">
+                      <h3>Valuation</h3>
+                      <span>$81,000</span>
+                    </li>
+                    <li class="">
+                      <h3>Asset Type</h3>
+                      <span>Residential</span>
+                    </li>
+                    <li class="">
+                      <h3>Year Built</h3>
+                      <span>2012</span>
+                    </li>
+                    <li class="">
+                      <h3>Developer</h3>
+                      <span>Freeman Development</span>
+                    </li>
+                    <li class="">
+                      <h3>Total Area</h3>
+                      <span>2432 Sq.ft</span>
+                    </li>
+                    <li class="">
+                      <h3>Token Left</h3>
+                      <span>476</span>
+                    </li>
                 </ul>
-                <VBtn color="primary" size="large" block class="">BUY</VBtn>
+                <VBtn size="large" block class="primary-btn">Invest</VBtn>
               </div>
             </div>
           </v-col>
           <!--=============================================-->
-
         </v-row>
       </div>
     </section>
   </div>
+  <!--===================================-->
+  <FooterComp/>
+  <!--===================================-->
 </template>
 
 

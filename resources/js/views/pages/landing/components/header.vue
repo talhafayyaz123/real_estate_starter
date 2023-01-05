@@ -56,7 +56,7 @@
           <div class="fut_nav">
             <ul class="fut_navigation">
               <li class="nav-items">
-                <RouterLink class="nav-link" :to="{ name: 'marketplace' }">MarketPlace</RouterLink>
+                <RouterLink class="nav-link" :to="{ name: 'marketplace' }">Marketplace</RouterLink>
               </li>
               <li class="nav-items">|</li>
               <li class="nav-items">

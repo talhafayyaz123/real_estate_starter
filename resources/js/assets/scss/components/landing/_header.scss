@@ -6,7 +6,7 @@
   }
 }
 .upper_header{
-  background: #5271FE;
+  background:#5271FE;
   min-height: 60px;
   display: flex;
   align-items: center;
@@ -44,12 +44,7 @@
           padding: 9px 15px;
           background: #fff;
           border: 1px solid #fff;
-          color: #000;
-          &:hover{
-            background: transparent;
-            color: #fff;
-            transition: 0.4s;
-          }
+          color: #375260;
         }
       }
       
@@ -114,23 +109,9 @@
             font-size: 16px;
             cursor: pointer;
             position: relative;
-            color: #848484;
-            &::before{
-              content: '';
-              position: absolute;
-              left: 0px;
-              bottom: 0px;
-              width: 0%;
-              height: 2px;
-              -webkit-transition: 0.5s;
-              transition: 0.5s;
-              background: #5271FE;
-            }
+            color: #375260;
             &:hover{
               color: #5271FE;
-              &::before{
-                  width: 100%;
-              }
             }
           }
           .auth-nav-btn{
@@ -151,6 +132,6 @@
   justify-content: center;
   h1{
     font-size: 44px;
-    color: #7a60e0;
+    color: #5271FE;
   }
 }

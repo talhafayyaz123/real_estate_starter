@@ -53,7 +53,7 @@
                   <h4>Head Office</h4>
                   <div class="footer_contact_info">
                     <div class="f_location mb-3 d-flex align-start">
-                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <svg style="width:41px;height:41px" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
                         </svg>
                       <p>Pearl One, 94-B/I, MM Alam Road, Gulberg III, Lahore, Pakistan</p>
@@ -98,7 +98,7 @@
             </v-row>
           </div>
           <div class="fut_bottom_footer">
-            <p>© Copyright 2022 - 2023 futurerealstate.com. All Rights Reserved</p>
+            <p>All right reserved - © copyright 2022-2023</p>
           </div>
         </div>
       </div>
