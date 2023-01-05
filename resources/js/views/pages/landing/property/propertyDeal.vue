@@ -95,7 +95,7 @@ const currentTab = ref(0)
             <div class="projected_card">
               <div class="projected_card_header">
                 <h1>Starting Price</h1>
-                <span class="price_starting">$ 50.00/Sq.ft</span>
+                <span class="price_starting">$ 35.00/Token</span>
               </div>
               <div class="projected_card_body">
                 <ul>
@@ -120,7 +120,7 @@ const currentTab = ref(0)
                       <span>2012</span>
                     </li>
                     <li class="">
-                      <h3>Developer</h3>
+                      <h3>Project Developer</h3>
                       <span>Freeman Development</span>
                     </li>
                     <li class="">
@@ -128,7 +128,7 @@ const currentTab = ref(0)
                       <span>2432 Sq.ft</span>
                     </li>
                     <li class="">
-                      <h3>Token Left</h3>
+                      <h3>Token Left <span>(1 Token = 1 Sq.ft)</span></h3>
                       <span>476</span>
                     </li>
                 </ul>

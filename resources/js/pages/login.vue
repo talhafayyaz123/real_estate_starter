@@ -106,7 +106,7 @@ const login = () => {
         class="mt-12 mt-sm-0 pa-4"
       >
         <VCardText>
-          <img src="@images/img/logo1.png" alt="" class="mb-3 w-75"/>
+          <img src="@images/img/logo.png" alt="" class="mb-3 w-75"/>
 
           <h5 class="text-h5 font-weight-semibold mb-1">
             Welcome to Future State 👋🏻

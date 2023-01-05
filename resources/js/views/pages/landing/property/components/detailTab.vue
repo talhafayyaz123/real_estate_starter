@@ -39,6 +39,20 @@
         <li>Backyard is completely fenced in</li>
         <li>Closely located to University Circle, Cleveland Clinic, and downtown</li>
       </ul>
+      <h2>Property Management and Insurance</h2>
+      <p>Managed by FYVE Property Management</p>
+      <p>Insurance Policy will come from Shelter Mutual Insurance Company once the property closes</p>
+      <h2>Occupancy Status</h2>
+      <p>Owners will begin receiving daily rent starting on the same day an investment is made. Rental income is paid via a two-month rent credit provided by the seller at the Property Manager's projected rental rate of $1,550/month.</p>
+      <h2>Location Data</h2>
+      <p>1/5 Neighborhood Rating on <a href="">Roofstock</a></p>
+    </div>
+    <div class="prop_heading mb-5">
+      <h2>Location</h2>
+      <VDivider />
+    </div>
+    <div class="prop_location">
+      <img src="@images/img/map.png" alt="">
     </div>
   </div>
 </template>

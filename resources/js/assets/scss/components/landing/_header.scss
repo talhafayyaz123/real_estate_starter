@@ -21,6 +21,11 @@
         margin-right: 15px;
         width: 250px;
         color: #fff;
+        input{
+          &::placeholder{
+            color: #fff !important;
+          }
+        }
       }
       .add_btn_prop{
         margin-right: 30px;
@@ -28,6 +33,7 @@
           background: #fff !important;
           border: 1px solid #fff;
           color: #375260 !important;
+          text-transform: capitalize;
         }
       }
       .user_auth_nav{
@@ -71,6 +77,9 @@
           transition: 0.5s;
           background: #fbfbfb;
         }
+        &::after{
+          
+        }
         &:hover{
           &::before{
               width: 100%;
@@ -81,6 +90,12 @@
         &::before{
           display: none;
         }
+      }
+    }
+    .upper_nav_item.logo{
+      width: 4%;
+      img{
+        width: 100%;
       }
     }
   }

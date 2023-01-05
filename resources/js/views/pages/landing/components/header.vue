@@ -4,18 +4,19 @@
       <v-container>
         <div class="up_head">
           <ul class="upper_nav">
-            <li  class="upper_nav_item">
-              <RouterLink :to="{ name: 'login' }" class="upper_nav_link home_icon"> 
-                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+            <li  class="upper_nav_item logo" >
+              <!-- <RouterLink :to="{ name: 'login' }" class="upper_nav_link home_icon">  -->
+                <!-- <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
-                </svg>
-              </RouterLink>
+                </svg> -->
+                <img src="@images/img/real.png" class="" alt="">
+              <!-- </RouterLink> -->
             </li>
             <li  class="upper_nav_item">
               <RouterLink :to="{ name: 'login' }" class="upper_nav_link"> Properties </RouterLink>
             </li>
             <li  class="upper_nav_item">
-              <RouterLink :to="{ name: 'login' }"  class="upper_nav_link"> Plot Finder </RouterLink>
+              <RouterLink :to="{ name: 'login' }"  class="upper_nav_link"> Condo Finder </RouterLink>
             </li>
             <li  class="upper_nav_item">
               <RouterLink :to="{ name: 'login' }" class="upper_nav_link"> Area Guides </RouterLink>
@@ -25,6 +26,12 @@
             </li>
             <li  class="upper_nav_item">
               <RouterLink :to="{ name: 'login' }" class="upper_nav_link"> Maps </RouterLink>
+            </li>
+            <li  class="upper_nav_item">
+              <RouterLink :to="{ name: 'login' }" class="upper_nav_link"> Tools </RouterLink>
+            </li>
+            <li  class="upper_nav_item">
+              <RouterLink :to="{ name: 'login' }" class="upper_nav_link"> More </RouterLink>
             </li>
           </ul>
           <div class="right_upper_side">
@@ -51,7 +58,7 @@
       <VContainer>
         <div class="fut_header">
           <div class="fut_brand">
-            <img src="@images/img/logo1.png" />
+            <router-link :to="{name:'home'}"><img src="@images/img/logo.png" /></router-link>
           </div>
           <div class="fut_nav">
             <ul class="fut_navigation">
@@ -64,7 +71,15 @@
               </li>
               <li class="nav-items">|</li>
               <li class="nav-items">
-                <RouterLink class="nav-link" :to="{ name: 'login' }">List Property</RouterLink>
+                <RouterLink class="nav-link" :to="{ name: 'login' }">Agents</RouterLink>
+              </li>
+              <li class="nav-items">|</li>
+              <li class="nav-items">
+                <RouterLink class="nav-link" :to="{ name: 'login' }">Developers</RouterLink>
+              </li>
+              <li class="nav-items">|</li>
+              <li class="nav-items">
+                <RouterLink class="nav-link" :to="{ name: 'login' }">New Projects</RouterLink>
               </li>
             </ul>
           </div>
