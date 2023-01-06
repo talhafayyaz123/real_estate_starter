@@ -19,9 +19,10 @@ import {
 } from '@validators'
 
 const refVForm = ref()
-const username = ref('johnDoe')
-const email = ref('john@example.com')
-const password = ref('john@VUEXY#123')
+const name = ref('')
+const email = ref('')
+const password = ref('')
+const c_password = ref('')
 const privacyPolicies = ref(true)
 
 // Router
@@ -35,18 +36,24 @@ const ability = useAppAbility()
 const errors = ref({
   email: undefined,
   password: undefined,
+  c_password: undefined,
 })
 
 const register = () => {
-  axios.post('/auth/register', {
-    username: username.value,
+  axios.post('/api/register', {
+    name: name.value,
     email: email.value,
     password: password.value,
-  }).then(r => {
-    const { accessToken, userData, userAbilities } = r.data
+    c_password: c_password.value,
+    role:'admin'
+  }).then(response => {
+    const { data: { data } } = response
+    const { accessToken, userData } = data
 
-    localStorage.setItem('userAbilities', JSON.stringify(userAbilities))
-    ability.update(userAbilities)
+    console.log(accessToken)
+    console.log(userData)
+    // localStorage.setItem('userAbilities', JSON.stringify(userAbilities))
+    ability.update(userData.ability)
     localStorage.setItem('userData', JSON.stringify(userData))
     localStorage.setItem('accessToken', JSON.stringify(accessToken))
 
@@ -131,7 +138,7 @@ const onSubmit = () => {
               <!-- Username -->
               <VCol cols="12">
                 <VTextField
-                  v-model="username"
+                  v-model="name"
                   :rules="[requiredValidator, alphaDashValidator]"
                   label="Username"
                 />
@@ -157,8 +164,20 @@ const onSubmit = () => {
                   :append-inner-icon="isPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'"
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"
                 />
+                </VCol>
 
-                <div class="d-flex align-center mt-2 mb-4">
+                <!-- Confirm password -->
+              <VCol cols="12">
+                <VTextField
+                  v-model="c_password"
+                  :rules="[requiredValidator]"
+                  label="Confirm Password"
+                  :type="isPasswordVisible ? 'text' : 'password'"
+                  :append-inner-icon="isPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'"
+                  @click:append-inner="isPasswordVisible = !isPasswordVisible"
+                /></VCol>
+
+                <!-- <div class="d-flex align-center mt-2 mb-4">
                   <VCheckbox
                     id="privacy-policy"
                     v-model="privacyPolicies"
@@ -175,7 +194,7 @@ const onSubmit = () => {
                       class="text-primary"
                     >privacy policy & terms</a>
                   </VLabel>
-                </div>
+                </div> -->
 
                 <VBtn
                   block
@@ -183,7 +202,7 @@ const onSubmit = () => {
                 >
                   Sign up
                 </VBtn>
-              </VCol>
+              <!-- </VCol> -->
 
               <!-- create account -->
               <VCol
