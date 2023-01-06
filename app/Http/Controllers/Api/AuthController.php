@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
 
 class AuthController extends ApiController
@@ -37,7 +38,7 @@ class AuthController extends ApiController
     public function getAuthResponseData($user)
     {
         $detail = $this->getUserAttribute($user);
-        $token = $user->createToken('authToken')->plainTextToken;
+        $token = $user->createToken('Personal Access Token')->plainTextToken;
  
         $data['userData'] = $detail;
         $data['accessToken'] = $token;
@@ -72,11 +73,50 @@ class AuthController extends ApiController
 
     public function logout(Request $request)
     {
-        $request->user()->currentAccessToken()->delete();
+        $request->user()->tokens()->delete();
         return $this->respond([
             'status' => true,
             'message' => 'user has been logout successfully!',
             'data' => []
         ]);
+    }
+
+    public function register(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string',
+            'email'=>'required|string|unique:users',
+            'password'=>'required|string',
+            'c_password' => 'required|same:password',
+            'role' => [
+                'required',
+                Rule::in(['admin', 'owner', 'dealer'])
+            ],
+        ]);
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
+
+        $user = new User([
+            'name'  => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+        ]);
+        $user->assignRole($request->role);
+
+        if($user->save()){
+            $data = $this->getAuthResponseData($user);
+            return $this->respond([
+            'message' => 'User has been registered successfully!',
+            'data'=> $data,
+            ]);
+        }
+        else{
+            return $this->respond([
+                'status' => false,
+                'message' => 'Provide proper details!',
+                'data'=> [],
+            ]);
+        }
     }
 }
