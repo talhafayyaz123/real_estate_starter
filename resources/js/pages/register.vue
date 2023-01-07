@@ -19,9 +19,10 @@ import {
 } from '@validators'
 
 const refVForm = ref()
-const username = ref('johnDoe')
-const email = ref('john@example.com')
-const password = ref('john@VUEXY#123')
+const name = ref('')
+const email = ref('')
+const password = ref('')
+const c_password = ref('')
 const privacyPolicies = ref(true)
 
 // Router
@@ -33,20 +34,25 @@ const ability = useAppAbility()
 
 // Form Errors
 const errors = ref({
+  name: undefined,
   email: undefined,
   password: undefined,
+  c_password: undefined,
 })
 
 const register = () => {
-  axios.post('/auth/register', {
-    username: username.value,
+  axios.post('/api/register', {
+    name: name.value,
     email: email.value,
     password: password.value,
-  }).then(r => {
-    const { accessToken, userData, userAbilities } = r.data
+    c_password: c_password.value,
+    role:'admin'
+  }).then(response => {
+    const { data: { data } } = response
+    const { accessToken, userData } = data
 
-    localStorage.setItem('userAbilities', JSON.stringify(userAbilities))
-    ability.update(userAbilities)
+    // localStorage.setItem('userAbilities', JSON.stringify(userAbilities))
+    ability.update(userData.ability)
     localStorage.setItem('userData', JSON.stringify(userData))
     localStorage.setItem('accessToken', JSON.stringify(accessToken))
 
@@ -65,6 +71,8 @@ const register = () => {
 const imageVariant = useGenerateImageVariant(authV2RegisterIllustrationLight, authV2RegisterIllustrationDark, authV2RegisterIllustrationBorderedLight, authV2RegisterIllustrationBorderedDark, true)
 const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 const isPasswordVisible = ref(false)
+const isConfirmPasswordVisible = ref(false)
+
 
 const onSubmit = () => {
   refVForm.value?.validate().then(({ valid: isValid }) => {
@@ -131,8 +139,9 @@ const onSubmit = () => {
               <!-- Username -->
               <VCol cols="12">
                 <VTextField
-                  v-model="username"
+                  v-model="name"
                   :rules="[requiredValidator, alphaDashValidator]"
+                  :error-messages="errors.name"
                   label="Username"
                 />
               </VCol>
@@ -142,6 +151,7 @@ const onSubmit = () => {
                 <VTextField
                   v-model="email"
                   :rules="[requiredValidator, emailValidator]"
+                  :error-messages="errors.email"
                   label="Email"
                   type="email"
                 />
@@ -154,11 +164,25 @@ const onSubmit = () => {
                   :rules="[requiredValidator]"
                   label="Password"
                   :type="isPasswordVisible ? 'text' : 'password'"
+                  :error-messages="errors.password"
                   :append-inner-icon="isPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'"
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"
                 />
+                </VCol>
 
-                <div class="d-flex align-center mt-2 mb-4">
+                <!-- Confirm password -->
+              <VCol cols="12">
+                <VTextField
+                  v-model="c_password"
+                  :rules="[requiredValidator]"
+                  label="Confirm Password"
+                  :error-messages="errors.c_password"
+                  :type="isConfirmPasswordVisible ? 'text' : 'password'"
+                  :append-inner-icon="isConfirmPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'"
+                  @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"
+                /></VCol>
+
+                <!-- <div class="d-flex align-center mt-2 mb-4">
                   <VCheckbox
                     id="privacy-policy"
                     v-model="privacyPolicies"
@@ -175,7 +199,7 @@ const onSubmit = () => {
                       class="text-primary"
                     >privacy policy & terms</a>
                   </VLabel>
-                </div>
+                </div> -->
 
                 <VBtn
                   block
@@ -183,7 +207,7 @@ const onSubmit = () => {
                 >
                   Sign up
                 </VBtn>
-              </VCol>
+              <!-- </VCol> -->
 
               <!-- create account -->
               <VCol

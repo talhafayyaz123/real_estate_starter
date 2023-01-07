@@ -15,24 +15,38 @@ import {
 const route = useRoute()
 const router = useRouter()
 
-const email = ref('')
+
 const refVForm = ref()
+const email = route.query.email
+const password = ref('')
+const c_password = ref('')
+const token = route.query.token 
+
+
 
 const authThemeImg = useGenerateImageVariant(authV2ForgotPasswordIllustrationLight, authV2ForgotPasswordIllustrationDark)
 const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
+const isPasswordVisible = ref(false)
+const isConfirmPasswordVisible = ref(false)
 
 const errors = ref({
   email: undefined,
+  password: undefined,
+  c_password: undefined,
+  token: undefined,
 })
 
-const forgotPassword = () => {
-  axios.post('/api/forgot-password', {
-    email: email.value,
+const resetPassword = () => {
+  axios.post('/api/reset-password', {
+    token: token,
+    email: email,
+    password: password.value,
+    c_password: c_password.value
   }).then(response => {
     console.log(response)
-    // const { data: { data } } = response
+    const { data: { data } } = response
     // Redirect to `to` query if exist or redirect to index route
-    // router.replace(route.query.to ? String(route.query.to) : '/')
+    router.replace(route.query.to ? String(route.query.to) : '/')
     
     return null
   }).catch(e => {
@@ -46,7 +60,7 @@ const forgotPassword = () => {
 const onSubmit = () => {
   refVForm.value?.validate().then(({ valid: isValid }) => {
     if (isValid)
-    forgotPassword()
+    resetPassword()
   })
 }
 </script>
@@ -92,16 +106,14 @@ const onSubmit = () => {
             class="mb-6"
           />
           <h5 class="text-h5 font-weight-semibold mb-1">
-            Forgot Password? 🔒
+            Reset Password🔒
           </h5>
-          <p class="mb-0">
-            Enter your email and we'll send you instructions to reset your password
-          </p>
         </VCardText>
 
         <VCardText>
           <VForm ref="refVForm" @submit.prevent="onSubmit">
             <VRow>
+
               <!-- email -->
               <VCol cols="12">
                 <VTextField
@@ -110,8 +122,34 @@ const onSubmit = () => {
                   :error-messages="errors.email"
                   label="Email"
                   type="email"
+                  readonly
                 />
               </VCol>
+
+              <!-- password -->
+              <VCol cols="12">
+                <VTextField
+                  v-model="password"
+                  label="Password"
+                  :type="isPasswordVisible ? 'text' : 'password'"
+                  :rules="[requiredValidator]"
+                  :error-messages="errors.password"
+                  :append-inner-icon="isPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'"
+                  @click:append-inner="isPasswordVisible = !isPasswordVisible"
+                />
+                </VCol>
+
+                <!-- Confirm password -->
+              <VCol cols="12">
+                <VTextField
+                  v-model="c_password"
+                  label="Confirm Password"
+                  :rules="[requiredValidator]"
+                  :error-messages="errors.c_password"
+                  :type="isConfirmPasswordVisible ? 'text' : 'password'"
+                  :append-inner-icon="isConfirmPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'"
+                  @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"
+                /></VCol>
 
               <!-- Reset link -->
               <VCol cols="12">
@@ -119,7 +157,7 @@ const onSubmit = () => {
                   block
                   type="submit"
                 >
-                  Send Reset Link
+                  Reset Password
                 </VBtn>
               </VCol>
 
