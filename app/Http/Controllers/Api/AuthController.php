@@ -53,10 +53,6 @@ class AuthController extends ApiController
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required',
-            // 'remember' => [
-            //     'required',
-            //     Rule::in(['on', 'off'])
-            // ],
         ]);
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
@@ -68,6 +64,9 @@ class AuthController extends ApiController
                 'message' => 'The provided credentials are incorrect.',
                 'data' => []
             ]);
+        }
+        if($request->rememberMe) {
+            $user->update([$user->setRememberToken(Str::random(60))]);
         }
         $data = $this->getAuthResponseData($user);
         // VerificationCode::generatedVerificationCode($user->id);

@@ -7,6 +7,10 @@ import authV2ForgotPasswordIllustrationLight from '@images/pages/auth-v2-forgot-
 import authV2MaskDark from '@images/pages/misc-mask-dark.png'
 import authV2MaskLight from '@images/pages/misc-mask-light.png'
 import axios from '@axios'
+import {
+  emailValidator,
+  requiredValidator,
+} from '@validators'
 
 const route = useRoute()
 const router = useRouter()
@@ -102,6 +106,8 @@ const onSubmit = () => {
               <VCol cols="12">
                 <VTextField
                   v-model="email"
+                  :rules="[requiredValidator, emailValidator]"
+                  :error-messages="errors.email"
                   label="Email"
                   type="email"
                 />

@@ -7,22 +7,27 @@ import authV2ForgotPasswordIllustrationLight from '@images/pages/auth-v2-forgot-
 import authV2MaskDark from '@images/pages/misc-mask-dark.png'
 import authV2MaskLight from '@images/pages/misc-mask-light.png'
 import axios from '@axios'
+import {
+  emailValidator,
+  requiredValidator,
+} from '@validators'
 
 const route = useRoute()
 const router = useRouter()
 
 
 const refVForm = ref()
-const email = ref('')
+const email = route.query.email
 const password = ref('')
 const c_password = ref('')
-// const token = this.$route.query.token
 const token = route.query.token 
 
 
 
 const authThemeImg = useGenerateImageVariant(authV2ForgotPasswordIllustrationLight, authV2ForgotPasswordIllustrationDark)
 const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
+const isPasswordVisible = ref(false)
+const isConfirmPasswordVisible = ref(false)
 
 const errors = ref({
   email: undefined,
@@ -34,7 +39,7 @@ const errors = ref({
 const resetPassword = () => {
   axios.post('/api/reset-password', {
     token: token,
-    email: email.value,
+    email: email,
     password: password.value,
     c_password: c_password.value
   }).then(response => {
@@ -113,8 +118,11 @@ const onSubmit = () => {
               <VCol cols="12">
                 <VTextField
                   v-model="email"
+                  :rules="[requiredValidator, emailValidator]"
+                  :error-messages="errors.email"
                   label="Email"
                   type="email"
+                  readonly
                 />
               </VCol>
 
@@ -124,6 +132,8 @@ const onSubmit = () => {
                   v-model="password"
                   label="Password"
                   :type="isPasswordVisible ? 'text' : 'password'"
+                  :rules="[requiredValidator]"
+                  :error-messages="errors.password"
                   :append-inner-icon="isPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'"
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"
                 />
@@ -134,9 +144,11 @@ const onSubmit = () => {
                 <VTextField
                   v-model="c_password"
                   label="Confirm Password"
-                  :type="isPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'"
-                  @click:append-inner="isPasswordVisible = !isPasswordVisible"
+                  :rules="[requiredValidator]"
+                  :error-messages="errors.c_password"
+                  :type="isConfirmPasswordVisible ? 'text' : 'password'"
+                  :append-inner-icon="isConfirmPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'"
+                  @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"
                 /></VCol>
 
               <!-- Reset link -->

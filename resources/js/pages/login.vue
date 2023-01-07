@@ -28,7 +28,7 @@ const router = useRouter()
 const email = ref()
 // const password = ref('admin')
 const password = ref()
-const rememberMe = ref(false)
+const rememberMe = ref()
 const loginFormRef = ref()
 
 const ability = useAppAbility()
@@ -48,10 +48,10 @@ const onSubmit = () => {
 }
 
 const login = () => {
-  // axios.post('/auth/login', {
   axios.post('/api/login', {
     email: email.value,
     password: password.value,
+    rememberMe: rememberMe.value
   }).then(response => {
     const { data: { data } } = response
     const { accessToken, userData } = data
@@ -64,8 +64,12 @@ const login = () => {
 
     // Redirect to `to` query if exist or redirect to index route
     router.replace(route.query.to ? String(route.query.to) : '/')
-  }).catch(error => {
-    loginFormRef.setErrors(error.response.data.errors)
+    
+  }).catch(e => {
+    const { errors: formErrors } = e.response.data
+
+    errors.value = formErrors
+    console.error(e.response.data)
   })
 }
 </script>

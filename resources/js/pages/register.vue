@@ -34,6 +34,7 @@ const ability = useAppAbility()
 
 // Form Errors
 const errors = ref({
+  name: undefined,
   email: undefined,
   password: undefined,
   c_password: undefined,
@@ -50,8 +51,6 @@ const register = () => {
     const { data: { data } } = response
     const { accessToken, userData } = data
 
-    console.log(accessToken)
-    console.log(userData)
     // localStorage.setItem('userAbilities', JSON.stringify(userAbilities))
     ability.update(userData.ability)
     localStorage.setItem('userData', JSON.stringify(userData))
@@ -72,6 +71,8 @@ const register = () => {
 const imageVariant = useGenerateImageVariant(authV2RegisterIllustrationLight, authV2RegisterIllustrationDark, authV2RegisterIllustrationBorderedLight, authV2RegisterIllustrationBorderedDark, true)
 const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 const isPasswordVisible = ref(false)
+const isConfirmPasswordVisible = ref(false)
+
 
 const onSubmit = () => {
   refVForm.value?.validate().then(({ valid: isValid }) => {
@@ -140,6 +141,7 @@ const onSubmit = () => {
                 <VTextField
                   v-model="name"
                   :rules="[requiredValidator, alphaDashValidator]"
+                  :error-messages="errors.name"
                   label="Username"
                 />
               </VCol>
@@ -149,6 +151,7 @@ const onSubmit = () => {
                 <VTextField
                   v-model="email"
                   :rules="[requiredValidator, emailValidator]"
+                  :error-messages="errors.email"
                   label="Email"
                   type="email"
                 />
@@ -161,6 +164,7 @@ const onSubmit = () => {
                   :rules="[requiredValidator]"
                   label="Password"
                   :type="isPasswordVisible ? 'text' : 'password'"
+                  :error-messages="errors.password"
                   :append-inner-icon="isPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'"
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"
                 />
@@ -172,9 +176,10 @@ const onSubmit = () => {
                   v-model="c_password"
                   :rules="[requiredValidator]"
                   label="Confirm Password"
-                  :type="isPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'"
-                  @click:append-inner="isPasswordVisible = !isPasswordVisible"
+                  :error-messages="errors.c_password"
+                  :type="isConfirmPasswordVisible ? 'text' : 'password'"
+                  :append-inner-icon="isConfirmPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'"
+                  @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"
                 /></VCol>
 
                 <!-- <div class="d-flex align-center mt-2 mb-4">
