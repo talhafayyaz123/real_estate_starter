@@ -28,6 +28,11 @@ const router = createRouter({
       component: () => import("@/views/pages/landing/home/index.vue"),
     },
     {
+      path: '/home-2',
+      name: 'home-2',
+      component: () => import("@/views/pages/landing/home/home-2.vue"),
+    },
+    {
       path: '/marketplace',
       name: 'marketplace',
       component: () => import("@/views/pages/landing/property/marketPlace.vue"),
