@@ -16,6 +16,7 @@ import {
   alphaDashValidator,
   emailValidator,
   requiredValidator,
+  confirmedValidator
 } from '@validators'
 
 const refVForm = ref()
@@ -174,7 +175,7 @@ const onSubmit = () => {
               <VCol cols="12">
                 <VTextField
                   v-model="c_password"
-                  :rules="[requiredValidator]"
+                  :rules="[requiredValidator, confirmedValidator(password,c_password)]"
                   label="Confirm Password"
                   :error-messages="errors.c_password"
                   :type="isConfirmPasswordVisible ? 'text' : 'password'"

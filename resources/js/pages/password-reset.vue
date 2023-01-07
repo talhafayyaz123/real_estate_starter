@@ -10,6 +10,7 @@ import axios from '@axios'
 import {
   emailValidator,
   requiredValidator,
+  confirmedValidator
 } from '@validators'
 
 const route = useRoute()
@@ -144,7 +145,7 @@ const onSubmit = () => {
                 <VTextField
                   v-model="c_password"
                   label="Confirm Password"
-                  :rules="[requiredValidator]"
+                  :rules="[requiredValidator, confirmedValidator(password,c_password)]"
                   :error-messages="errors.c_password"
                   :type="isConfirmPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="isConfirmPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'"
