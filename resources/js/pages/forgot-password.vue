@@ -11,9 +11,11 @@ import {
   emailValidator,
   requiredValidator,
 } from '@validators'
+import { useToast } from "vue-toastification";
 
 const route = useRoute()
 const router = useRouter()
+const toast = useToast();
 
 const email = ref('')
 const refVForm = ref()
@@ -29,11 +31,12 @@ const forgotPassword = () => {
   axios.post('/api/forgot-password', {
     email: email.value,
   }).then(response => {
-    console.log(response)
     // const { data: { data } } = response
     // Redirect to `to` query if exist or redirect to index route
     // router.replace(route.query.to ? String(route.query.to) : '/')
-    
+    toast.success("A Password Reset link has been sent!", {
+      timeout: 3000
+    });
     return null
   }).catch(e => {
     const { errors: formErrors } = e.response.data

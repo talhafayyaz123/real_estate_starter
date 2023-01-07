@@ -17,6 +17,7 @@ import {
   requiredValidator,
 } from '@validators'
 import { VForm } from 'vuetify/components';
+import { useToast } from "vue-toastification";
 
 
 const authThemeImg = useGenerateImageVariant(authV2LoginIllustrationLight, authV2LoginIllustrationDark, authV2LoginIllustrationBorderedLight, authV2LoginIllustrationBorderedDark, true)
@@ -24,6 +25,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 const isPasswordVisible = ref(false)
 const route = useRoute()
 const router = useRouter()
+const toast = useToast();
 // const email = ref('admin@demo.com')
 const email = ref()
 // const password = ref('admin')
@@ -64,12 +66,16 @@ const login = () => {
 
     // Redirect to `to` query if exist or redirect to index route
     router.replace(route.query.to ? String(route.query.to) : '/')
+    toast.success("User has been login successfully!", {
+      timeout: 3000
+    });
     
   }).catch(e => {
-    const { errors: formErrors } = e.response.data
-
-    errors.value = formErrors
-    console.error(e.response.data)
+    // const { errors: formErrors } = e.response.data
+    // errors.value = formErrors
+    toast.error("The provided credentials are incorrect!", {
+      timeout: 3000
+    });
   })
 }
 </script>

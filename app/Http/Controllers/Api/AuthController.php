@@ -60,7 +60,7 @@ class AuthController extends ApiController
         $user = User::where('email', $request->email)->first();
         if (!$user || !Hash::check($request->password, $user->password)) {
             return $this->respond([
-                'status' => true,
+                'status' => false,
                 'message' => 'The provided credentials are incorrect.',
                 'data' => []
             ]);

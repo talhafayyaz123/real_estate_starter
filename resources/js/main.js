@@ -14,6 +14,9 @@ import '@styles/styles.scss'
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
 import './assets/scss/style.scss'
+import Toast , {POSITION} from "vue-toastification";
+// Import the CSS or use your own!
+import "vue-toastification/dist/index.css";
 
 loadFonts()
 
@@ -32,6 +35,14 @@ app.use(i18n)
 app.use(abilitiesPlugin, ability, {
   useGlobalProperties: true,
 })
+
+const options = {
+    // Setting the global default position
+    position: POSITION.TOP_RIGHT,
+    transition: "fade"
+};
+
+app.use(Toast, options);
 
 // Mount vue app
 app.mount('#app')

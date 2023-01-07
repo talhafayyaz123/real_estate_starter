@@ -12,9 +12,11 @@ import {
   requiredValidator,
   confirmedValidator
 } from '@validators'
+import { useToast } from "vue-toastification";
 
 const route = useRoute()
 const router = useRouter()
+const toast = useToast();
 
 
 const refVForm = ref()
@@ -48,6 +50,9 @@ const resetPassword = () => {
     const { data: { data } } = response
     // Redirect to `to` query if exist or redirect to index route
     router.replace(route.query.to ? String(route.query.to) : '/')
+    toast.success("Password has been reset successfully!", {
+      timeout: 3000
+    });
     
     return null
   }).catch(e => {

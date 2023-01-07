@@ -18,6 +18,7 @@ import {
   requiredValidator,
   confirmedValidator
 } from '@validators'
+import { useToast } from "vue-toastification";
 
 const refVForm = ref()
 const name = ref('')
@@ -29,6 +30,7 @@ const privacyPolicies = ref(true)
 // Router
 const route = useRoute()
 const router = useRouter()
+const toast = useToast();
 
 // Ability
 const ability = useAppAbility()
@@ -59,7 +61,9 @@ const register = () => {
 
     // Redirect to `to` query if exist or redirect to index route
     router.replace(route.query.to ? String(route.query.to) : '/')
-    
+    toast.success("User has been registered successfully!", {
+      timeout: 5000
+    });
     return null
   }).catch(e => {
     const { errors: formErrors } = e.response.data
