@@ -28,9 +28,19 @@ const router = createRouter({
       component: () => import("@/views/pages/landing/home/index.vue"),
     },
     {
-      path: '/marketplace',
-      name: 'marketplace',
-      component: () => import("@/views/pages/landing/property/marketPlace.vue"),
+      path: '/home-2',
+      name: 'home-2',
+      component: () => import("@/views/pages/landing/home/home-2.vue"),
+    },
+    {
+      path: '/home-3',
+      name: 'home-3',
+      component: () => import("@/views/pages/landing/home/home-3.vue"),
+    },
+    {
+      path: '/property',
+      name: 'property',
+      component: () => import("@/views/pages/landing/property/property.vue"),
     },
     {
       path: '/property-deal',
