@@ -57,7 +57,7 @@ const register = () => {
     // localStorage.setItem('userAbilities', JSON.stringify(userAbilities))
     ability.update(userData.ability)
     localStorage.setItem('userData', JSON.stringify(userData))
-    localStorage.setItem('accessToken', JSON.stringify(accessToken))
+    localStorage.setItem('accessToken', accessToken)
 
     // Redirect to `to` query if exist or redirect to index route
     router.replace(route.query.to ? String(route.query.to) : '/')
