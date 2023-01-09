@@ -19,10 +19,11 @@ html {
 }
 
 .loading-logo {
-  margin-bottom: 100px;
-  /* position: absolute;
-  inset-block-start: 40%;
-  inset-inline-start: calc(50% - 45px); */
+  margin-bottom: 90px;
+  text-align: center;
+}
+.loading-logo img{
+  width: 60%;
 }
 
 .loading {

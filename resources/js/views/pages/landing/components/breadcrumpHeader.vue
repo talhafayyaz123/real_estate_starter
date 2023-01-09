@@ -1,11 +1,11 @@
 <template>
   <div class="breadcrup_header">
-      <v-container>
+    <div class="overlay"></div>
+      <div class="container">
         <div class="text-center">
-          <h1>Marketplace</h1>
-          <p>Invest in rental properties for only $50.</p>
+          <h1>Properties</h1>
         </div>
-      </v-container>
+      </div>
     </div>
 </template>
 
