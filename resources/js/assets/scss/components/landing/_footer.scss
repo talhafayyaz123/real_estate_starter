@@ -1,9 +1,10 @@
 .site_footer{
   background: #1F1F1F;
-  padding: 2rem 0 1rem;
+  padding: 1.5rem 0 1rem;
 }
 .fut_footer{
   .fut_upper_footer{
+    padding: 50px 0px 50px !important;
     .widgets{
       h4{
         font-size: 1.5rem;
@@ -41,6 +42,7 @@
   }
   .fut_bottom_footer{
     // margin-top: 70px;
+    background: $primary_color;
     p{
       color: #999;
       font-size: 18px;

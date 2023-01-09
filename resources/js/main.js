@@ -17,6 +17,7 @@ import './assets/scss/style.scss'
 import Toast , {POSITION} from "vue-toastification";
 // Import the CSS or use your own!
 import "vue-toastification/dist/index.css";
+import 'aos/dist/aos.css'
 
 loadFonts()
 
