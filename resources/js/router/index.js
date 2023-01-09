@@ -25,18 +25,18 @@ const router = createRouter({
     {
       path: '/home',
       name: 'home',
-      component: () => import("@/views/pages/landing/home/index.vue"),
-    },
-    {
-      path: '/home-2',
-      name: 'home-2',
-      component: () => import("@/views/pages/landing/home/home-2.vue"),
-    },
-    {
-      path: '/home-3',
-      name: 'home-3',
       component: () => import("@/views/pages/landing/home/home-3.vue"),
     },
+    // {
+    //   path: '/home-2',
+    //   name: 'home-2',
+    //   component: () => import("@/views/pages/landing/home/home-2.vue"),
+    // },
+    // {
+    //   path: '/home-3',
+    //   name: 'home-3',
+    //   component: () => import("@/views/pages/landing/home/home-3.vue"),
+    // },
     {
       path: '/property',
       name: 'property',
