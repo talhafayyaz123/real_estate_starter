@@ -201,86 +201,8 @@ body{
       vertical-align: bottom;
 
     }
-    .property_tags{
-      position: absolute;
-      left: 10px;
-      top: 15px;
-      z-index: 11;
-      display: flex;
-      align-items: center;
-      .tag{
-        display: inline-block;
-        border-radius: 4px;
-        padding: 0.2rem 0.6rem;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 12px;
-        line-height: 24px;
-        color: #FFFFFF;
-      }
-      .blue_tag{
-        background: $primary_color;
-      }
-      .green_tag{
-        background: #0bceaf;
-      }
-      .danger_tag{
-        background: #E22826;
-      }
-      .hot_tag{
-        background: #E22826;
-        border-radius: 4px;
-        color: #FFFFFF;
-        display: flex;
-        align-items: center;
-        height: 30px;
-        width: 35px;
-        margin: 0px 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-right: 2px;
-      }
-    }
-    .loction_tag{
-      border-radius: 4px;
-      border: 1px solid #D3D9E5;
-      background: #fff;
-      font-size: 12px;
-      padding: 0.2rem 0.4rem;
-      position: absolute;
-      z-index: 11;
-      bottom: 15px;
-      left: 15px;
-      svg{
-        color: $primary_color;
-      }
-    }
-    .wishlist{
-      background: rgba(254, 255, 253, 0.2);
-      border-radius: 12px;
-      position: absolute;
-      right: 15px;
-      top: 15px;
-      width: 44px;
-      height: 44px;
-      z-index: 11;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      color: #fff;
-      svg{
-        margin: 0px !important;
-        &:focus{
-          path{
-            fill: #E22826;
-          }
-        }
-      }
-    }
   }
-  
+
   .property_body{
     padding:15px 20px;
     h2{
@@ -1010,4 +932,273 @@ body{
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.loction_tag{
+  border-radius: 4px;
+  border: 1px solid #D3D9E5;
+  background: #fff;
+  font-size: 12px;
+  padding: 0.2rem 0.4rem;
+  position: absolute;
+  z-index: 11;
+  bottom: 15px;
+  left: 15px;
+  svg{
+    color: $primary_color;
+  }
+}
+.wishlist{
+  background: rgba(254, 255, 253, 0.2);
+  border-radius: 12px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 44px;
+  height: 44px;
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  svg{
+    margin: 0px !important;
+    &:focus{
+      path{
+        fill: #E22826;
+      }
+    }
+  }
+}
+.property_tags{
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  .tag{
+    display: inline-block;
+    border-radius: 4px;
+    padding: 0.2rem 0.6rem;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin: 0px 5px;
+  }
+  .blue_tag{
+    background: $primary_color;
+  }
+  .green_tag{
+    background: #0bceaf;
+  }
+  .danger_tag{
+    background: #E22826;
+  }
+  .hot_tag{
+    background: #E22826;
+    border-radius: 4px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: 35px;
+    margin: 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 2px;
+  }
+}
+.condos-listing{
+  .breadcrup_header{
+    background: url('@images/img/bg-1.jpg');
+  }
+}
+.v-dialog-close-btn{
+  z-index: 5 !important;
+}
+.image_modal{
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+  .swiper{
+    height: 100%;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+}
+.property_deal_page{
+  .property_det_tags{
+    position: relative;
+    .tag{
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      background: $primary_color;
+      border: 1px solid $primary_color;
+      color: #fff;
+      font-size: 14px;
+      display: inline-block;
+      margin: 0px 10px 0px 0px; 
+    }
+    .activeTag{
+      background: #0bceaf;
+      border: 1px solid #0bceaf;
+    }
+    .inactiveTag{
+      background: #E22826;
+      border: 1px solid #E22826;
+    }
+    .locationtag{
+      border: 1px solid #ccc;
+      background: #fff;
+      color: #333;
+    }
+  }
+  .container{
+    max-width: 1400px;
+  }
+  .container-fluid{
+    padding: 0px 50px;
+    max-width: 1700px;
+    margin: auto;
+    width: 100%;
+  }
+  
+  .card{
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+  }
+  .property_thumb{
+    overflow: hidden;
+    img{
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      &:hover{
+        scale: 1.1;
+        transition: .5s all ease-in-out;
+      }
+    }
+  }
+  .multi_prop_images{
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .property_detail{ 
+    .property_detail_heading{
+      h1{
+        font-size: 2.4rem;
+        color: #001D38;
+      }
+      h2{
+        font-size: 1.8rem;
+        color: #001D38;
+        span{
+          font-weight: 400;
+          font-size: 16px;
+        }
+      }
+      p{
+        font-size: 18px;
+      }
+    }
+    
+  }
+}
 
+.projected_card{
+  width: 100%;
+  .projected_card_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span.price_starting{
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: $primary_color;
+    }
+  }
+  .projected_card_body{
+    background: #f6f7f9;
+    padding: 15px;
+    ul{
+      list-style: none;
+      margin: 0px;
+      margin-bottom: 20px;
+      li{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 6px 0px;
+        border-bottom: 1px solid #D3D9E5;
+        h3{
+          color: #375260;
+          font-size: 1rem;
+          cursor: pointer;
+          span{
+            font-weight: 400;
+          }
+        }
+        span{
+          color: #375260;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  .projected_card_footer{
+    .primary-btn{
+      background: #5271FE !important;
+    }
+  }
+}
+.property_image_sec{
+  margin: 20px 0px;
+  .image_section_left{
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    img{
+      width: 100%;
+      height: 570px;
+      object-fit: cover;
+      vertical-align: bottom;
+    }
+    .view_all_btn{
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+    }
+    .overlay{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      opacity: 0.2;
+    }
+  }
+  .propimage{
+    border-radius: 10px;
+    overflow: hidden;
+    img{
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      vertical-align: bottom;
+    }
+  }
+}

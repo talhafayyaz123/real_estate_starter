@@ -409,60 +409,7 @@ body{
     top: -7rem;
     right: 1rem;
   }
-  .projected_card{
-    position: sticky;
-    top: 4rem;
-    right: 2rem;
-    width: 100%;
-    border-radius: 10px;
-    background: #fff;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    .projected_card_header{
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      h1{
-        font-size: 1.6rem;
-        color: #375260;
-        cursor: pointer;
-      }
-      span.price_starting{
-        font-size: 1.6rem;
-        font-weight: bold;
-        color: #5271FE;
-      }
-    }
-    .projected_card_body{
-      padding:0px 20px 20px;
-      ul{
-        list-style: none;
-        margin: 0px;
-        margin-bottom: 20px;
-        li{
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin: 6px 0px;
-          h3{
-            color: #375260;
-            font-size: 1rem;
-            cursor: pointer;
-            span{
-              font-weight: 400;
-            }
-          }
-          span{
-            color: #375260;
-            font-size: 1rem;
-          }
-        }
-      }
-      .primary-btn{
-        background: #5271FE !important;
-      }
-    }
-  }
+  
   .prop_detail{
     .active_tag{
       display: inline-block;

@@ -27,16 +27,11 @@ const router = createRouter({
       name: 'home',
       component: () => import("@/views/pages/landing/home/home-3.vue"),
     },
-    // {
-    //   path: '/home-2',
-    //   name: 'home-2',
-    //   component: () => import("@/views/pages/landing/home/home-2.vue"),
-    // },
-    // {
-    //   path: '/home-3',
-    //   name: 'home-3',
-    //   component: () => import("@/views/pages/landing/home/home-3.vue"),
-    // },
+    {
+      path: '/condo-finder',
+      name: 'condo-finder',
+      component: () => import("@/views/pages/landing/condos/condos.vue"),
+    },
     {
       path: '/property',
       name: 'property',

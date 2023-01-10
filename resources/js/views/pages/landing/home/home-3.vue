@@ -173,50 +173,48 @@
         </VCol>
         <VCol lg="4" data-aos="fade-up" data-aos-duration="1500">
           <div class="property-card">
-            <div class="prop-img">
-              <div class="property_tags">
-                <div class="tag_prop">Featured</div>
-                <div class="hot_tag"><v-icon size="24" class=""> mdi-fire</v-icon></div>
+              <div class="prop-img">
+                <!--======================================-->
+                <!--======================================-->
+                <div class="property_tags">
+                  <div class="hot_tag"><v-icon size="24" class=""> mdi-fire</v-icon></div>
+                </div>
+                <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
+                <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
+                <!--======================================-->
+                <!--======================================-->
+                <swiper :pagination="true" :autoplay="{ delay: 5000, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
+                  <swiper-slide>
+                    <div class="prop-img">
+                      <img src="@images/img/slide 4.png" alt="">
+                    </div>
+                  </swiper-slide>
+                  <swiper-slide>
+                  <img src="@images/img/slide 5.png" alt="">
+                  </swiper-slide>
+                  <swiper-slide>
+                  <img src="@images/img/slide 6.png" alt="">
+                  </swiper-slide>
+                </swiper>
               </div>
-              
-              <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
-              <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
-              <swiper :navigation="true" :pagination="true" :modules="modules" class="property_img_slider">
-                <swiper-slide>
-                  <div class="property_card_img">
-                    <img src="@images/img/slide 4.png" alt=""/>
-                  </div>
-                </swiper-slide>
-                <swiper-slide>
-                  <div class="property_card_img">
-                    <img src="@images/img/slide 5.png" alt=""/>
-                  </div>
-                </swiper-slide>
-                <swiper-slide>
-                  <div class="property_card_img">
-                    <img src="@images/img/slide 6.png" alt=""/>
-                  </div>
-                </swiper-slide>
-              </swiper>
-            </div>
-            <div class="property_body">
-              <h2>18474 Glenmore St Redford, MI 48240</h2>
-              <div class="property_price">
-                <h3><span>$</span> 1,853,219</h3>
-                <p>315 investors</p>
+              <div class="property_body">
+                <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
+                <div class="property_price">
+                  <h3><span>$</span> 1,853,219</h3>
+                  <p>315 investors</p>
+                </div>
+                <ul class="property_det">
+                  <li>
+                    <p>Available Unit</p><span>188</span>
+                  </li>
+                  <li>
+                    <p>Rating </p><span>4.5</span>
+                  </li>
+                  <li>
+                    <p>Capital ROI :</p><span>+11.84 %</span>
+                  </li>
+                </ul>
               </div>
-              <ul class="property_det">
-                <li>
-                  <p>Available Unit</p><span>188</span>
-                </li>
-                <li>
-                  <p>Rating </p><span>4.5</span>
-                </li>
-                <li>
-                  <p>Capital ROI :</p><span>+11.84 %</span>
-                </li>
-              </ul>
-            </div>
           </div>
         </VCol>
         <VCol lg="4" class="right_income_card" data-aos="fade-left" data-aos-duration="1500">
@@ -249,134 +247,140 @@
           <swiper class="condos_featured_slider" :slidesPerView="3" :loop="true" :modules="condos_modules" :navigation="{nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev'}" :pagination="{dynamicBullets: true, }">
             <swiper-slide>
               <div class="property-card">
-                <div class="prop-img">
-                  <div class="property_tags">
-                    <div class="tag_prop">Featured</div>
-                    <div class="hot_tag"><v-icon size="24" class=""> mdi-fire</v-icon></div>
+                  <div class="prop-img">
+                    <!--======================================-->
+                    <!--======================================-->
+                    <div class="property_tags">
+                      <div class="hot_tag"><v-icon size="24" class=""> mdi-fire</v-icon></div>
+                    </div>
+                    <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
+                    <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
+                    <!--======================================-->
+                    <!--======================================-->
+                    <swiper :pagination="true" :autoplay="{ delay: 5000, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
+                      <swiper-slide>
+                        <div class="prop-img">
+                          <img src="@images/img/slide 4.png" alt="">
+                        </div>
+                      </swiper-slide>
+                      <swiper-slide>
+                      <img src="@images/img/slide 5.png" alt="">
+                      </swiper-slide>
+                      <swiper-slide>
+                      <img src="@images/img/slide 6.png" alt="">
+                      </swiper-slide>
+                    </swiper>
                   </div>
-                  <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
-                  <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
-
-                  <swiper :navigation="true" :pagination="true"  :modules="modules" class="property_img_slider">
-                    <swiper-slide>
-                      <div class="prop-img">
-                        <img src="@images/img/slide 6.png" alt="">
-                      </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                    <img src="@images/img/slide 4.png" alt="">
-                    </swiper-slide>
-                    <swiper-slide>
-                    <img src="@images/img/slide 5.png" alt="">
-                    </swiper-slide>
-                  </swiper>
-                </div>
-                <div class="property_body">
-                  <h2>18474 Glenmore St Redford, MI 48240</h2>
-                  <div class="property_price">
-                    <h3><span>$</span> 1,853,219</h3>
-                    <p>315 investors</p>
+                  <div class="property_body">
+                    <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
+                    <div class="property_price">
+                      <h3><span>$</span> 1,853,219</h3>
+                      <p>315 investors</p>
+                    </div>
+                    <ul class="property_det">
+                      <li>
+                        <p>Available Unit</p><span>188</span>
+                      </li>
+                      <li>
+                        <p>Rating </p><span>4.5</span>
+                      </li>
+                      <li>
+                        <p>Capital ROI :</p><span>+11.84 %</span>
+                      </li>
+                    </ul>
                   </div>
-                  <ul class="property_det">
-                    <li>
-                      <p>Available Unit</p><span>188</span>
-                    </li>
-                    <li>
-                      <p>Rating </p><span>4.5</span>
-                    </li>
-                    <li>
-                      <p>Capital ROI :</p><span>+11.84 %</span>
-                    </li>
-                  </ul>
-                </div>
               </div>
             </swiper-slide>
             <swiper-slide>
               <div class="property-card">
-                <div class="prop-img">
-                  <div class="property_tags">
-                    <div class="tag_prop">Featured</div>
-                    <!-- <div class="hot_tag"><v-icon size="24" class=""> mdi-fire</v-icon></div> -->
+                  <div class="prop-img">
+                    <!--======================================-->
+                    <!--======================================-->
+                    <div class="property_tags">
+                      <div class="hot_tag"><v-icon size="24" class=""> mdi-fire</v-icon></div>
+                    </div>
+                    <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
+                    <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
+                    <!--======================================-->
+                    <!--======================================-->
+                    <swiper :pagination="true" :autoplay="{ delay: 5500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
+                      <swiper-slide>
+                        <div class="prop-img">
+                          <img src="@images/img/slide 5.png" alt="">
+                        </div>
+                      </swiper-slide>
+                      <swiper-slide>
+                      <img src="@images/img/slide 4.png" alt="">
+                      </swiper-slide>
+                      <swiper-slide>
+                      <img src="@images/img/slide 5.png" alt="">
+                      </swiper-slide>
+                    </swiper>
                   </div>
-                  <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
-                  <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
-
-                  <swiper :navigation="true" :pagination="true"  :modules="modules" class="property_img_slider">
-                    <swiper-slide>
-                      <div class="prop-img">
-                        <img src="@images/img/slide 4.png" alt="">
-                      </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                    <img src="@images/img/slide 5.png" alt="">
-                    </swiper-slide>
-                    <swiper-slide>
-                    <img src="@images/img/slide 6.png" alt="">
-                    </swiper-slide>
-                  </swiper>
-                </div>
-                <div class="property_body">
-                  <h2>18474 Glenmore St Redford, MI 48240</h2>
-                  <div class="property_price">
-                    <h3><span>$</span> 1,853,219</h3>
-                    <p>315 investors</p>
+                  <div class="property_body">
+                    <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
+                    <div class="property_price">
+                      <h3><span>$</span> 1,853,219</h3>
+                      <p>315 investors</p>
+                    </div>
+                    <ul class="property_det">
+                      <li>
+                        <p>Available Unit</p><span>188</span>
+                      </li>
+                      <li>
+                        <p>Rating </p><span>4.5</span>
+                      </li>
+                      <li>
+                        <p>Capital ROI :</p><span>+11.84 %</span>
+                      </li>
+                    </ul>
                   </div>
-                  <ul class="property_det">
-                    <li>
-                      <p>Available Unit</p><span>188</span>
-                    </li>
-                    <li>
-                      <p>Rating </p><span>4.5</span>
-                    </li>
-                    <li>
-                      <p>Capital ROI :</p><span>+11.84 %</span>
-                    </li>
-                  </ul>
-                </div>
               </div>
             </swiper-slide>
             <swiper-slide>
               <div class="property-card">
-                <div class="prop-img">
-                  <div class="property_tags">
-                    <div class="tag_prop">Featured</div>
-                    <!-- <div class="hot_tag"><v-icon size="24" class=""> mdi-fire</v-icon></div> -->
+                  <div class="prop-img">
+                    <!--======================================-->
+                    <!--======================================-->
+                    <div class="property_tags">
+                      <div class="hot_tag"><v-icon size="24" class=""> mdi-fire</v-icon></div>
+                    </div>
+                    <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
+                    <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
+                    <!--======================================-->
+                    <!--======================================-->
+                    <swiper :pagination="true" :autoplay="{ delay: 5000, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
+                      <swiper-slide>
+                        <div class="prop-img">
+                          <img src="@images/img/slide 6.png" alt="">
+                        </div>
+                      </swiper-slide>
+                      <swiper-slide>
+                      <img src="@images/img/slide 5.png" alt="">
+                      </swiper-slide>
+                      <swiper-slide>
+                      <img src="@images/img/slide 4.png" alt="">
+                      </swiper-slide>
+                    </swiper>
                   </div>
-                  <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
-                  <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
-
-                  <swiper :navigation="true" :pagination="true"  :modules="modules" class="property_img_slider">
-                    <swiper-slide>
-                      <div class="prop-img">
-                        <img src="@images/img/slide 5.png" alt="">
-                      </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                    <img src="@images/img/slide 6.png" alt="">
-                    </swiper-slide>
-                    <swiper-slide>
-                    <img src="@images/img/slide 4.png" alt="">
-                    </swiper-slide>
-                  </swiper>
-                </div>
-                <div class="property_body">
-                  <h2>18474 Glenmore St Redford, MI 48240</h2>
-                  <div class="property_price">
-                    <h3><span>$</span> 1,853,219</h3>
-                    <p>315 investors</p>
+                  <div class="property_body">
+                    <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
+                    <div class="property_price">
+                      <h3><span>$</span> 1,853,219</h3>
+                      <p>315 investors</p>
+                    </div>
+                    <ul class="property_det">
+                      <li>
+                        <p>Available Unit</p><span>188</span>
+                      </li>
+                      <li>
+                        <p>Rating </p><span>4.5</span>
+                      </li>
+                      <li>
+                        <p>Capital ROI :</p><span>+11.84 %</span>
+                      </li>
+                    </ul>
                   </div>
-                  <ul class="property_det">
-                    <li>
-                      <p>Available Unit</p><span>188</span>
-                    </li>
-                    <li>
-                      <p>Rating </p><span>4.5</span>
-                    </li>
-                    <li>
-                      <p>Capital ROI :</p><span>+11.84 %</span>
-                    </li>
-                  </ul>
-                </div>
               </div>
             </swiper-slide>
           </swiper>
@@ -463,215 +467,143 @@
           <swiper class="condos_featured_slider" :slidesPerView="3"  :loop="true" :modules="modules" :navigation="{nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev'}" :pagination="{dynamicBullets: true, }">
             <swiper-slide>
               <div class="property-card">
-                <div class="prop-img">
-                  <div class="property_tags">
-                    <div class="tag_prop">Featured</div>
-                    <div class="hot_tag"><v-icon size="24" class=""> mdi-fire</v-icon></div>
-                  </div>
-                  <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
-                  <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
-
-                  <swiper :pagination="true" :autoplay="{ delay: 3000, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
-                    <swiper-slide>
-                        <div class="property_card_img">
-                          <img src="@images/img/11.png" alt=""/>
+                  <div class="prop-img">
+                    <!--======================================-->
+                    <!--======================================-->
+                    <div class="property_tags">
+                      <div class="hot_tag"><v-icon size="24" class=""> mdi-fire</v-icon></div>
+                      <div class="blue_tag tag featured_tag">Featured</div>
+                    </div>
+                    <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
+                    <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
+                    <!--======================================-->
+                    <!--======================================-->
+                    <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 5000, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
+                      <swiper-slide>
+                        <div class="prop-img">
+                          <img src="@images/img/44.png" alt="">
                         </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                      <div class="property_card_img">
-                        <img src="@images/img/22.png" alt="">
-                      </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                      <div class="property_card_img">
-                        <img src="@images/img/33.png" alt=""/>
-                      </div>
-                    </swiper-slide>
-                  </swiper>
-                </div>
-                <div class="property_body"> 
-                  <h2>18474 Glenmore St Redford, MI 48240</h2>
-                  <div class="property_price">
-                    <h3><span>$</span> 1,853,219</h3>
-                    <p>315 investors</p>
+                      </swiper-slide>
+                      <swiper-slide>
+                      <img src="@images/img/11.png" alt="">
+                      </swiper-slide>
+                      <swiper-slide>
+                      <img src="@images/img/55.png" alt="">
+                      </swiper-slide>
+                    </swiper>
                   </div>
-                  <ul class="property_det">
-                    <li>
-                      <p>Available Unit</p><span>188</span>
-                    </li>
-                    <li>
-                      <p>Rating </p><span>4.5</span>
-                    </li>
-                    <li>
-                      <p>Capital ROI :</p><span>+11.84 %</span>
-                    </li>
-                  </ul>
-                </div>
-                <VDivider/>
-                <div class="footer_card">
-                  <ul>
-                    <li>
-                      <div class="property_card_info">
-                        <v-icon size="16" class="mr-1"> mdi-shape-square-plus </v-icon>
-                        <span>1200 Sqft</span>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="property_card_info">
-                        <v-icon size="16" class="mr-1"> mdi-bed-outline </v-icon>
-                        <span>2 Bed</span>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="property_card_info">
-                        <v-icon size="16" class="mr-1"> mdi-shower </v-icon>
-                        <span>2 Bath</span>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+                  <div class="property_body">
+                    <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
+                    <div class="property_price">
+                      <h3><span>$</span> 1,853,219</h3>
+                      <p>315 investors</p>
+                    </div>
+                    <ul class="property_det">
+                      <li>
+                        <p>Available Unit</p><span>188</span>
+                      </li>
+                      <li>
+                        <p>Rating </p><span>4.5</span>
+                      </li>
+                      <li>
+                        <p>Capital ROI :</p><span>+11.84 %</span>
+                      </li>
+                    </ul>
+                  </div>
               </div>
             </swiper-slide>
             <swiper-slide>
               <div class="property-card">
-                <div class="prop-img">
-                  <div class="property_tags">
-                    <div class="tag_prop">Featured</div>
-                    <!-- <div class="hot_tag"><v-icon size="24" class=""> mdi-fire</v-icon></div> -->
-                  </div>
-                  <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
-                  <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
-
-                  <swiper :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
-                    <swiper-slide>
-                        <div class="property_card_img">
-                          <img src="@images/img/11.png" alt=""/>
+                  <div class="prop-img">
+                    <!--======================================-->
+                    <!--======================================-->
+                    <div class="property_tags">
+                      <div class="hot_tag"><v-icon size="24" class=""> mdi-fire</v-icon></div>
+                      <div class="blue_tag tag featured_tag">Featured</div>
+                    </div>
+                    <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
+                    <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
+                    <!--======================================-->
+                    <!--======================================-->
+                    <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 5500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
+                      <swiper-slide>
+                        <div class="prop-img">
+                          <img src="@images/img/22.png" alt="">
                         </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                      <div class="property_card_img">
-                        <img src="@images/img/22.png" alt="">
-                      </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                      <div class="property_card_img">
-                        <img src="@images/img/33.png" alt=""/>
-                      </div>
-                    </swiper-slide>
-                  </swiper>
-                </div>
-                <div class="property_body"> 
-                  <h2>18474 Glenmore St Redford, MI 48240</h2>
-                  <div class="property_price">
-                    <h3><span>$</span> 1,853,219</h3>
-                    <p>315 investors</p>
+                      </swiper-slide>
+                      <swiper-slide>
+                      <img src="@images/img/33.png" alt="">
+                      </swiper-slide>
+                      <swiper-slide>
+                      <img src="@images/img/55.png" alt="">
+                      </swiper-slide>
+                    </swiper>
                   </div>
-                  <ul class="property_det">
-                    <li>
-                      <p>Available Unit</p><span>188</span>
-                    </li>
-                    <li>
-                      <p>Rating </p><span>4.5</span>
-                    </li>
-                    <li>
-                      <p>Capital ROI :</p><span>+11.84 %</span>
-                    </li>
-                  </ul>
-                </div>
-                <VDivider/>
-                <div class="footer_card">
-                  <ul>
-                    <li>
-                      <div class="property_card_info">
-                        <v-icon size="16" class="mr-1"> mdi-shape-square-plus </v-icon>
-                        <span>1200 Sqft</span>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="property_card_info">
-                        <v-icon size="16" class="mr-1"> mdi-bed-outline </v-icon>
-                        <span>2 Bed</span>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="property_card_info">
-                        <v-icon size="16" class="mr-1"> mdi-shower </v-icon>
-                        <span>2 Bath</span>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+                  <div class="property_body">
+                    <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
+                    <div class="property_price">
+                      <h3><span>$</span> 1,853,219</h3>
+                      <p>315 investors</p>
+                    </div>
+                    <ul class="property_det">
+                      <li>
+                        <p>Available Unit</p><span>188</span>
+                      </li>
+                      <li>
+                        <p>Rating </p><span>4.5</span>
+                      </li>
+                      <li>
+                        <p>Capital ROI :</p><span>+11.84 %</span>
+                      </li>
+                    </ul>
+                  </div>
               </div>
             </swiper-slide>
             <swiper-slide>
               <div class="property-card">
-                <div class="prop-img">
-                  <div class="property_tags">
-                    <div class="tag_prop">New Listing</div>
-                    <!-- <div class="hot_tag"><v-icon size="24" class=""> mdi-fire</v-icon></div> -->
-                  </div>
-                  <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
-                  <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
-
-                  <swiper :pagination="true" :autoplay="{ delay: 4000, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
-                    <swiper-slide>
-                        <div class="property_card_img">
-                          <img src="@images/img/11.png" alt=""/>
+                  <div class="prop-img">
+                    <!--======================================-->
+                    <!--======================================-->
+                    <div class="property_tags">
+                      <div class="hot_tag"><v-icon size="24" class=""> mdi-fire</v-icon></div>
+                      <div class="blue_tag tag featured_tag">Featured</div>
+                    </div>
+                    <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
+                    <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
+                    <!--======================================-->
+                    <!--======================================-->
+                    <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 4500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
+                      <swiper-slide>
+                        <div class="prop-img">
+                          <img src="@images/img/11.png" alt="">
                         </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                      <div class="property_card_img">
-                        <img src="@images/img/22.png" alt="">
-                      </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                      <div class="property_card_img">
-                        <img src="@images/img/33.png" alt=""/>
-                      </div>
-                    </swiper-slide>
-                  </swiper>
-                </div>
-                <div class="property_body"> 
-                  <h2>18474 Glenmore St Redford, MI 48240</h2>
-                  <div class="property_price">
-                    <h3><span>$</span> 1,853,219</h3>
-                    <p>315 investors</p>
+                      </swiper-slide>
+                      <swiper-slide>
+                      <img src="@images/img/33.png" alt="">
+                      </swiper-slide>
+                      <swiper-slide>
+                      <img src="@images/img/55.png" alt="">
+                      </swiper-slide>
+                    </swiper>
                   </div>
-                  <ul class="property_det">
-                    <li>
-                      <p>Available Unit</p><span>188</span>
-                    </li>
-                    <li>
-                      <p>Rating </p><span>4.5</span>
-                    </li>
-                    <li>
-                      <p>Capital ROI :</p><span>+11.84 %</span>
-                    </li>
-                  </ul>
-                </div>
-                <VDivider/>
-                <div class="footer_card">
-                  <ul>
-                    <li>
-                      <div class="property_card_info">
-                        <v-icon size="16" class="mr-1"> mdi-shape-square-plus </v-icon>
-                        <span>1200 Sqft</span>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="property_card_info">
-                        <v-icon size="16" class="mr-1"> mdi-bed-outline </v-icon>
-                        <span>2 Bed</span>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="property_card_info">
-                        <v-icon size="16" class="mr-1"> mdi-shower </v-icon>
-                        <span>2 Bath</span>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+                  <div class="property_body">
+                    <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
+                    <div class="property_price">
+                      <h3><span>$</span> 1,853,219</h3>
+                      <p>315 investors</p>
+                    </div>
+                    <ul class="property_det">
+                      <li>
+                        <p>Available Unit</p><span>188</span>
+                      </li>
+                      <li>
+                        <p>Rating </p><span>4.5</span>
+                      </li>
+                      <li>
+                        <p>Capital ROI :</p><span>+11.84 %</span>
+                      </li>
+                    </ul>
+                  </div>
               </div>
             </swiper-slide>
           </swiper>
@@ -936,21 +868,6 @@ Fusce ac mattis nulla. Morbi eget ornare dui. </p>
       </VRow>
     </div>
   </section>
-  <!--====================================================================-->
-  <!-- <section class="real_section_9 real_Section add_property_section">
-    <div class="overlay"></div>
-    <div class="container">
-      <VRow>
-        <VCol sm="12">
-          <div class="add_property">
-            <h2>Add your property for sale</h2>
-            <v-btn>Add Property</v-btn>
-          </div>
-        </VCol>
-      </VRow>
-    </div>
-  </section> -->.
-  
   <!--====================================================================-->
   <FooterComp/>
   <!--====================================================================-->
