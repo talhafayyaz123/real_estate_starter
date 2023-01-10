@@ -60,9 +60,6 @@
                 <li class="realestate_nav_item">
                   <RouterLink class-active="active" :to="{ name: 'home' }" class="realestate_nav_link">Home</RouterLink>
                 </li>
-                <li class="realestate_nav_item">
-                  <RouterLink class-active="active" :to="{ name: 'login' }" class="realestate_nav_link">COndo</RouterLink>
-                </li>
               </ul>
             </li>
             <li class="realestate_nav_item">|</li>

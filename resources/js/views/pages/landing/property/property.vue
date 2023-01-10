@@ -89,6 +89,8 @@
           <VTab>Hot</VTab>
           <VTab>Featured</VTab>
           <VTab>New Listing</VTab>
+          <VTab>Coming Soon</VTab>
+          <VTab>Sold Out</VTab>
         </VTabs>
         <VWindow v-model="propTabs">
           <VWindowItem>
