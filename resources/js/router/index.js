@@ -19,7 +19,7 @@ const router = createRouter({
         if (userRole === 'client')
           return { name: 'access-control' }
 
-        return { name: 'login', query: to.query }
+        return { name: 'home', query: to.query }
       },
     },
     {
