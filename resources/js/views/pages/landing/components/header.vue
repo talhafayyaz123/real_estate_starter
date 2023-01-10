@@ -61,14 +61,16 @@
 
         <div class="right_upper_side">
           <div class="user_auth_nav">
-            <RouterLink :to="{ name: 'login' }" v-if="!isLoggedIn">
-              <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+            <RouterLink :to="{ name: 'login' }" v-if="!isLoggedIn" class="">
+              <!-- <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
                 <path
                   fill="currentColor"
                   d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
                 />
-              </svg>
+              </svg> -->
+              login
             </RouterLink>
+            <RouterLink :to="{name: 'register'}" v-if="!isLoggedIn" class="sign_btn">Signup</RouterLink>
             <RouterLink :to="{ name: 'dashboards-analytics' }" v-else> Dashboard </RouterLink>
           </div>
         </div>

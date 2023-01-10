@@ -208,32 +208,39 @@ body{
       z-index: 11;
       display: flex;
       align-items: center;
-    }
-    .hot_tag{
-      background: #E22826;
-      border-radius: 4px;
-      color: #FFFFFF;
-      display: flex;
-      align-items: center;
-      height: 30px;
-      width: 35px;
-      margin: 0px 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-right: 2px;
-    }
-    .tag_prop{
-      display: inline-block;
-      background: $primary_color;
-      border-radius: 4px;
-      padding: 0.2rem 0.6rem;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 24px;
-      color: #FFFFFF;
-      z-index: 11;
+      .tag{
+        display: inline-block;
+        border-radius: 4px;
+        padding: 0.2rem 0.6rem;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 24px;
+        color: #FFFFFF;
+      }
+      .blue_tag{
+        background: $primary_color;
+      }
+      .green_tag{
+        background: #0bceaf;
+      }
+      .danger_tag{
+        background: #E22826;
+      }
+      .hot_tag{
+        background: #E22826;
+        border-radius: 4px;
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        height: 30px;
+        width: 35px;
+        margin: 0px 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 2px;
+      }
     }
     .loction_tag{
       border-radius: 4px;
@@ -283,6 +290,14 @@ body{
       line-height: 26px;
       color: #001D38;
       margin-bottom: 0.5rem;
+      cursor: pointer;
+      a{
+        color: inherit;
+      }
+      &:hover{
+        color: $primary_color;
+      }
+
     }
     .property_price{
       display: flex;
