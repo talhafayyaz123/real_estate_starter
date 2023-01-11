@@ -141,49 +141,26 @@
                             </li>
                           </ul>
                         </div>
-                    </div>
-                  </VCol>
-                  <VCol lg="4">
-                    <div class="property-card">
-                        <div class="prop-img">
-                          <!--======================================-->
-                          <!--======================================-->
-                          <div class="property_tags">
-                            <div class="blue_tag tag featured_tag">Featured</div>
-                          </div>
-                          <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
-                          <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
-                          <!--======================================-->
-                          <!--======================================-->
-                          <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
-                            <swiper-slide>
-                              <div class="prop-img">
-                                <img src="@images/img/22.png" alt="">
+                        <VDivider/>
+                        <div class="footer_card">
+                          <ul>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shape-square-plus </v-icon>
+                                <span>1200 Sqft</span>
                               </div>
-                            </swiper-slide>
-                            <swiper-slide>
-                            <img src="@images/img/33.png" alt="">
-                            </swiper-slide>
-                            <swiper-slide>
-                            <img src="@images/img/55.png" alt="">
-                            </swiper-slide>
-                          </swiper>
-                        </div>
-                        <div class="property_body">
-                          <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
-                          <div class="property_price">
-                            <h3><span>$</span> 1,853,219</h3>
-                            <p>315 investors</p>
-                          </div>
-                          <ul class="property_det">
-                            <li>
-                              <p>Available Unit</p><span>188</span>
                             </li>
                             <li>
-                              <p>Rating </p><span>4.5</span>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-bed-outline </v-icon>
+                                <span>2 Bed</span>
+                              </div>
                             </li>
                             <li>
-                              <p>Capital ROI :</p><span>+11.84 %</span>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shower </v-icon>
+                                <span>2 Bath</span>
+                              </div>
                             </li>
                           </ul>
                         </div>
@@ -233,6 +210,29 @@
                             </li>
                           </ul>
                         </div>
+                        <VDivider/>
+                        <div class="footer_card">
+                          <ul>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shape-square-plus </v-icon>
+                                <span>1200 Sqft</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-bed-outline </v-icon>
+                                <span>2 Bed</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shower </v-icon>
+                                <span>2 Bath</span>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
                     </div>
                   </VCol>
                   <VCol lg="4">
@@ -241,7 +241,7 @@
                           <!--======================================-->
                           <!--======================================-->
                           <div class="property_tags">
-                            <div class="green_tag tag featured_tag">New Listing</div>
+                            <div class="blue_tag tag featured_tag">Featured</div>
                           </div>
                           <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
                           <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
@@ -276,6 +276,29 @@
                             </li>
                             <li>
                               <p>Capital ROI :</p><span>+11.84 %</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <VDivider/>
+                        <div class="footer_card">
+                          <ul>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shape-square-plus </v-icon>
+                                <span>1200 Sqft</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-bed-outline </v-icon>
+                                <span>2 Bed</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shower </v-icon>
+                                <span>2 Bath</span>
+                              </div>
                             </li>
                           </ul>
                         </div>
@@ -322,6 +345,98 @@
                             </li>
                             <li>
                               <p>Capital ROI :</p><span>+11.84 %</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <VDivider/>
+                        <div class="footer_card">
+                          <ul>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shape-square-plus </v-icon>
+                                <span>1200 Sqft</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-bed-outline </v-icon>
+                                <span>2 Bed</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shower </v-icon>
+                                <span>2 Bath</span>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                    </div>
+                  </VCol>
+                  <VCol lg="4">
+                    <div class="property-card">
+                        <div class="prop-img">
+                          <!--======================================-->
+                          <!--======================================-->
+                          <div class="property_tags">
+                            <div class="green_tag tag featured_tag">New Listing</div>
+                          </div>
+                          <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
+                          <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
+                          <!--======================================-->
+                          <!--======================================-->
+                          <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
+                            <swiper-slide>
+                              <div class="prop-img">
+                                <img src="@images/img/22.png" alt="">
+                              </div>
+                            </swiper-slide>
+                            <swiper-slide>
+                            <img src="@images/img/33.png" alt="">
+                            </swiper-slide>
+                            <swiper-slide>
+                            <img src="@images/img/55.png" alt="">
+                            </swiper-slide>
+                          </swiper>
+                        </div>
+                        <div class="property_body">
+                          <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
+                          <div class="property_price">
+                            <h3><span>$</span> 1,853,219</h3>
+                            <p>315 investors</p>
+                          </div>
+                          <ul class="property_det">
+                            <li>
+                              <p>Available Unit</p><span>188</span>
+                            </li>
+                            <li>
+                              <p>Rating </p><span>4.5</span>
+                            </li>
+                            <li>
+                              <p>Capital ROI :</p><span>+11.84 %</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <VDivider/>
+                        <div class="footer_card">
+                          <ul>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shape-square-plus </v-icon>
+                                <span>1200 Sqft</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-bed-outline </v-icon>
+                                <span>2 Bed</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shower </v-icon>
+                                <span>2 Bath</span>
+                              </div>
                             </li>
                           </ul>
                         </div>
@@ -368,6 +483,29 @@
                             </li>
                             <li>
                               <p>Capital ROI :</p><span>+11.84 %</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <VDivider/>
+                        <div class="footer_card">
+                          <ul>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shape-square-plus </v-icon>
+                                <span>1200 Sqft</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-bed-outline </v-icon>
+                                <span>2 Bed</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shower </v-icon>
+                                <span>2 Bath</span>
+                              </div>
                             </li>
                           </ul>
                         </div>
@@ -425,6 +563,29 @@
                           </li>
                         </ul>
                       </div>
+                      <VDivider/>
+                        <div class="footer_card">
+                          <ul>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shape-square-plus </v-icon>
+                                <span>1200 Sqft</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-bed-outline </v-icon>
+                                <span>2 Bed</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shower </v-icon>
+                                <span>2 Bath</span>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
                   </div>
                 </VCol>
               </VRow>
@@ -479,6 +640,29 @@
                             </li>
                           </ul>
                         </div>
+                        <VDivider/>
+                        <div class="footer_card">
+                          <ul>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shape-square-plus </v-icon>
+                                <span>1200 Sqft</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-bed-outline </v-icon>
+                                <span>2 Bed</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shower </v-icon>
+                                <span>2 Bath</span>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
                     </div>
                   </VCol>
                   <VCol lg="4">
@@ -522,6 +706,29 @@
                             </li>
                             <li>
                               <p>Capital ROI :</p><span>+11.84 %</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <VDivider/>
+                        <div class="footer_card">
+                          <ul>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shape-square-plus </v-icon>
+                                <span>1200 Sqft</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-bed-outline </v-icon>
+                                <span>2 Bed</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shower </v-icon>
+                                <span>2 Bath</span>
+                              </div>
                             </li>
                           </ul>
                         </div>
@@ -579,6 +786,29 @@
                           </li>
                         </ul>
                       </div>
+                      <VDivider/>
+                        <div class="footer_card">
+                          <ul>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shape-square-plus </v-icon>
+                                <span>1200 Sqft</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-bed-outline </v-icon>
+                                <span>2 Bed</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shower </v-icon>
+                                <span>2 Bath</span>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
                   </div>
                 </VCol>
                 <VCol lg="4">
@@ -625,6 +855,29 @@
                           </li>
                         </ul>
                       </div>
+                      <VDivider/>
+                        <div class="footer_card">
+                          <ul>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shape-square-plus </v-icon>
+                                <span>1200 Sqft</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-bed-outline </v-icon>
+                                <span>2 Bed</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shower </v-icon>
+                                <span>2 Bath</span>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
                   </div>
                 </VCol>
               </VRow>
@@ -679,6 +932,29 @@
                             </li>
                           </ul>
                         </div>
+                        <VDivider/>
+                        <div class="footer_card">
+                          <ul>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shape-square-plus </v-icon>
+                                <span>1200 Sqft</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-bed-outline </v-icon>
+                                <span>2 Bed</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shower </v-icon>
+                                <span>2 Bath</span>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
                     </div>
                   </VCol>
                 </VRow>
@@ -730,6 +1006,29 @@
                             </li>
                             <li>
                               <p>Capital ROI :</p><span>+11.84 %</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <VDivider/>
+                        <div class="footer_card">
+                          <ul>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shape-square-plus </v-icon>
+                                <span>1200 Sqft</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-bed-outline </v-icon>
+                                <span>2 Bed</span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="property_card_info">
+                                <v-icon size="16" class="mr-1"> mdi-shower </v-icon>
+                                <span>2 Bath</span>
+                              </div>
                             </li>
                           </ul>
                         </div>
