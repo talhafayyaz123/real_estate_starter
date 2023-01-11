@@ -510,6 +510,9 @@
                       </li>
                     </ul>
                   </div>
+                  <div class="property_footer">
+                    
+                  </div>
               </div>
             </swiper-slide>
             <swiper-slide>
@@ -864,6 +867,52 @@ Fusce ac mattis nulla. Morbi eget ornare dui. </p>
                 </div>
               </swiper-slide>
           </swiper>
+        </VCol>
+      </VRow>
+    </div>
+  </section>
+  <!--====================================================================-->
+  <section class="real_section_7 real_Section contact_section">
+    <div class="container">
+      <div class="real_section_heading"  data-aos="fade-up" data-aos-duration="1500">
+        <h2>Contact us</h2>
+      </div>
+      <VRow class="contact"  data-aos="fade-up" data-aos-duration="1500">
+        <VCol>
+          <VForm class="mt-3">
+            <VRow>
+              <VCol cols="6">
+                <VTextField
+                  label="Your Name"
+                  placeholder="Enter Name"
+                />
+              </VCol>
+
+              <VCol cols="6">
+                <VTextField
+                  label="Phone Number"
+                  type="number"
+                  placeholder="Enter Phone Nnmber"
+                />
+              </VCol>
+
+              <VCol cols="6">
+                <VTextField
+                  label="Email"
+                  type="email"
+                  placeholder="Enter Email"
+                />
+              </VCol>
+
+              <VCol cols="12">
+                <VTextarea label="Message" placeholder="Enter Message"/>
+              </VCol>
+
+              <VCol cols="12" class="mt-10 text-center" >
+                <VBtn class="primary-btn" type="submit"> Submit </VBtn>
+              </VCol>
+            </VRow>
+          </VForm>
         </VCol>
       </VRow>
     </div>

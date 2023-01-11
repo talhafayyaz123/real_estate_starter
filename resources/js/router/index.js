@@ -42,6 +42,26 @@ const router = createRouter({
       name: 'property-deal',
       component: () => import("@/views/pages/landing/property/propertyDeal.vue"),
     },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: () => import("@/views/pages/landing/contact/contact.vue"),
+    },
+    {
+      path: '/brokers',
+      name: 'brokers',
+      component: () => import("@/views/pages/landing/agents/agent.vue"),
+    },
+    {
+      path: '/blogs',
+      name: 'blogs',
+      component: () => import("@/views/pages/landing/blogs/blog.vue"),
+    },
+    {
+      path: '/blogs-detail',
+      name: 'blogs-detail',
+      component: () => import("@/views/pages/landing/blogs/blogDetail.vue"),
+    },
 
     ...setupLayouts(routes),
   ],

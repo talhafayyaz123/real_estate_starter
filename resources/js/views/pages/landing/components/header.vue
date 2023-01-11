@@ -32,7 +32,7 @@
           </li>
           <li class="upper_nav_item">
             <RouterLink
-              :to="{ name: 'login' }"
+              :to="{ name: 'blogs' }"
               class-active="active"
               class="upper_nav_link"
             >
@@ -109,7 +109,7 @@
             <li class="realestate_nav_item">
               <RouterLink
                 class-active="active"
-                :to="{ name: 'login' }"
+                :to="{ name: 'brokers' }"
                 class="realestate_nav_link"
                 >Agents</RouterLink
               >
@@ -118,9 +118,9 @@
             <li class="realestate_nav_item">
               <RouterLink
                 class-active="active"
-                :to="{ name: 'login' }"
+                :to="{ name: 'contact' }"
                 class="realestate_nav_link"
-                >New Projects</RouterLink
+                >Contact</RouterLink
               >
             </li>
           </ul>
