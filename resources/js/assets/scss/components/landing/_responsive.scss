@@ -70,6 +70,10 @@
   }
 }
 @media (max-width:1100px) {
+  .filter .filter_grid .filter_b{
+    width: 100%;
+    text-align: center;
+  }
   .banner_sec_1{
     min-height: auto;
     padding: 50px 0px 80px;
@@ -137,6 +141,17 @@
   }
 }
 @media (max-width:600px) {
+  .property-card{
+    margin: 0px;
+  }
+  .add_property_section .add_property{
+    flex-direction: column;
+    justify-content: center;
+    h2{
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+  }
   .real_section_heading{
     h2{
       font-size: 26px;

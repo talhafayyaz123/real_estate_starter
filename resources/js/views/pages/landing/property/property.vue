@@ -97,7 +97,7 @@
             <div class="property_list real_Section">
               <div class="container">
                 <VRow>
-                  <VCol lg="4">
+                  <VCol lg="4" md="4" sm="6" cols="12">
                     <div class="property-card">
                         <div class="prop-img">
                           <!--======================================-->
@@ -166,7 +166,7 @@
                         </div>
                     </div>
                   </VCol>
-                  <VCol lg="4">
+                  <VCol lg="4" md="4" sm="6" cols="12">
                     <div class="property-card">
                         <div class="prop-img">
                           <!--======================================-->
@@ -235,7 +235,7 @@
                         </div>
                     </div>
                   </VCol>
-                  <VCol lg="4">
+                  <VCol lg="4" md="4" sm="6" cols="12">
                     <div class="property-card">
                         <div class="prop-img">
                           <!--======================================-->
@@ -304,7 +304,7 @@
                         </div>
                     </div>
                   </VCol>
-                  <VCol lg="4">
+                  <VCol lg="4" md="4" sm="6" cols="12">
                     <div class="property-card">
                         <div class="prop-img">
                           <!--======================================-->
@@ -373,7 +373,7 @@
                         </div>
                     </div>
                   </VCol>
-                  <VCol lg="4">
+                  <VCol lg="4" md="4" sm="6" cols="12">
                     <div class="property-card">
                         <div class="prop-img">
                           <!--======================================-->
@@ -442,7 +442,7 @@
                         </div>
                     </div>
                   </VCol>
-                  <VCol lg="4">
+                  <VCol lg="4" md="4" sm="6" cols="12">
                     <div class="property-card">
                         <div class="prop-img">
                           <!--======================================-->
@@ -519,7 +519,7 @@
             <div class="property_list real_Section">
               <div class="container">
               <VRow>
-                <VCol lg="4">
+                <VCol lg="4" md="4" sm="6" cols="12">
                   <div class="property-card">
                       <div class="prop-img">
                         <!--======================================-->
@@ -596,7 +596,7 @@
             <div class="property_list real_Section">
               <div class="container">
                 <VRow>
-                  <VCol lg="4">
+                  <VCol lg="4" md="4" sm="6" cols="12">
                     <div class="property-card">
                         <div class="prop-img">
                           <!--======================================-->
@@ -665,7 +665,7 @@
                         </div>
                     </div>
                   </VCol>
-                  <VCol lg="4">
+                  <VCol lg="4" md="4" sm="6" cols="12">
                     <div class="property-card">
                         <div class="prop-img">
                           <!--======================================-->
@@ -742,7 +742,7 @@
             <div class="property_list real_Section">
               <div class="container">
               <VRow>
-                <VCol lg="4">
+                <VCol lg="4" md="4" sm="6" cols="12">
                   <div class="property-card">
                       <div class="prop-img">
                         <!--======================================-->
@@ -811,7 +811,7 @@
                         </div>
                   </div>
                 </VCol>
-                <VCol lg="4">
+                <VCol lg="4" md="4" sm="6" cols="12">
                   <div class="property-card">
                       <div class="prop-img">
                         <!--======================================-->
@@ -888,7 +888,7 @@
             <div class="property_list real_Section">
               <div class="container">
                 <VRow>
-                  <VCol lg="4">
+                  <VCol lg="4" md="4" sm="6" cols="12">
                     <div class="property-card">
                         <div class="prop-img">
                           <!--======================================-->
@@ -965,7 +965,7 @@
             <div class="property_list real_Section">
               <div class="container">
                 <VRow>
-                  <VCol lg="4">
+                  <VCol lg="4" md="4" sm="6" cols="12">
                     <div class="property-card">
                         <div class="prop-img">
                           <!--======================================-->
