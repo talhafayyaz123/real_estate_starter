@@ -13,7 +13,7 @@
             <VCol md="4">
               <div class="brokers_card">
                 <div class="brokers_card_header">
-                  <img src="@images/img/broker 1.png" alt="">
+                  <img src="@images/img/broker-1.png" alt="">
                 </div>
                 <div class="brokers_card_body">
                   <h2>Wade Warren</h2>
@@ -40,7 +40,7 @@
             <VCol md="4">
               <div class="brokers_card">
                 <div class="brokers_card_header">
-                  <img src="@images/img/broker 2.png" alt="">
+                  <img src="@images/img/broker-2.png" alt="">
                 </div>
                 <div class="brokers_card_body">
                   <h2>Wade Warren</h2>
@@ -67,7 +67,7 @@
             <VCol md="4">
               <div class="brokers_card">
                 <div class="brokers_card_header">
-                  <img src="@images/img/broker 3.png" alt="">
+                  <img src="@images/img/broker-3.png" alt="">
                 </div>
                 <div class="brokers_card_body">
                   <h2>Wade Warren</h2>

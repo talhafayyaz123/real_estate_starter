@@ -48,7 +48,7 @@
           <div class="meta mt-5 mb-5">
             <div class="blog_auther">
               <a href="">
-                <img src="@images/img/broker 1.png" alt="">
+                <img src="@images/img/broker-1.png" alt="">
                 <span>Joanna Wellick</span>
               </a>
             </div>
@@ -110,7 +110,7 @@
                     <div class="blog_meta">
                       <div class="blog_auther">
                         <a href="">
-                          <img src="@images/img/broker 1.png" alt="">
+                          <img src="@images/img/broker-1.png" alt="">
                           <span>Joanna Wellick</span>
                         </a>
                       </div>
@@ -132,7 +132,7 @@
                   <div class="blog_meta">
                     <div class="blog_auther">
                       <a href="">
-                        <img src="@images/img/broker 1.png" alt="">
+                        <img src="@images/img/broker-1.png" alt="">
                         <span>Joanna Wellick</span>
                       </a>
                     </div>
@@ -154,7 +154,7 @@
                   <div class="blog_meta">
                     <div class="blog_auther">
                       <a href="">
-                        <img src="@images/img/broker 1.png" alt="">
+                        <img src="@images/img/broker-1.png" alt="">
                         <span>Joanna Wellick</span>
                       </a>
                     </div>

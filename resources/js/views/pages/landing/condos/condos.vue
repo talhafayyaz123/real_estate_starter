@@ -119,14 +119,14 @@
                           <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
                             <swiper-slide>
                               <div class="prop-img">
-                                <img src="@images/img/slide 4.png" alt="">
+                                <img src="@images/img/condo1.jpg" alt="">
                               </div>
                             </swiper-slide>
                             <swiper-slide>
-                            <img src="@images/img/slide 5.png" alt="">
+                            <img src="@images/img/condo2.jpg" alt="">
                             </swiper-slide>
                             <swiper-slide>
-                            <img src="@images/img/slide 6.png" alt="">
+                            <img src="@images/img/condo3.jpg" alt="">
                             </swiper-slide>
                           </swiper>
                         </div>
@@ -165,14 +165,14 @@
                           <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
                             <swiper-slide>
                               <div class="prop-img">
-                                <img src="@images/img/slide 4.png" alt="">
+                                <img src="@images/img/condo4.jpg" alt="">
                               </div>
                             </swiper-slide>
                             <swiper-slide>
-                            <img src="@images/img/slide 5.png" alt="">
+                            <img src="@images/img/condo9.jpg" alt="">
                             </swiper-slide>
                             <swiper-slide>
-                            <img src="@images/img/slide 6.png" alt="">
+                            <img src="@images/img/condo6.jpg" alt="">
                             </swiper-slide>
                           </swiper>
                         </div>
@@ -211,14 +211,14 @@
                           <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
                             <swiper-slide>
                               <div class="prop-img">
-                                <img src="@images/img/slide 4.png" alt="">
+                                <img src="@images/img/condo9.jpg" alt="">
                               </div>
                             </swiper-slide>
                             <swiper-slide>
-                            <img src="@images/img/slide 5.png" alt="">
+                            <img src="@images/img/condo9.jpg" alt="">
                             </swiper-slide>
                             <swiper-slide>
-                            <img src="@images/img/slide 6.png" alt="">
+                            <img src="@images/img/condo7.jpg" alt="">
                             </swiper-slide>
                           </swiper>
                         </div>
@@ -257,14 +257,14 @@
                           <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
                             <swiper-slide>
                               <div class="prop-img">
-                                <img src="@images/img/slide 4.png" alt="">
+                                <img src="@images/img/condo12.jpg" alt="">
                               </div>
                             </swiper-slide>
                             <swiper-slide>
-                            <img src="@images/img/slide 5.png" alt="">
+                            <img src="@images/img/condo17.jpg" alt="">
                             </swiper-slide>
                             <swiper-slide>
-                            <img src="@images/img/slide 6.png" alt="">
+                            <img src="@images/img/condo10.jpg" alt="">
                             </swiper-slide>
                           </swiper>
                         </div>
@@ -303,14 +303,14 @@
                           <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
                             <swiper-slide>
                               <div class="prop-img">
-                                <img src="@images/img/slide 4.png" alt="">
+                                <img src="@images/img/condo14.jpg" alt="">
                               </div>
                             </swiper-slide>
                             <swiper-slide>
-                            <img src="@images/img/slide 5.png" alt="">
+                            <img src="@images/img/condo9.jpg" alt="">
                             </swiper-slide>
                             <swiper-slide>
-                            <img src="@images/img/slide 6.png" alt="">
+                            <img src="@images/img/condo1.jpg" alt="">
                             </swiper-slide>
                           </swiper>
                         </div>
@@ -349,14 +349,14 @@
                           <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
                             <swiper-slide>
                               <div class="prop-img">
-                                <img src="@images/img/slide 4.png" alt="">
+                                <img src="@images/img/condo11.jpg" alt="">
                               </div>
                             </swiper-slide>
                             <swiper-slide>
-                            <img src="@images/img/slide 5.png" alt="">
+                            <img src="@images/img/condo11.jpg" alt="">
                             </swiper-slide>
                             <swiper-slide>
-                            <img src="@images/img/slide 6.png" alt="">
+                            <img src="@images/img/condo11.jpg" alt="">
                             </swiper-slide>
                           </swiper>
                         </div>
@@ -403,14 +403,14 @@
                         <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
                           <swiper-slide>
                             <div class="prop-img">
-                              <img src="@images/img/slide 4.png" alt="">
+                              <img src="@images/img/condo12.jpg" alt="">
                             </div>
                           </swiper-slide>
                           <swiper-slide>
-                          <img src="@images/img/slide 5.png" alt="">
+                          <img src="@images/img/condo12.jpg" alt="">
                           </swiper-slide>
                           <swiper-slide>
-                          <img src="@images/img/slide 6.png" alt="">
+                          <img src="@images/img/condo13.jpg" alt="">
                           </swiper-slide>
                         </swiper>
                       </div>
@@ -457,14 +457,14 @@
                           <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
                             <swiper-slide>
                               <div class="prop-img">
-                                <img src="@images/img/slide 4.png" alt="">
+                                <img src="@images/img/condo14.jpg" alt="">
                               </div>
                             </swiper-slide>
                             <swiper-slide>
-                            <img src="@images/img/slide 5.png" alt="">
+                            <img src="@images/img/condo13.jpg" alt="">
                             </swiper-slide>
                             <swiper-slide>
-                            <img src="@images/img/slide 6.png" alt="">
+                            <img src="@images/img/condo15.jpg" alt="">
                             </swiper-slide>
                           </swiper>
                         </div>
@@ -503,14 +503,14 @@
                           <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
                             <swiper-slide>
                               <div class="prop-img">
-                                <img src="@images/img/slide 4.png" alt="">
+                                <img src="@images/img/condo15.jpg" alt="">
                               </div>
                             </swiper-slide>
                             <swiper-slide>
-                            <img src="@images/img/slide 5.png" alt="">
+                            <img src="@images/img/condo14.jpg" alt="">
                             </swiper-slide>
                             <swiper-slide>
-                            <img src="@images/img/slide 6.png" alt="">
+                            <img src="@images/img/condo7.jpg" alt="">
                             </swiper-slide>
                           </swiper>
                         </div>
@@ -557,14 +557,14 @@
                         <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
                           <swiper-slide>
                             <div class="prop-img">
-                              <img src="@images/img/slide 4.png" alt="">
+                              <img src="@images/img/condo16.jpg" alt="">
                             </div>
                           </swiper-slide>
                           <swiper-slide>
-                          <img src="@images/img/slide 5.png" alt="">
+                          <img src="@images/img/condo9.jpg" alt="">
                           </swiper-slide>
                           <swiper-slide>
-                          <img src="@images/img/slide 6.png" alt="">
+                          <img src="@images/img/condo16.jpg" alt="">
                           </swiper-slide>
                         </swiper>
                       </div>
@@ -603,14 +603,14 @@
                         <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
                           <swiper-slide>
                             <div class="prop-img">
-                              <img src="@images/img/slide 4.png" alt="">
+                              <img src="@images/img/condo17.jpg" alt="">
                             </div>
                           </swiper-slide>
                           <swiper-slide>
-                          <img src="@images/img/slide 5.png" alt="">
+                          <img src="@images/img/condo16.jpg" alt="">
                           </swiper-slide>
                           <swiper-slide>
-                          <img src="@images/img/slide 6.png" alt="">
+                          <img src="@images/img/condo19.jpg" alt="">
                           </swiper-slide>
                         </swiper>
                       </div>
@@ -657,14 +657,14 @@
                           <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
                             <swiper-slide>
                               <div class="prop-img">
-                                <img src="@images/img/slide 4.png" alt="">
+                                <img src="@images/img/condo19.jpg" alt="">
                               </div>
                             </swiper-slide>
                             <swiper-slide>
-                            <img src="@images/img/slide 5.png" alt="">
+                            <img src="@images/img/condo20.jpg" alt="">
                             </swiper-slide>
                             <swiper-slide>
-                            <img src="@images/img/slide 6.png" alt="">
+                            <img src="@images/img/condo7.jpg" alt="">
                             </swiper-slide>
                           </swiper>
                         </div>
@@ -711,14 +711,14 @@
                           <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
                             <swiper-slide>
                               <div class="prop-img">
-                                <img src="@images/img/slide 4.png" alt="">
+                                <img src="@images/img/condo11.jpg" alt="">
                               </div>
                             </swiper-slide>
                             <swiper-slide>
-                            <img src="@images/img/slide 5.png" alt="">
+                            <img src="@images/img/condo9.jpg" alt="">
                             </swiper-slide>
                             <swiper-slide>
-                            <img src="@images/img/slide 6.png" alt="">
+                            <img src="@images/img/condo7.jpg" alt="">
                             </swiper-slide>
                           </swiper>
                         </div>
