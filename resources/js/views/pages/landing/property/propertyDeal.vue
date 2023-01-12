@@ -25,32 +25,32 @@ const currentTab = ref(0)
       <section class="property_image_sec">
         <div class="container-fluid">
           <VRow class="">
-            <VCol md="6">
+            <VCol md="6" sm="12" cols="12">
               <div class="image_section_left">
                   <div class="overlay"></div>
                   <img src="@images/img/22.png" alt="">
                   <VBtn class="view_all_btn" @click="isDialogVisible = true">View all photos</VBtn>
               </div>
             </VCol>
-            <VCol md="6">
+            <VCol md="6" sm="12" cols="12">
               <div class="card">
                 <VRow>
-                  <VCol md="6">
+                  <VCol md="6" sm="6" cols="6">
                     <div class="propimage">
                       <img src="@images/img/slide 3.png" alt="">
                     </div>
                   </VCol>
-                  <VCol md="6">
+                  <VCol md="6" sm="6" cols="6">
                     <div class="propimage">
                       <img src="@images/img/slide 2.png" alt="">
                     </div>
                   </VCol>
-                  <VCol md="6">
+                  <VCol md="6" sm="6" cols="6">
                     <div class="propimage">
                       <img src="@images/img/slide 2.png" alt="">
                     </div>
                   </VCol>
-                  <VCol md="6">
+                  <VCol md="6" sm="6" cols="6">
                     <div class="propimage">
                       <img src="@images/img/slide 1.png" alt="">
                     </div>
@@ -61,9 +61,9 @@ const currentTab = ref(0)
           </VRow>
         </div>
       </section>
-      <div class="container mt-10 mb-10">
+      <div class="container mt-10 mb-10 property_deal_cont">
         <VRow>
-          <VCol lg="8">
+          <VCol lg="8" md="8" cols="12" class="col-left">
             <div class="property_detail">
               <div class="">
                 <div class="property_det_tags mb-3">
@@ -177,7 +177,7 @@ const currentTab = ref(0)
               </div>
             </div>
           </VCol> 
-          <VCol lg="4">
+          <VCol lg="4" md="4" cols="12" class="col-right">
             <div class="projected_card card mb-2">
                 <div class="projected_card_header property_detail_heading">
                   <h2>Starting Price</h2>
@@ -222,30 +222,6 @@ const currentTab = ref(0)
                 <div class="projected_card_footer">
                   <VBtn size="large" block class="primary-btn">Invest</VBtn>
                 </div>
-            </div>
-            <div class="card">
-              <div class="property_thumb">
-                <img src="@images/img/slide 1.png" alt="" />
-              </div>
-            </div>
-            <div class="card mt-5">
-              <VRow class="multi_prop_images">
-                <VCol md="3">
-                  <img src="@images/img/slide 2.png" alt=""/>
-                </VCol>
-                <VCol md="3">
-                  <img src="@images/img/slide 3.png" alt=""/>
-                </VCol>
-                <VCol md="3">
-                  <img src="@images/img/11.png" alt=""/>
-                </VCol>
-                <VCol md="3">
-                  <img src="@images/img/22.png" alt=""/>
-                </VCol>
-                <VCol md="12">
-                  <VBtn>View all photos</VBtn>
-                </VCol>
-              </VRow>
             </div>
           </VCol>
         </VRow>

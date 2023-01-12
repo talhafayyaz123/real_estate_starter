@@ -9,13 +9,13 @@
           <h2>Blog Posts</h2>
           <p>A fully-compliant, fractional, tokenized ownership model allows investors from around the world to buy into the US real estate market for the first time. Blockchain-based.</p>
         </div>
-        <VRow class="mt-10">
-          <VCol md="6">
+        <VRow class="mt-10 justify-center">
+          <VCol md="6" cols="12">
             <div class="show_list">
               <h2>Showing 3 results</h2>
             </div>
           </VCol>
-          <VCol md="6">
+          <VCol md="6" cols="10">
             <div class="Grid_View">
               <VTabs v-model="GridTab">
                 <VTab><v-icon size="24" class=""> mdi-view-grid-outline</v-icon></VTab>
@@ -27,7 +27,7 @@
         <VWindow v-model="GridTab">
           <VWindowItem>
             <VRow class="mt-5">
-              <VCol lg="4">
+              <VCol lg="4" md="4" sm="6" cols="12">
                 <div class="blog_card">
                   <div class="blog_card_header">
                     <RouterLink :to="{name:'blogs-detail'}"><img src="@images/img/blog1.png" alt=""/></RouterLink>
@@ -49,7 +49,7 @@
                   </div>
                 </div>
               </VCol>
-              <VCol lg="4">
+              <VCol lg="4" md="4" sm="6" cols="12">
                 <div class="blog_card">
                   <div class="blog_card_header">
                     <RouterLink  :to="{name:'blogs-detail'}"><img src="@images/img/blog2.png" alt=""/></RouterLink>
@@ -71,7 +71,7 @@
                   </div>
                 </div>
               </VCol>
-              <VCol lg="4">
+              <VCol lg="4" md="4" sm="6" cols="12">
                 <div class="blog_card">
                   <div class="blog_card_header">
                     <img src="@images/img/slide 4.png" alt="">
@@ -93,7 +93,7 @@
                   </div>
                 </div>
               </VCol>
-              <VCol lg="4">
+              <VCol lg="4" md="4" sm="6" cols="12">
                 <div class="blog_card">
                   <div class="blog_card_header">
                     <img src="@images/img/slide 5.png" alt="">
@@ -115,7 +115,7 @@
                   </div>
                 </div>
               </VCol>
-              <VCol lg="4">
+              <VCol lg="4" md="4" sm="6" cols="12">
                 <div class="blog_card">
                   <div class="blog_card_header">
                     <img src="@images/img/slide 6.png" alt="">
@@ -137,7 +137,7 @@
                   </div>
                 </div>
               </VCol>
-              <VCol lg="4">
+              <VCol lg="4" md="4" sm="6" cols="12">
                 <div class="blog_card">
                   <div class="blog_card_header">
                     <img src="@images/img/slide 3.png" alt="">
@@ -163,7 +163,7 @@
           </VWindowItem>
           <VWindowItem>
             <VRow class="mt-5">
-              <VCol lg="12">
+              <VCol lg="12" cols="12">
                 <div class="blog_card_list">
                   <div class="blog_card_header">
                     <img src="@images/img/blog1.png" alt="">
@@ -188,7 +188,7 @@
                   </div>
                 </div>
               </VCol>
-              <VCol lg="12">
+              <VCol lg="12" cols="12">
                 <div class="blog_card_list">
                   <div class="blog_card_header">
                     <img src="@images/img/blog2.png" alt="">
@@ -213,7 +213,7 @@
                   </div>
                 </div>
               </VCol>
-              <VCol lg="12">
+              <VCol lg="12" cols="12">
                 <div class="blog_card_list">
                   <div class="blog_card_header">
                     <img src="@images/img/slide 4.png" alt="">
@@ -238,7 +238,7 @@
                   </div>
                 </div>
               </VCol>
-              <VCol lg="12">
+              <VCol lg="12" cols="12">
                 <div class="blog_card_list">
                   <div class="blog_card_header">
                     <img src="@images/img/slide 5.png" alt="">
@@ -263,7 +263,7 @@
                   </div>
                 </div>
               </VCol>
-              <VCol lg="12">
+              <VCol lg="12" cols="12">
                 <div class="blog_card_list">
                   <div class="blog_card_header">
                     <img src="@images/img/slide 6.png" alt="">
@@ -288,7 +288,7 @@
                   </div>
                 </div>
               </VCol>
-              <VCol lg="12">
+              <VCol lg="12" cols="12">
                 <div class="blog_card_list">
                   <div class="blog_card_header">
                     <img src="@images/img/slide 3.png" alt="">

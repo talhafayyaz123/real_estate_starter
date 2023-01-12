@@ -99,7 +99,7 @@
         <div class="container">
           <h2>You May Also Like</h2>
           <VRow class="mt-4">
-            <VCol lg="4">
+            <VCol lg="4"  md="4" sm="6" cols="12">
                 <div class="blog_card">
                   <div class="blog_card_header">
                     <img src="@images/img/blog2.png" alt="">
@@ -121,7 +121,7 @@
                   </div>
                 </div>
             </VCol>
-            <VCol lg="4">
+            <VCol lg="4"  md="4" sm="6" cols="12">
               <div class="blog_card">
                 <div class="blog_card_header">
                   <img src="@images/img/slide 4.png" alt="">
@@ -143,7 +143,7 @@
                 </div>
               </div>
             </VCol>
-            <VCol lg="4">
+            <VCol lg="4"  md="4" sm="6" cols="12">
               <div class="blog_card">
                 <div class="blog_card_header">
                   <img src="@images/img/slide 5.png" alt="">
