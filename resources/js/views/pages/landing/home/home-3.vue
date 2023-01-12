@@ -89,19 +89,19 @@
     <div class="container">
       <div class="completed_project_card" data-aos="fade-in" data-aos-duration="1500">
         <VRow>
-          <VCol lg="3">
+          <VCol lg="3" md="3" sm="3" cols="6">
             <h4>23K+</h4>
             <p>registered users</p>
           </VCol>
-          <VCol lg="3">
+          <VCol lg="3" md="3" sm="3" cols="6">
             <h4>$ 43M+</h4>
             <p>in properties funded</p>
           </VCol>
-          <VCol lg="3">
+          <VCol lg="3" md="3" sm="3" cols="6">
             <h4>152+</h4>
             <p>user nationalities</p>
           </VCol>
-          <VCol lg="3">
+          <VCol lg="3" md="3" sm="3" cols="6">
             <h4>$ 2.5M+</h4>
             <p>rental income paid</p>
           </VCol>
@@ -116,7 +116,7 @@
         <h2>How it works</h2>
       </div>
       <VRow>
-        <VCol lg="3"  data-aos="fade-up" data-aos-duration="1500">
+        <VCol lg="3" md="3" sm="6" cols="12"  data-aos="fade-up" data-aos-duration="1500">
           <div class="work_item active">
             <div class="work_heading">
               <span>01</span>
@@ -125,7 +125,7 @@
             <p>Sign up in less than 3 minutes and browse our collection of properties</p>
           </div>
         </VCol>
-        <VCol lg="3"  data-aos="fade-up" data-aos-duration="1500">
+        <VCol lg="3" md="3" sm="6"  cols="12" data-aos="fade-up" data-aos-duration="1500">
           <div class="work_item">
             <div class="work_heading">
               <span>02</span>
@@ -134,7 +134,7 @@
             <p>Buy a piece of the ones you love, starting from only $ 500</p>
           </div>
         </VCol>
-        <VCol lg="3" data-aos="fade-up" data-aos-duration="1500">
+        <VCol lg="3" md="3" sm="6" cols="12" data-aos="fade-up" data-aos-duration="1500">
           <div class="work_item">
             <div class="work_heading">
               <span>03</span>
@@ -143,7 +143,7 @@
             <p>Sit back and track your income and investments online</p>
           </div>
         </VCol>
-        <VCol lg="3" data-aos="fade-up" data-aos-duration="1500">
+        <VCol lg="3" md="3" sm="6" cols="12" data-aos="fade-up" data-aos-duration="1500">
           <div class="work_item">
             <div class="work_heading">
               <span>04</span>
@@ -161,9 +161,9 @@
       <div class="real_section_heading"  data-aos="fade-up" data-aos-duration="1500">
         <h2>How will you make money?</h2>
       </div>
-      <VRow class="align-center">
-        <VCol lg="4" class="left_income_card"  data-aos="fade-right" data-aos-duration="1500">
-          <div class="income_card mb-10">
+      <VRow class="align-center justify-center">
+        <VCol lg="4" md="3" sm="12" cols="12" class="left_income_card"  data-aos="fade-right" data-aos-duration="1500">
+          <div class="income_card mb-lg-10 mb-5">
             <div class="income_icon">
               <v-icon size="34"> mdi-chart-areaspline  </v-icon>
             </div>
@@ -171,7 +171,7 @@
             <p>Consistent passive income from monthly rental payments</p>
           </div>
         </VCol>
-        <VCol lg="4" data-aos="fade-up" data-aos-duration="1500">
+        <VCol lg="4" md="6" sm="7" cols="12" data-aos="fade-up" data-aos-duration="1500">
           <div class="property-card">
               <div class="prop-img">
                 <!--======================================-->
@@ -217,8 +217,8 @@
               </div>
           </div>
         </VCol>
-        <VCol lg="4" class="right_income_card" data-aos="fade-left" data-aos-duration="1500">
-          <div class="income_card mt-10">
+        <VCol lg="4" md="3" sm="12" cols="12" class="right_income_card" data-aos="fade-left" data-aos-duration="1500">
+          <div class="income_card mt-5">
             <div class="income_icon">
               <v-icon size="34"> mdi-chart-line-stacked  </v-icon>
             </div>
@@ -244,7 +244,19 @@
             <VBtn class="swiper-button-prev"><v-icon size="24" class=""> mdi-arrow-left   </v-icon></VBtn>
             <VBtn class="swiper-button-next"> <v-icon size="24" class=""> mdi-arrow-right   </v-icon> </VBtn>
           </div>
-          <swiper class="condos_featured_slider" :slidesPerView="3" :loop="true" :modules="condos_modules" :navigation="{nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev'}" :pagination="{dynamicBullets: true, }">
+          <swiper class="condos_featured_slider" 
+              :breakpoints="{
+                '340': {
+                  slidesPerView: 1,
+                },
+                '670': {
+                  slidesPerView: 2,
+                },
+                '1100': {
+                  slidesPerView: 3,
+                },
+              }" 
+              :slidesPerView="3" :loop="true" :modules="condos_modules" :navigation="{nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev'}" :pagination="{dynamicBullets: true, }">
             <swiper-slide>
               <div class="property-card">
                   <div class="prop-img">
@@ -464,7 +476,19 @@
             <VBtn class="swiper-button-prev"><v-icon size="24" class=""> mdi-arrow-left   </v-icon></VBtn>
             <VBtn class="swiper-button-next"> <v-icon size="24" class=""> mdi-arrow-right   </v-icon> </VBtn>
           </div>
-          <swiper class="condos_featured_slider" :slidesPerView="3"  :loop="true" :modules="modules" :navigation="{nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev'}" :pagination="{dynamicBullets: true, }">
+          <swiper class="condos_featured_slider"
+              :breakpoints="{
+                '340': {
+                  slidesPerView: 1,
+                },
+                '670': {
+                  slidesPerView: 2,
+                },
+                '1100': {
+                  slidesPerView: 3,
+                },
+              }"
+              :slidesPerView="3"  :loop="true" :modules="modules" :navigation="{nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev'}" :pagination="{dynamicBullets: true, }">
             <swiper-slide>
               <div class="property-card">
                   <div class="prop-img">
@@ -687,7 +711,7 @@
         <h2>Investment calculator</h2>
       </div>
       <VRow>
-        <VCol lg="5"  data-aos="fade-up" data-aos-duration="1500">
+        <VCol lg="5" sm="12" cols="12"  data-aos="fade-up" data-aos-duration="1500">
           <div class="invest_cal_card">
             <h2>How much do you want to invest?</h2>
             <div class="">
@@ -722,7 +746,7 @@
             </div>
           </div>
         </VCol>
-        <VCol lg="7"  data-aos="fade-up" data-aos-duration="1500">
+        <VCol lg="7" sm="12" cols="12" data-aos="fade-up" data-aos-duration="1500">
           <div class="invest_right">
             <VRow>
               <VCol md="6">
@@ -775,7 +799,7 @@
         <h2>Why we are the best</h2>
       </div>
       <VRow class="">
-        <VCol lg="4" md="6"  data-aos="fade-up" data-aos-duration="1500">
+        <VCol lg="4" md="6" sm="6" cols="12"  data-aos="fade-up" data-aos-duration="1500">
           <div class="feature_item">
             <div class="d-flex align-center mb-2">
               <v-icon size="28" class="mr-2"> mdi-account </v-icon>
@@ -784,7 +808,7 @@
             <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
           </div>
         </VCol>
-        <VCol lg="4" md="6"  data-aos="fade-up" data-aos-duration="1500">
+        <VCol lg="4" md="6" sm="6" cols="12"  data-aos="fade-up" data-aos-duration="1500">
           <div class="feature_item">
             <div class="d-flex align-center mb-2">
               <v-icon size="28" class="mr-2"> mdi-license </v-icon>
@@ -793,7 +817,7 @@
             <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
           </div>
         </VCol>
-        <VCol lg="4" md="6"  data-aos="fade-up" data-aos-duration="1500">
+        <VCol lg="4" md="6" sm="6" cols="12"  data-aos="fade-up" data-aos-duration="1500">
           <div class="feature_item">
             <div class="d-flex align-center mb-2">
               <v-icon size="28" class="mr-2"> mdi-phone-classic </v-icon>
@@ -802,7 +826,7 @@
             <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
           </div>
         </VCol>
-        <VCol lg="4" md="6"  data-aos="fade-up" data-aos-duration="1500">
+        <VCol lg="4" md="6" sm="6" cols="12"  data-aos="fade-up" data-aos-duration="1500">
           <div class="feature_item">
             <div class="d-flex align-center mb-2">
               <v-icon size="28" class="mr-2"> mdi-rocket-launch </v-icon>
@@ -811,7 +835,7 @@
             <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
           </div>
         </VCol>
-        <VCol lg="4" md="6"  data-aos="fade-up" data-aos-duration="1500">
+        <VCol lg="4" md="6" sm="6" cols="12"  data-aos="fade-up" data-aos-duration="1500">
           <div class="feature_item">
             <div class="d-flex align-center mb-2">
               <v-icon size="28" class="mr-2"> mdi-diamond-stone </v-icon>
@@ -820,7 +844,7 @@
             <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
           </div>
         </VCol>
-        <VCol lg="4" md="6"  data-aos="fade-up" data-aos-duration="1500">
+        <VCol lg="4" md="6" sm="6" cols="12"  data-aos="fade-up" data-aos-duration="1500">
           <div class="feature_item">
             <div class="d-flex align-center mb-2">
               <v-icon size="28" class="mr-2"> mdi-comment </v-icon>
@@ -906,7 +930,19 @@ Fusce ac mattis nulla. Morbi eget ornare dui. </p>
       </div>
       <VRow class="mt-16"  data-aos="fade-up" data-aos-duration="1500">
         <VCol sm="12">
-          <swiper :slidesPerView="5" :modules="modules" class="mySwiper">
+          <swiper 
+              :breakpoints="{
+                '340': {
+                  slidesPerView: 2,
+                },
+                '670': {
+                  slidesPerView: 3,
+                },
+                '1100': {
+                  slidesPerView: 5,
+                },
+              }" 
+               :slidesPerView="5" :modules="modules" class="mySwiper">
               <swiper-slide>
                 <div class="customers_img">
                   <img src="@images/img/cus1.webp" alt="">
@@ -947,14 +983,14 @@ Fusce ac mattis nulla. Morbi eget ornare dui. </p>
         <VCol>
           <VForm class="mt-3">
             <VRow>
-              <VCol cols="6">
+              <VCol lg="6" md="6" sm="6" cols="12">
                 <VTextField
                   label="Your Name"
                   placeholder="Enter Name"
                 />
               </VCol>
 
-              <VCol cols="6">
+              <VCol lg="6" md="6" sm="6" cols="12">
                 <VTextField
                   label="Phone Number"
                   type="number"
@@ -962,7 +998,7 @@ Fusce ac mattis nulla. Morbi eget ornare dui. </p>
                 />
               </VCol>
 
-              <VCol cols="6">
+              <VCol lg="6" md="6" sm="6" cols="12">
                 <VTextField
                   label="Email"
                   type="email"

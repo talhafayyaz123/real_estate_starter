@@ -30,10 +30,10 @@
               <VCol lg="4">
                 <div class="blog_card">
                   <div class="blog_card_header">
-                    <img src="@images/img/blog1.png" alt="">
+                    <RouterLink :to="{name:'blogs-detail'}"><img src="@images/img/blog1.png" alt=""/></RouterLink>
                   </div>
                   <div class="blog_card_body">
-                    <h2><a href="">Integer Maecenas Eget Viverra</a></h2>
+                    <h2><RouterLink :to="{name:'blogs-detail'}">Integer Maecenas Eget Viverra</RouterLink></h2>
                     <p>Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem.</p>
                     <div class="blog_meta">
                       <div class="blog_auther">
@@ -46,19 +46,16 @@
                         <p>June 28, 2018</p>
                       </div>
                     </div>
-                  </div>
-                  <div class="blog_card_footer">
-                    <RouterLink :to="{name:'blogs-detail'}">View Post</RouterLink>
                   </div>
                 </div>
               </VCol>
               <VCol lg="4">
                 <div class="blog_card">
                   <div class="blog_card_header">
-                    <img src="@images/img/blog2.png" alt="">
+                    <RouterLink  :to="{name:'blogs-detail'}"><img src="@images/img/blog2.png" alt=""/></RouterLink>
                   </div>
                   <div class="blog_card_body">
-                    <h2><a href="">Integer Maecenas Eget Viverra</a></h2>
+                    <h2><RouterLink  :to="{name:'blogs-detail'}">Integer Maecenas Eget Viverra</RouterLink></h2>
                     <p>Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem.</p>
                     <div class="blog_meta">
                       <div class="blog_auther">
@@ -71,9 +68,6 @@
                         <p>June 28, 2018</p>
                       </div>
                     </div>
-                  </div>
-                  <div class="blog_card_footer">
-                    <a href="">View Post</a>
                   </div>
                 </div>
               </VCol>
@@ -97,9 +91,6 @@
                       </div>
                     </div>
                   </div>
-                  <div class="blog_card_footer">
-                    <a href="">View Post</a>
-                  </div>
                 </div>
               </VCol>
               <VCol lg="4">
@@ -121,9 +112,6 @@
                         <p>June 28, 2018</p>
                       </div>
                     </div>
-                  </div>
-                  <div class="blog_card_footer">
-                    <a href="">View Post</a>
                   </div>
                 </div>
               </VCol>
@@ -147,9 +135,6 @@
                       </div>
                     </div>
                   </div>
-                  <div class="blog_card_footer">
-                    <a href="">View Post</a>
-                  </div>
                 </div>
               </VCol>
               <VCol lg="4">
@@ -171,9 +156,6 @@
                         <p>June 28, 2018</p>
                       </div>
                     </div>
-                  </div>
-                  <div class="blog_card_footer">
-                    <a href="">View Post</a>
                   </div>
                 </div>
               </VCol>

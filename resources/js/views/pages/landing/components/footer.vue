@@ -4,7 +4,7 @@
         <div class="container">
           <div class="fut_upper_footer">
             <v-row>
-              <v-col lg="3">
+              <v-col lg="3" md="3" sm="4" cols="12">
                 <div class="widgets">
                   <img src="@images/img/logo-white.png" alt="">
                   <p>Introducing the first decentralized platform for buying, selling, and managing real estate, powered by blockchain technology.</p>
@@ -27,8 +27,8 @@
                   </div>
                 </div>
               </v-col>
-              <v-col lg="3">
-                <div class="widgets">
+              <v-col  lg="3" md="3" sm="4" cols="6">
+                <div class="widgets text-left">
                   <h4>Company</h4>
                   <ul class="quick_nav">
                     <li>
@@ -49,8 +49,8 @@
                   </ul>
                 </div>
               </v-col>
-              <v-col lg="3">
-                <div class="widgets">
+              <v-col  lg="3" md="3" sm="4" cols="6">
+                <div class="widgets text-left">
                   <h4>Connect</h4>
                   <ul class="quick_nav">
                     <li>
@@ -71,12 +71,12 @@
                   </ul>
                 </div>
               </v-col>
-              <v-col lg="3">
-                <div class="widgets">
+              <v-col  lg="3" md="3" sm="4" cols="12">
+                <div class="widgets text-left">
                   <h4>Head Office</h4>
                   <div class="footer_contact_info">
                     <div class="f_location mb-3 d-flex align-start">
-                        <svg style="width:41px;height:41px" viewBox="0 0 24 24">
+                        <svg style="width:35px;height:35px" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
                         </svg>
                       <p>City Hall 100 Queen St W, Toronto, Ontario M5H 2N1 Canada.</p>

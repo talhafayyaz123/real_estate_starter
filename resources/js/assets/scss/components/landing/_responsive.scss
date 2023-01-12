@@ -43,3 +43,151 @@
   width: 100%;
   margin: auto;
 }
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+@media (max-width:1240px) {
+  .container{
+    padding: 0px 50px;
+  }
+  .banner_sec_1{
+    min-height: auto;
+    padding: 50px 0px 80px;
+    .banner_filter{
+      padding: 0px 50px;
+    }
+  }
+  .filter {
+    .filter_body{
+      padding: 40px 30px 30px;
+    }
+    .filter_grid{
+      flex-wrap: wrap ;
+      .filter_s{
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+@media (max-width:1100px) {
+  .banner_sec_1{
+    min-height: auto;
+    padding: 50px 0px 80px;
+    .banner_filter{
+      padding: 0px 50px;
+      width: auto;
+    }
+  }
+  .filter {
+    .filter_body{
+      padding: 40px 30px 30px;
+    }
+    .filter_grid{
+      flex-wrap: wrap ;
+      .filter_s{
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .realestate_upper_header{
+    display: none;
+  }
+  .realestate_head{
+    padding: 15px 0px;
+    .realestate_header {
+      .realestate_brand{
+        width: 50%;
+        .realestate_logo{
+          img{
+            width: 50%;
+          }
+        }
+      }
+      .realestate_nav {
+        width: 50%;
+        justify-content: flex-end;
+        .realestate_navigation{
+          display: none;
+        }
+        .mobile_nav_btn{
+          display: block;
+        }
+      }
+    }
+  }
+  .income_card{
+    h2{
+      font-size: 18px;
+    }
+    p{
+      font-size: 16px;
+    }
+  }
+  .left_income_card,.right_income_card{
+    justify-content: center;
+  }
+  .completed_project_sec .completed_project_card {
+    h4{
+      font-size: 26px;
+    }
+    p{
+      font-size: 14px;
+    }
+  }
+}
+@media (max-width:600px) {
+  .real_section_heading{
+    h2{
+      font-size: 26px;
+    }
+    p{
+      font-size: 16px;
+    }
+  }
+  .banner_sec_1{
+    min-height: auto;
+    padding: 80px 0px 100px;
+    .banner_filter{
+      padding: 0px 20px;
+    }
+  }
+  .filter .filter_body {
+    padding: 40px 20px 30px;
+  }
+  .container{
+    padding: 0px 15px;
+  }
+  .realestate_footer {
+    .widgets{
+      text-align: center;
+      .social_links{
+        justify-content: center;
+      }
+      h4{
+        margin-bottom: 10px;
+      }
+      svg{
+        width: 24px !important;
+        height: 24px !important;
+      }
+      ul {
+        li{
+          margin-bottom: 4px;
+        }
+      }
+    }
+  }
+  .banner_sec_1 .banner_filter{
+    h1{
+      font-size: 30px;
+      line-height: 35px;
+    }
+    p{
+      font-size: 16px;
+    }
+  }
+  .realestate_head .realestate_header .realestate_brand .realestate_logo img{
+    width: 90%;
+  }
+}

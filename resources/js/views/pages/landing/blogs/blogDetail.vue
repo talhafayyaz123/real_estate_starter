@@ -7,14 +7,9 @@
       <section class="blogs_detail_banner">
         <div class="overlay"></div>
         <div class="container">
-          <h2>5 Efficient Rules How to Organize Your Working Place</h2>
-          <!-- <h4>Relationship tips couples therapists are giving all the time</h4> -->
-          <div class="blog_auther">
-            <a href="">
-              <img src="@images/img/broker 1.png" alt="">
-              <span>Joanna Wellick</span>
-            </a>
-          </div>
+          <h2>Integer Maecenas Eget Viverra</h2>
+          <p>Structured gripped tape invisible moulded cups for sauppor firm hold strong powermesh front liner sport detail. </p>
+          
         </div>
       </section>
       <section class="blog_content mt-10 mb-10">
@@ -47,6 +42,58 @@
           </div>
         </div>
       </section>
+      <section class="blog_info mb-10">
+        <div class="container">
+          <v-divider/>
+          <div class="meta mt-5 mb-5">
+            <div class="blog_auther">
+              <a href="">
+                <img src="@images/img/broker 1.png" alt="">
+                <span>Joanna Wellick</span>
+              </a>
+            </div>
+            <div class="meta_link">
+              <a href=""><v-icon size="24" class=""> mdi-share-all</v-icon> Share</a>
+              <a href=""><v-icon size="24" class=""> mdi-facebook</v-icon> Share</a>
+              <a href=""><v-icon size="24" class=""> mdi-twitter</v-icon> Tweet</a>
+            </div>
+          </div>
+          <v-divider/>
+          <VRow>
+            <VCol lg="8">
+              <div class="comment contact mt-5">
+                <h2>Leave a comment</h2>
+                <VForm class="mt-6">
+                  <VRow>
+                    <VCol cols="12">
+                      <VTextField
+                        label="Your Name"
+                        placeholder="Enter Name"
+                      />
+                    </VCol>
+
+                    <VCol cols="12">
+                      <VTextField
+                        label="Email"
+                        type="email"
+                        placeholder="Enter Email"
+                      />
+                    </VCol>
+
+                    <VCol cols="12">
+                      <VTextarea label="Message" placeholder="Enter Message"/>
+                    </VCol>
+
+                    <VCol cols="12" class="mt-10" >
+                      <VBtn class="primary-btn" type="submit"> Submit </VBtn>
+                    </VCol>
+                  </VRow>
+                </VForm>
+              </div>
+            </VCol>
+          </VRow>
+        </div>
+      </section>
       <v-divider/>
       <section class="related-posts mt-4 mb-16">
         <div class="container">
@@ -72,9 +119,6 @@
                       </div>
                     </div>
                   </div>
-                  <div class="blog_card_footer">
-                    <a href="">View Post</a>
-                  </div>
                 </div>
             </VCol>
             <VCol lg="4">
@@ -97,9 +141,6 @@
                     </div>
                   </div>
                 </div>
-                <div class="blog_card_footer">
-                  <a href="">View Post</a>
-                </div>
               </div>
             </VCol>
             <VCol lg="4">
@@ -121,9 +162,6 @@
                       <p>June 28, 2018</p>
                     </div>
                   </div>
-                </div>
-                <div class="blog_card_footer">
-                  <a href="">View Post</a>
                 </div>
               </div>
             </VCol>

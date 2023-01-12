@@ -124,13 +124,72 @@
               >
             </li>
           </ul>
+          <div class="mobile_nav_btn" @click="openSidenav()">
+            <VIcon size="28" icon="tabler-align-right" />
+          </div>
         </div>
       </div>
     </div>
   </header>
+  <!--=========================================================================================-->
+  <!--=========================================================================================-->
+
+  <div class="mobile_sidebar" :class="{ active: isActive }">
+    <div class="overlay_nav" @click="closeSidenav()"></div>
+    <div class="user_auth_nav">
+      <div class="mobileclose_nav_btn" @click="closeSidenav()">
+          <VIcon size="28" icon="tabler-align-left" />
+      </div>
+      <div class="d-flex align-center">
+        <RouterLink :to="{ name: 'login' }" v-if="!isLoggedIn" class="">
+          login
+        </RouterLink>
+        <RouterLink :to="{name: 'register'}" v-if="!isLoggedIn" class="sign_btn">Signup</RouterLink>
+        <RouterLink :to="{ name: 'dashboards-analytics' }" v-else> Dashboard </RouterLink>
+      </div>
+      
+    </div>
+    <ul class="sidebar_navigation">
+      <li>
+        <RouterLink class-active="active" :to="{ name: 'home' }">Home</RouterLink>
+      </li>
+      <li>
+        <RouterLink class-active="active" :to="{ name: 'property' }">Property</RouterLink>
+      </li>
+      <li>
+        <RouterLink class-active="active" :to="{ name: 'condo-finder' }">Condos Finder</RouterLink>
+      </li>
+      <li>
+        <RouterLink class-active="active" :to="{ name: 'brokers' }">Agents</RouterLink>
+      </li>
+      <li>
+        <RouterLink class-active="active" :to="{ name: 'blogs' }">Blogs</RouterLink>
+      </li>
+    </ul>
+  </div>
+  <!--=========================================================================================-->
+  <!--=========================================================================================-->
 </template>
 
 <script setup>
 import { isUserLoggedIn } from "../../../../router/utils";
 const isLoggedIn = isUserLoggedIn();
+</script>
+<script>
+  export default{
+    data() {
+      return {
+        isActive: false,
+      }
+    },
+    methods: {
+      openSidenav(){
+        this.isActive = 'true'
+      },
+      closeSidenav(){
+        this.isActive = !this.isActive
+      }
+    }
+
+  }
 </script>
