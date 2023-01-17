@@ -15,7 +15,6 @@
             </div>  
           </v-col>
           <v-col lg="7">
-            <img src="@images/img/bann.png" class="bann-img" alt="">
           </v-col>
         </v-row>
       </v-container>
@@ -242,14 +241,14 @@
                     class="mySwiper">
                       <swiper-slide>
                         <div class="prop-img">
-                          <img src="@images/img/slide 4.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                         </div>
                       </swiper-slide>
                       <swiper-slide>
-                          <img src="@images/img/slide 5.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                       </swiper-slide>
                       <swiper-slide>
-                          <img src="@images/img/slide 6.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                       </swiper-slide>
                     </swiper>
                   </div>
@@ -286,14 +285,14 @@
                     class="mySwiper">
                       <swiper-slide>
                         <div class="prop-img">
-                          <img src="@images/img/slide 5.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                         </div>
                       </swiper-slide>
                       <swiper-slide>
-                          <img src="@images/img/slide 4.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                       </swiper-slide>
                       <swiper-slide>
-                          <img src="@images/img/slide 6.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                       </swiper-slide>
                     </swiper>
                   </div>
@@ -330,14 +329,14 @@
                     class="mySwiper">
                       <swiper-slide>
                         <div class="prop-img">
-                          <img src="@images/img/slide 6.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                         </div>
                       </swiper-slide>
                       <swiper-slide>
-                          <img src="@images/img/slide 4.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                       </swiper-slide>
                       <swiper-slide>
-                          <img src="@images/img/slide 6.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                       </swiper-slide>
                     </swiper>
                   </div>
@@ -374,14 +373,14 @@
                     class="mySwiper">
                       <swiper-slide>
                         <div class="prop-img">
-                          <img src="@images/img/slide 4.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                         </div>
                       </swiper-slide>
                       <swiper-slide>
-                          <img src="@images/img/slide 5.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                       </swiper-slide>
                       <swiper-slide>
-                          <img src="@images/img/slide 6.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                       </swiper-slide>
                     </swiper>
                   </div>
@@ -431,14 +430,14 @@
                     class="mySwiper">
                       <swiper-slide>
                         <div class="prop-img">
-                          <img src="@images/img/slide 3.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                         </div>
                       </swiper-slide>
                       <swiper-slide>
-                          <img src="@images/img/slide 2.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                       </swiper-slide>
                       <swiper-slide>
-                          <img src="@images/img/slide 1.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                       </swiper-slide>
                     </swiper>
                   </div>
@@ -475,14 +474,14 @@
                     class="mySwiper">
                       <swiper-slide>
                         <div class="prop-img">
-                          <img src="@images/img/slide 1.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                         </div>
                       </swiper-slide>
                       <swiper-slide>
-                          <img src="@images/img/slide 2.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                       </swiper-slide>
                       <swiper-slide>
-                          <img src="@images/img/slide 3.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                       </swiper-slide>
                     </swiper>
                   </div>
@@ -519,14 +518,14 @@
                     class="mySwiper">
                       <swiper-slide>
                         <div class="prop-img">
-                          <img src="@images/img/slide 2.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                         </div>
                       </swiper-slide>
                       <swiper-slide>
-                          <img src="@images/img/slide 3.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                       </swiper-slide>
                       <swiper-slide>
-                          <img src="@images/img/slide 1.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                       </swiper-slide>
                     </swiper>
                   </div>
@@ -563,14 +562,14 @@
                     class="mySwiper">
                       <swiper-slide>
                         <div class="prop-img">
-                          <img src="@images/img/slide 1.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                         </div>
                       </swiper-slide>
                       <swiper-slide>
-                          <img src="@images/img/slide 2.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                       </swiper-slide>
                       <swiper-slide>
-                          <img src="@images/img/slide 3.png" alt="">
+                          <img src="@images/img/property/slide1.png" alt="">
                       </swiper-slide>
                     </swiper>
                   </div>

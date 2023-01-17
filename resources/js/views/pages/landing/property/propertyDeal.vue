@@ -37,22 +37,22 @@ const currentTab = ref(0)
                 <VRow>
                   <VCol md="6" sm="6" cols="6">
                     <div class="propimage">
-                      <img src="@images/img/slide 3.png" alt="">
+                      <img src="@images/img/property/slide3.png" alt="">
                     </div>
                   </VCol>
                   <VCol md="6" sm="6" cols="6">
                     <div class="propimage">
-                      <img src="@images/img/slide 2.png" alt="">
+                      <img src="@images/img/property/slide2.png" alt="">
                     </div>
                   </VCol>
                   <VCol md="6" sm="6" cols="6">
                     <div class="propimage">
-                      <img src="@images/img/slide 2.png" alt="">
+                      <img src="@images/img/property/slide2.png" alt="">
                     </div>
                   </VCol>
                   <VCol md="6" sm="6" cols="6">
                     <div class="propimage">
-                      <img src="@images/img/slide 1.png" alt="">
+                      <img src="@images/img/property/slide1.png" alt="">
                     </div>
                   </VCol>
                 </VRow>
