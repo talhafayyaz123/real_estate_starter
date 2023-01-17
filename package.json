@@ -5,7 +5,8 @@
     "dev": "npm run build:icons && vite --host",
     "build": "npm run build:icons && vite build",
     "lint": "eslint . -c .eslintrc.js --fix --ext .ts,.js,.vue,.tsx,.jsx",
-    "build:icons": "node resources/js/@iconify/build-icons.js"
+    "build:icons": "node resources/js/@iconify/build-icons.js",
+    "preview":"vite preview --host",
   },
   "dependencies": {
     "@casl/ability": "^6.2.0",

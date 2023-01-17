@@ -69,7 +69,7 @@ const login = () => {
     toast.success("User has been login successfully!", {
       timeout: 3000
     });
-    
+
   }).catch(e => {
     // const { errors: formErrors } = e.response.data
     // errors.value = formErrors
@@ -81,140 +81,53 @@ const login = () => {
 </script>
 
 <template>
-  <VRow
-    no-gutters
-    class="auth-wrapper"
-  >
-    <VCol
-      lg="8"
-      class="d-none d-lg-flex"
-    >
-      <div class="position-relative auth-bg rounded-lg w-100 ma-8 me-0">
-        <div class="d-flex align-center justify-center w-100 h-100">
-          <VImg
-            max-width="505"
-            :src="authThemeImg"
-            class="auth-illustration mt-16 mb-2"
-          />
-        </div>
+  <div class="realestate_auth">
+    <img class="bottomimage" src="@images/img/auth_bottom.png" alt=""/>
+    <div class="realestate_form">
+      <div class="realestate_form_box">
+        <!-- <h2>Login</h2> -->
+        <div class="text-center"><img src="@images/img/logo.png" alt=""/></div>
+        <VForm ref="loginFormRef" @submit.prevent="onSubmit">
+          <VRow>
+            <!-- email -->
+            <VCol cols="12">
+              <label for="" class="input_label">Email Address</label>
+              <VTextField single-line v-model="email" label="E.g. yourname@company.com" type="email" :rules="[requiredValidator, emailValidator]"
+                :error-messages="errors.email" />
+            </VCol>
 
-        <VImg
-          :src="authThemeMask"
-          class="auth-footer-mask"
-        />
+            <!-- password -->
+            <VCol cols="12">
+              <label for="" class="input_label">Password</label>
+              <VTextField single-line v-model="password" label="Enter your password" :rules="[requiredValidator]"
+                :type="isPasswordVisible ? 'text' : 'password'" :error-messages="errors.password"
+                :append-inner-icon="isPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'"
+                @click:append-inner="isPasswordVisible = !isPasswordVisible" />
+            </VCol>
+            <VCol cols="12" class="mt-3">
+              <VBtn block type="submit">
+                Login
+              </VBtn>
+            </VCol>
+            <VCol cols="12">
+              <div class="text-center mt-1">
+                <!-- <VCheckbox v-model="rememberMe" label="Remember me" /> -->
+                <RouterLink class="text-primary ms-2 mb-1" :to="{ name: 'forgot-password' }">
+                  Forgot Password?
+                </RouterLink>
+              </div>
+            </VCol>
+            <VCol cols="12">
+              <div class="join_us">
+                <p>Don’t have an account <RouterLink :to="{name:'register'}">Join us today</RouterLink></p>
+                <span>Regulated by the DFSA</span>
+              </div>
+            </VCol>
+          </VRow>
+        </VForm>
       </div>
-    </VCol>
-
-    <VCol
-      cols="12"
-      lg="4"
-      class="d-flex align-center justify-center"
-    >
-      <VCard
-        flat
-        :max-width="500"
-        class="mt-12 mt-sm-0 pa-4"
-      >
-        <VCardText>
-          <img src="@images/img/logo.png" alt="" class="mb-3 w-75"/>
-
-          <h5 class="text-h5 font-weight-semibold mb-1">
-            Welcome to Future State 👋🏻
-          </h5>
-          <p class="mb-0">
-            Please sign-in to your account and start the adventure
-          </p>
-        </VCardText>
-
-        <VCardText>
-          <VForm
-            ref="loginFormRef"
-            @submit.prevent="onSubmit"
-          >
-            <VRow>
-              <!-- email -->
-              <VCol cols="12">
-                <VTextField
-                  v-model="email"
-                  label="Email"
-                  type="email"
-                  :rules="[requiredValidator, emailValidator]"
-                  :error-messages="errors.email"
-                />
-              </VCol>
-
-              <!-- password -->
-              <VCol cols="12">
-                <VTextField
-                  v-model="password"
-                  label="Password"
-                  :rules="[requiredValidator]"
-                  :type="isPasswordVisible ? 'text' : 'password'"
-                  :error-messages="errors.password"
-                  :append-inner-icon="isPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'"
-                  @click:append-inner="isPasswordVisible = !isPasswordVisible"
-                />
-
-                <div class="d-flex align-center flex-wrap justify-space-between mt-2 mb-4">
-                  <VCheckbox
-                    v-model="rememberMe"
-                    label="Remember me"
-                  />
-                  <RouterLink
-                    class="text-primary ms-2 mb-1"
-                    :to="{ name: 'forgot-password'}"
-                  >
-                    Forgot Password?
-                  </RouterLink>
-                </div>
-
-                <VBtn
-                  block
-                  type="submit"
-                >
-                  Login
-                </VBtn>
-              </VCol>
-
-              <!-- create account -->
-              <VCol
-                cols="12"
-                class="text-center"
-              >
-                <span>New on our platform?</span>
-                <a
-                  class="text-primary ms-2"
-                  href="#"
-                >
-                  <RouterLink
-                    class="text-primary ms-2"
-                    :to="{ name :'register'}"
-                  > Create an account</RouterLink>
-
-                </a>
-              </VCol>
-              <VCol
-                cols="12"
-                class="d-flex align-center"
-              >
-                <VDivider />
-                <span class="mx-4">or</span>
-                <VDivider />
-              </VCol>
-
-              <!-- auth providers -->
-              <VCol
-                cols="12"
-                class="text-center"
-              >
-                <AuthProvider />
-              </VCol>
-            </VRow>
-          </VForm>
-        </VCardText>
-      </VCard>
-    </VCol>
-  </VRow>
+    </div>
+  </div>
 </template>
 
 <style lang="scss">
