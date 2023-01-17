@@ -124,7 +124,7 @@
             <VCol lg="4"  md="4" sm="6" cols="12">
               <div class="blog_card">
                 <div class="blog_card_header">
-                  <img src="@images/img/slide 4.png" alt="">
+                  <img src="@images/img/property/slide4.png" alt="">
                 </div>
                 <div class="blog_card_body">
                   <h2><a href="">Integer Maecenas Eget Viverra</a></h2>
@@ -146,7 +146,7 @@
             <VCol lg="4"  md="4" sm="6" cols="12">
               <div class="blog_card">
                 <div class="blog_card_header">
-                  <img src="@images/img/slide 5.png" alt="">
+                  <img src="@images/img/property/slide5.png" alt="">
                 </div>
                 <div class="blog_card_body">
                   <h2><a href="">Integer Maecenas Eget Viverra</a></h2>
