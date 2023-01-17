@@ -6,7 +6,7 @@
             <v-row>
               <v-col lg="3" md="3" sm="4" cols="12">
                 <div class="widgets">
-                  <img src="@images/img/logo-white.png" alt="">
+                  <img src="@images/img/logo/logo-white.png" alt="">
                   <p>Introducing the first decentralized platform for buying, selling, and managing real estate, powered by blockchain technology.</p>
                   <div class="social_links">
                     <a href="">
