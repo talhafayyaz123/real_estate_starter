@@ -86,7 +86,7 @@ const login = () => {
     <div class="realestate_form">
       <div class="realestate_form_box">
         <!-- <h2>Login</h2> -->
-        <div class="text-center"><img src="@images/img/logo.png" alt=""/></div>
+        <div class="text-center"><img src="@images/img/logo/logo.png" alt=""/></div>
         <VForm ref="loginFormRef" @submit.prevent="onSubmit">
           <VRow>
             <!-- email -->
