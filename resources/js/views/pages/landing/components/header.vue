@@ -65,7 +65,7 @@
               login
             </RouterLink>
             <RouterLink :to="{name: 'register'}" v-if="!isLoggedIn" class="sign_btn">Signup</RouterLink>
-            <RouterLink :to="{ name: 'dashboards-analytics' }" v-else> Dashboard </RouterLink>
+            <RouterLink :to="{ name: 'dashboards-analytics' }" v-else class="sign_btn"> Dashboard </RouterLink>
           </div>
         </div>
       </div>
