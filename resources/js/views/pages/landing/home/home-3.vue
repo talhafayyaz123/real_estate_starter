@@ -156,7 +156,7 @@
     </div>
   </section>
   <!--====================================================================-->
-  <section class="real_section_4 real_Section featured_property make_money_section">
+  <section class="real_section_3 real_Section featured_property make_money_section">
     <div class="container">
       <div class="real_section_heading"  data-aos="fade-up" data-aos-duration="1500">
         <h2>How will you make money?</h2>
@@ -186,14 +186,14 @@
                 <swiper :pagination="true" :autoplay="{ delay: 5000, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
                   <swiper-slide>
                     <div class="prop-img">
-                      <img src="@images/img/slide 4.png" alt="">
+                      <img src="@images/img/property/slide4.png" alt="">
                     </div>
                   </swiper-slide>
                   <swiper-slide>
-                  <img src="@images/img/slide 5.png" alt="">
+                  <img src="@images/img/property/slide5.png" alt="">
                   </swiper-slide>
                   <swiper-slide>
-                  <img src="@images/img/slide 6.png" alt="">
+                  <img src="@images/img/property/slide6.png" alt="">
                   </swiper-slide>
                 </swiper>
               </div>
@@ -256,7 +256,7 @@
                   slidesPerView: 3,
                 },
               }" 
-              :slidesPerView="3" :loop="true" :modules="condos_modules" :navigation="{nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev'}" :pagination="{dynamicBullets: true, }">
+              :slidesPerView="3" :loop="true" :modules="modules" :navigation="{nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev'}" :pagination="{dynamicBullets: true, }">
             <swiper-slide>
               <div class="property-card">
                   <div class="prop-img">
@@ -272,14 +272,14 @@
                     <swiper :pagination="true" :autoplay="{ delay: 5000, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
                       <swiper-slide>
                         <div class="prop-img">
-                          <img src="@images/img/slide 4.png" alt="">
+                          <img src="@images/img/property/slide4.png" alt="">
                         </div>
                       </swiper-slide>
                       <swiper-slide>
-                      <img src="@images/img/slide 5.png" alt="">
+                      <img src="@images/img/property/slide5.png" alt="">
                       </swiper-slide>
                       <swiper-slide>
-                      <img src="@images/img/slide 6.png" alt="">
+                      <img src="@images/img/property/slide6.png" alt="">
                       </swiper-slide>
                     </swiper>
                   </div>
@@ -318,14 +318,14 @@
                     <swiper :pagination="true" :autoplay="{ delay: 5500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
                       <swiper-slide>
                         <div class="prop-img">
-                          <img src="@images/img/slide 5.png" alt="">
+                          <img src="@images/img/property/slide5.png" alt="">
                         </div>
                       </swiper-slide>
                       <swiper-slide>
-                      <img src="@images/img/slide 4.png" alt="">
+                      <img src="@images/img/property/slide4.png" alt="">
                       </swiper-slide>
                       <swiper-slide>
-                      <img src="@images/img/slide 5.png" alt="">
+                      <img src="@images/img/property/slide5.png" alt="">
                       </swiper-slide>
                     </swiper>
                   </div>
@@ -364,14 +364,14 @@
                     <swiper :pagination="true" :autoplay="{ delay: 5000, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
                       <swiper-slide>
                         <div class="prop-img">
-                          <img src="@images/img/slide 6.png" alt="">
+                          <img src="@images/img/property/slide6.png" alt="">
                         </div>
                       </swiper-slide>
                       <swiper-slide>
-                      <img src="@images/img/slide 5.png" alt="">
+                      <img src="@images/img/property/slide5.png" alt="">
                       </swiper-slide>
                       <swiper-slide>
-                      <img src="@images/img/slide 4.png" alt="">
+                      <img src="@images/img/property/slide4.png" alt="">
                       </swiper-slide>
                     </swiper>
                   </div>
@@ -401,7 +401,7 @@
     </div>
   </section>
   <!--====================================================================-->
-  <section class="real_section_2 real_Section explore_more">
+  <section class="real_section_5 real_Section explore_more">
     <div class="container">
       <div class="real_section_heading"  data-aos="fade-up" data-aos-duration="1500">
         <h2>Explore More</h2>
@@ -463,7 +463,7 @@
     </div>
   </section>
   <!--====================================================================-->
-  <section class="real_section_4 real_Section condos_property">
+  <section class="real_section_6 real_Section condos_property">
     <div class="container">
       <div class="real_section_heading"  data-aos="fade-up" data-aos-duration="1500">
         <h2>Houses</h2>
@@ -705,7 +705,7 @@
     </div>
   </section>
   <!--====================================================================-->
-  <section class="real_section_3 invest_calculator real_Section">
+  <section class="real_section_7 invest_calculator real_Section">
     <div class="container">
       <div class="real_section_heading"  data-aos="fade-up" data-aos-duration="1500">
         <h2>Investment calculator</h2>
@@ -793,7 +793,7 @@
     </div>
   </section>
   <!--====================================================================-->
-  <section class="real_section_5 real_Section best_section">
+  <section class="real_section_8 real_Section best_section">
     <div class="container">
       <div class="real_section_heading"  data-aos="fade-up" data-aos-duration="1500">
         <h2>Why we are the best</h2>
@@ -857,7 +857,7 @@
     </div>
   </section>
   <!--====================================================================-->
-  <section class="real_section_6 real_Section testimonials_section">
+  <section class="real_section_9 real_Section testimonials_section">
     <div class="overlay"></div>
     <div class="container">
       <div class="real_section_heading"  data-aos="fade-up" data-aos-duration="1500">
@@ -923,7 +923,7 @@ Fusce ac mattis nulla. Morbi eget ornare dui. </p>
     </div>
   </section>
   <!--====================================================================-->
-  <section class="real_section_7 real_Section customer_section">
+  <section class="real_section_10 real_Section customer_section">
     <div class="container">
       <div class="real_section_heading"  data-aos="fade-up" data-aos-duration="1500">
         <h2>Partners</h2>
@@ -974,7 +974,7 @@ Fusce ac mattis nulla. Morbi eget ornare dui. </p>
     </div>
   </section>
   <!--====================================================================-->
-  <section class="real_section_7 real_Section contact_section">
+  <section class="real_section_11 real_Section contact_section">
     <div class="container">
       <div class="real_section_heading"  data-aos="fade-up" data-aos-duration="1500">
         <h2>Contact us</h2>
@@ -1036,12 +1036,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Pagination , Navigation ,Autoplay} from "swiper";
 ////////
-
-const condos_modules =[
-  Pagination,
-  Navigation,
-  Autoplay
-]
 const modules = [
   Pagination,
   Navigation,

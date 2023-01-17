@@ -76,7 +76,7 @@
       <div class="realestate_header">
         <div class="realestate_brand">
           <RouterLink :to="{ name: 'home' }" class="realestate_logo">
-            <img src="@images/img/logo.png" alt="" />
+            <img src="@images/img/logo/logo.png" alt="" />
           </RouterLink>
         </div>
         <div class="realestate_nav">
