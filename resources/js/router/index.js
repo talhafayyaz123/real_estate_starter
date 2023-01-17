@@ -62,6 +62,11 @@ const router = createRouter({
       name: 'blogs-detail',
       component: () => import("@/views/pages/landing/blogs/blogDetail.vue"),
     },
+    {
+      path: '/coming-soon',
+      name: 'coming-soon',
+      component: () => import("@/views/pages/landing/components/comingSoon.vue"),
+    },
 
     ...setupLayouts(routes),
   ],

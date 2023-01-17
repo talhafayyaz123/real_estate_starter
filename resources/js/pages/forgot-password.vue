@@ -49,102 +49,47 @@ const forgotPassword = () => {
 const onSubmit = () => {
   refVForm.value?.validate().then(({ valid: isValid }) => {
     if (isValid)
-    forgotPassword()
+      forgotPassword()
   })
 }
 </script>
 
 <template>
-  <VRow
-    class="auth-wrapper"
-    no-gutters
-  >
-    <VCol
-      lg="8"
-      class="d-none d-lg-flex"
-    >
-      <div class="position-relative auth-bg rounded-lg w-100 ma-8 me-0">
-        <div class="d-flex align-center justify-center w-100 h-100">
-          <VImg
-            max-width="368"
-            :src="authThemeImg"
-            class="auth-illustration mt-16 mb-2"
-          />
-        </div>
+  <div class="realestate_auth">
+    <img class="bottomimage" src="@images/img/auth_bottom.png" alt="" />
+    <div class="realestate_form">
+      <div class="realestate_form_box">
+        <div class="text-center"><img src="@images/img/logo/logo.png" alt="" /></div>
+        <h2>Forgot Password?</h2>
+        <VForm ref="refVForm" @submit.prevent="onSubmit">
+          <VRow>
+            <!-- email -->
+            <VCol cols="12">
+              <label for=""  class="input_label">Email Address</label>
+              <VTextField single-line v-model="email" :rules="[requiredValidator, emailValidator]" :error-messages="errors.email"
+                label="Email" type="email" />
+            </VCol>
 
-        <VImg
-          class="auth-footer-mask"
-          :src="authThemeMask"
-        />
+            <!-- Reset link -->
+            <VCol cols="12" class="mt-2">
+              <VBtn block type="submit">
+                Send Reset Link
+              </VBtn>
+            </VCol>
+
+            <!-- back to login -->
+            <VCol cols="12">
+              <RouterLink class="d-flex align-center justify-center" :to="{ name: 'login' }">
+                <VIcon icon="tabler-chevron-left" class="flip-in-rtl" />
+                <span>Back to login</span>
+              </RouterLink>
+            </VCol>
+          </VRow>
+        </VForm>
       </div>
-    </VCol>
+    </div>
+  </div>
 
-    <VCol
-      cols="12"
-      lg="4"
-      class="d-flex align-center justify-center"
-    >
-      <VCard
-        flat
-        :max-width="500"
-        class="mt-12 mt-sm-0 pa-4"
-      >
-        <VCardText>
-          <VNodeRenderer
-            :nodes="themeConfig.app.logo"
-            class="mb-6"
-          />
-          <h5 class="text-h5 font-weight-semibold mb-1">
-            Forgot Password? 🔒
-          </h5>
-          <p class="mb-0">
-            Enter your email and we'll send you instructions to reset your password
-          </p>
-        </VCardText>
-
-        <VCardText>
-          <VForm ref="refVForm" @submit.prevent="onSubmit">
-            <VRow>
-              <!-- email -->
-              <VCol cols="12">
-                <VTextField
-                  v-model="email"
-                  :rules="[requiredValidator, emailValidator]"
-                  :error-messages="errors.email"
-                  label="Email"
-                  type="email"
-                />
-              </VCol>
-
-              <!-- Reset link -->
-              <VCol cols="12">
-                <VBtn
-                  block
-                  type="submit"
-                >
-                  Send Reset Link
-                </VBtn>
-              </VCol>
-
-              <!-- back to login -->
-              <VCol cols="12">
-                <RouterLink
-                  class="d-flex align-center justify-center"
-                  :to="{ name: 'login' }"
-                >
-                  <VIcon
-                    icon="tabler-chevron-left"
-                    class="flip-in-rtl"
-                  />
-                  <span>Back to login</span>
-                </RouterLink>
-              </VCol>
-            </VRow>
-          </VForm>
-        </VCardText>
-      </VCard>
-    </VCol>
-  </VRow>
 </template>
 
 <style lang="scss">

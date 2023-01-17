@@ -85,8 +85,8 @@ const login = () => {
     <img class="bottomimage" src="@images/img/auth_bottom.png" alt=""/>
     <div class="realestate_form">
       <div class="realestate_form_box">
-        <!-- <h2>Login</h2> -->
-        <div class="text-center"><img src="@images/img/logo/logo.png" alt=""/></div>
+        <div class="text-center"><RouterLink :to="{name:'home'}"><img src="@images/img/logo/logo.png" alt="" /></RouterLink></div>
+        <h2>Login</h2>
         <VForm ref="loginFormRef" @submit.prevent="onSubmit">
           <VRow>
             <!-- email -->

@@ -49,7 +49,7 @@ const register = () => {
     email: email.value,
     password: password.value,
     c_password: c_password.value,
-    role:'admin'
+    role: 'admin'
   }).then(response => {
     const { data: { data } } = response
     const { accessToken, userData } = data
@@ -88,168 +88,75 @@ const onSubmit = () => {
 </script>
 
 <template>
-  <VRow
-    no-gutters
-    class="auth-wrapper"
-  >
-    <VCol
-      lg="8"
-      class="d-none d-lg-flex"
-    >
-      <div class="position-relative auth-bg rounded-lg w-100 ma-8 me-0">
-        <div class="d-flex align-center justify-center w-100 h-100">
-          <VImg
-            max-width="441"
-            :src="imageVariant"
-            class="auth-illustration mt-16 mb-2"
-          />
+  <div class="realestate_auth">
+    <img class="bottomimage" src="@images/img/auth_bottom.png" alt="" />
+    <div class="realestate_form">
+      <div class="realestate_form_box">
+        <div class="text-center">
+          <RouterLink :to="{ name: 'home' }"><img src="@images/img/logo/logo.png" alt="" /></RouterLink>
         </div>
+        <h2>Register</h2>
+        <VForm ref="refVForm" @submit.prevent="onSubmit">
+          <VRow>
+            <!-- Username -->
+            <VCol cols="12">
+              <label for="" class="input_label">Username</label>
+              <VTextField single-line v-model="name" :rules="[requiredValidator, alphaDashValidator]"
+                :error-messages="errors.name" label="Username" />
+            </VCol>
 
-        <VImg
-          class="auth-footer-mask"
-          :src="authThemeMask"
-        />
+            <!-- email -->
+            <VCol cols="12">
+              <label for="" class="input_label">Email Address</label>
+              <VTextField single-line v-model="email" :rules="[requiredValidator, emailValidator]"
+                :error-messages="errors.email" label="Email" type="email" />
+            </VCol>
+
+            <!-- password -->
+            <VCol cols="12">
+              <label for="" class="input_label">Password</label>
+              <VTextField single-line v-model="password" :rules="[requiredValidator]" label="Password"
+                :type="isPasswordVisible ? 'text' : 'password'" :error-messages="errors.password"
+                :append-inner-icon="isPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'"
+                @click:append-inner="isPasswordVisible = !isPasswordVisible" />
+            </VCol>
+
+            <!-- Confirm password -->
+            <VCol cols="12">
+              <label for="" class="input_label">Confirm Password</label>
+              <VTextField single-line v-model="c_password"
+                :rules="[requiredValidator, confirmedValidator(password, c_password)]" label="Confirm Password"
+                :error-messages="errors.c_password" :type="isConfirmPasswordVisible ? 'text' : 'password'"
+                :append-inner-icon="isConfirmPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'"
+                @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible" />
+            </VCol>
+
+            <VCol cols="12">
+              <div class="d-flex align-center">
+                <VCheckbox id="privacy-policy" v-model="privacyPolicies" inline />
+                <VLabel for="privacy-policy" class="pb-1" style="opacity: 1;">
+                  <span class="me-1">I agree to</span>
+                  <a href="javascript:void(0)" class="text-primary">privacy policy & terms</a>
+                </VLabel>
+              </div>
+            </VCol>
+
+            <VCol cols="12">
+              <VBtn block type="submit">
+                Sign up
+              </VBtn>
+            </VCol>
+            <VCol cols="12">
+              <div class="join_us">
+                <p>Already have an account?&nbsp; <RouterLink :to="{ name: 'login' }">Sign in</RouterLink>
+                </p>
+              </div>
+            </VCol>
+          </VRow>
+        </VForm>
       </div>
-    </VCol>
-
-    <VCol
-      cols="12"
-      lg="4"
-      class="d-flex align-center justify-center"
-    >
-      <VCard
-        flat
-        :max-width="500"
-        class="mt-12 mt-sm-0 pa-4"
-      >
-        <VCardText>
-          <VNodeRenderer
-            :nodes="themeConfig.app.logo"
-            class="mb-6"
-          />
-          <h5 class="text-h5 font-weight-semibold mb-1">
-            Adventure starts here 🚀
-          </h5>
-          <p class="mb-0">
-            Make your app management easy and fun!
-          </p>
-        </VCardText>
-
-        <VCardText>
-          <VForm
-            ref="refVForm"
-            @submit.prevent="onSubmit"
-          >
-            <VRow>
-              <!-- Username -->
-              <VCol cols="12">
-                <VTextField
-                  v-model="name"
-                  :rules="[requiredValidator, alphaDashValidator]"
-                  :error-messages="errors.name"
-                  label="Username"
-                />
-              </VCol>
-
-              <!-- email -->
-              <VCol cols="12">
-                <VTextField
-                  v-model="email"
-                  :rules="[requiredValidator, emailValidator]"
-                  :error-messages="errors.email"
-                  label="Email"
-                  type="email"
-                />
-              </VCol>
-
-              <!-- password -->
-              <VCol cols="12">
-                <VTextField
-                  v-model="password"
-                  :rules="[requiredValidator]"
-                  label="Password"
-                  :type="isPasswordVisible ? 'text' : 'password'"
-                  :error-messages="errors.password"
-                  :append-inner-icon="isPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'"
-                  @click:append-inner="isPasswordVisible = !isPasswordVisible"
-                />
-                </VCol>
-
-                <!-- Confirm password -->
-              <VCol cols="12">
-                <VTextField
-                  v-model="c_password"
-                  :rules="[requiredValidator, confirmedValidator(password,c_password)]"
-                  label="Confirm Password"
-                  :error-messages="errors.c_password"
-                  :type="isConfirmPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isConfirmPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'"
-                  @click:append-inner="isConfirmPasswordVisible = !isConfirmPasswordVisible"
-                /></VCol>
-
-                <!-- <div class="d-flex align-center mt-2 mb-4">
-                  <VCheckbox
-                    id="privacy-policy"
-                    v-model="privacyPolicies"
-                    inline
-                  />
-                  <VLabel
-                    for="privacy-policy"
-                    class="pb-1"
-                    style="opacity: 1;"
-                  >
-                    <span class="me-1">I agree to</span>
-                    <a
-                      href="javascript:void(0)"
-                      class="text-primary"
-                    >privacy policy & terms</a>
-                  </VLabel>
-                </div> -->
-
-                <VBtn
-                  block
-                  type="submit"
-                >
-                  Sign up
-                </VBtn>
-              <!-- </VCol> -->
-
-              <!-- create account -->
-              <VCol
-                cols="12"
-                class="text-center text-base"
-              >
-                <span>Already have an account?</span>
-                <RouterLink
-                  class="text-primary ms-2"
-                  :to="{ name: 'login' }"
-                >
-                  Sign in instead
-                </RouterLink>
-              </VCol>
-
-              <VCol
-                cols="12"
-                class="d-flex align-center"
-              >
-                <VDivider />
-                <span class="mx-4">or</span>
-                <VDivider />
-              </VCol>
-
-              <!-- auth providers -->
-              <VCol
-                cols="12"
-                class="text-center"
-              >
-                <AuthProvider />
-              </VCol>
-            </VRow>
-          </VForm>
-        </VCardText>
-      </VCard>
-    </VCol>
-  </VRow>
+    </div>
+  </div>
 </template>
 
 <style lang="scss">
