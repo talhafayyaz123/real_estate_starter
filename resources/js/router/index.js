@@ -9,7 +9,7 @@ const router = createRouter({
   routes: [
 
     {
-      path: '/dashboard',
+      path: '/',
       redirect: to => {
         const userData = JSON.parse(localStorage.getItem('userData') || '{}')
         const userRole = userData && userData.role ? userData.role : null
@@ -23,7 +23,7 @@ const router = createRouter({
       },
     },
     {
-      path: '/',
+      path: '/home',
       name: 'home',
       component: () => import("@/views/pages/landing/home/home-3.vue"),
     },
@@ -61,6 +61,11 @@ const router = createRouter({
       path: '/blogs-detail',
       name: 'blogs-detail',
       component: () => import("@/views/pages/landing/blogs/blogDetail.vue"),
+    },
+    {
+      path: '/coming-soon',
+      name: 'coming-soon',
+      component: () => import("@/views/pages/landing/components/comingSoon.vue"),
     },
 
     ...setupLayouts(routes),

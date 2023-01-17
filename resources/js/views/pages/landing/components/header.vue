@@ -23,7 +23,7 @@
           </li>
           <li class="upper_nav_item">
             <RouterLink
-              :to="{ name: 'login' }"
+              :to="{ name: 'coming-soon' }"
               class-active="active"
               class="upper_nav_link"
             >
@@ -41,7 +41,7 @@
           </li>
           <li class="upper_nav_item">
             <RouterLink
-              :to="{ name: 'login' }"
+              :to="{ name: 'coming-soon' }"
               class-active="active"
               class="upper_nav_link"
             >
@@ -50,7 +50,7 @@
           </li>
           <li class="upper_nav_item">
             <RouterLink
-              :to="{ name: 'login' }"
+              :to="{ name: 'coming-soon' }"
               class-active="active"
               class="upper_nav_link"
             >
@@ -100,7 +100,7 @@
             <li class="realestate_nav_item">
               <RouterLink
                 class-active="active"
-                :to="{ name: 'login' }"
+                :to="{ name: 'coming-soon' }"
                 class="realestate_nav_link"
                 >Rent</RouterLink
               >
