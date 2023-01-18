@@ -1,12 +1,12 @@
 import axios from '@axios'
 import { defineStore } from 'pinia'
 
-export const useHomeStore = defineStore('HomeStore', {
+export const CondosListStore = defineStore('CondosListStore', {
   actions: {
     // 👉 Fetch users data
     fetchUsers(params) { return axios.get('/apps/users/list', { params }) },
-    fetchProperty(params) { return axios.get('/api/get-properties', { params }) },
     fetchCondos(params) { return axios.get('/api/condos', { params }) },
+
     // 👉 Add User
     addUser(userData) {
 
@@ -18,11 +18,36 @@ export const useHomeStore = defineStore('HomeStore', {
           .catch(error => reject(error))
       })
     },
-    addProperty(params) {
+    addCondo(params) {
 
       return new Promise((resolve, reject) => {
         axios
-          .post(`/api/store-property`, params)
+          .post(`/api/condos`, params)
+          .then((response) => {
+            resolve(response);
+          })
+          .catch((error) => reject(error))
+          .finally(() => {
+          });
+      });
+    },
+    deleteCondo(uuid) {
+      return new Promise((resolve, reject) => {
+        axios
+          .delete(`/api/condos/${uuid}`)
+          .then((response) => {
+            resolve(response);
+          })
+          .catch((error) => reject(error))
+          .finally(() => {
+          });
+      });
+    },
+    CondoStatusChange(params) {
+
+      return new Promise((resolve, reject) => {
+        axios
+          .post(`/api/update-condo-status`, params)
           .then((response) => {
             resolve(response);
           })
