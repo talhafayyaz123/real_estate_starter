@@ -24,22 +24,18 @@ class Condos extends Model
     public static function getCondos($request)
     {
 
-        $condos = self::when($request->market, function ($query, $market) {
-            if ($market == 'All Market') {
+        $condos = self::when($request->location, function ($query, $location) {
+            if ($location == 'All Market') {
                 return $query->orderBy('id');
             } else {
-                return $query->where('market', $market);
+                return $query->where('location', $location);
             }
         })
-            ->when($request->city, function ($query, $city) {
-                return $query->where('city', $city);
+
+            ->when($request->category, function ($query, $category) {
+                return $query->where('category', $category);
             })
-            ->when($request->type, function ($query, $type) {
-                return $query->where('type', $type);
-            })
-            ->when($request->land, function ($query, $land) {
-                return $query->where('land', $land);
-            })
+
             ->when($request->new, function ($query) {
                 return $query->whereBetween('condos.created_at', [Carbon::now()->subDays(3)->startOfDay(), Carbon::now()->endofDay()])
                     ->orderBy('condos.created_at', 'asc');

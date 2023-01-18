@@ -32,31 +32,25 @@
                   <div class="filter_grid">
                     <div class="filter_s">
                       <VSelect
-                        v-model="market"
-                        label="Market"
+                        v-model="location"
+                        label="Location"
                         :items="['All Market', 'UAE', 'Canada', 'USA', 'KSA']"
                       />
                     </div>
                     <div class="filter_s">
                       <VSelect
-                        v-model="land"
-                        label="Land"
-                        :items="['Residential', 'Commercial', 'Industrial']"
-                      />
-                    </div>
-                    <div class="filter_s">
-                      <VSelect
-                        v-model="type"
-                        label="Type"
+                        v-model="category"
+                        label="Category"
                         :items="[
-                          'Plaza',
-                          'Office',
-                          'Hotel',
-                          'Apartment',
-                          'Condo',
+                          'New Listing',
+                          'Hot',
+                          'Featured',
+                          'Coming Soon',
+                          'Sold Out',
                         ]"
                       />
                     </div>
+
                     <div class="filter_b">
                       <v-btn class="find_filter" @click="fetchCondos"
                         >Find</v-btn
@@ -71,28 +65,21 @@
                   <div class="filter_grid">
                     <div class="filter_s">
                       <VSelect
-                        v-model="market"
-                        label="Market"
+                        v-model="location"
+                        label="Location"
                         :items="['All Market', 'UAE', 'Canada', 'USA', 'KSA']"
                       />
                     </div>
                     <div class="filter_s">
                       <VSelect
-                        v-model="land"
-                        label="Land"
-                        :items="['Residential', 'Commercial', 'Industrial']"
-                      />
-                    </div>
-                    <div class="filter_s">
-                      <VSelect
-                        v-model="type"
-                        label="Type"
+                        v-model="category"
+                        label="Category"
                         :items="[
-                          'Plaza',
-                          'Office',
-                          'Hotel',
-                          'Apartment',
-                          'Condo',
+                          'New Listing',
+                          'Hot',
+                          'Featured',
+                          'Coming Soon',
+                          'Sold Out',
                         ]"
                       />
                     </div>
@@ -844,9 +831,8 @@ const currentPage = ref(1);
 const totalPage = ref(1);
 const totalCondos = ref(0);
 const condos = ref([]);
-const market = ref("");
-const land = ref("");
-const type = ref("");
+const location = ref("");
+const category = ref("");
 const fetchCondos = () => {
   userHomeStore
     .fetchCondos({
@@ -857,6 +843,8 @@ const fetchCondos = () => {
       perPage: rowPerPage.value,
       currentPage: currentPage.value,
       front: 1,
+      category: category.value,
+      location: location.value,
     })
     .then((response) => {
       condos.value = response.data.data.condos.data;

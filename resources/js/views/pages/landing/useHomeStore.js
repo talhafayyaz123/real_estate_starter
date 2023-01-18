@@ -6,7 +6,7 @@ export const useHomeStore = defineStore('HomeStore', {
     // 👉 Fetch users data
     fetchUsers(params) { return axios.get('/apps/users/list', { params }) },
     fetchProperty(params) { return axios.get('/api/get-properties', { params }) },
-    fetchCondos(params) { return axios.get('/api/condos', { params }) },
+    fetchCondos(params) { return axios.get('/api/get-condos', { params }) },
     // 👉 Add User
     addUser(userData) {
 
