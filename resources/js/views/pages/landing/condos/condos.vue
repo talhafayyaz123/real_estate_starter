@@ -3,6 +3,8 @@
   <HeaderComp/>
   <!--====================================================================-->
   <div class="condos-listing">
+    <!--====================================================================-->
+    <!--====================================================================-->
     <div class="breadcrup_header">
       <div class="overlay"></div>
       <div class="container">
@@ -11,6 +13,8 @@
         </div>
       </div>
     </div>
+    <!--====================================================================-->
+    <!--====================================================================-->
     <section class="property_banner_filters">
       <div class="container">
         <div class="banner_filter">
@@ -89,6 +93,8 @@
         </div>
       </div>
     </section>
+    <!--====================================================================-->
+    <!--====================================================================-->
     <section class="property_tabs">
       <div class="container">
         <VTabs v-model="propTabs" class="v-tabs-pill">
@@ -749,6 +755,8 @@
         </VWindow>
       </div>
     </section>
+    <!--====================================================================-->
+    <!--====================================================================-->
   </div>
   <!--====================================================================-->
   <section class="real_section_9 real_Section add_property_section">
@@ -770,86 +778,20 @@
 </template>
 
 <script setup>
+/////////////////////////////////////////////////////////////////////
 import HeaderComp from '../components/header.vue';
 import FooterComp from '../components/footer.vue';
 import breadcrumpHeader from '../components/breadcrumpHeader.vue';
-
 /////////////////////////////////////////////////////////////////////
-
-/////////////////////////////////////////////////////////////////////
-import { useHomeStore } from "../useHomeStore";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Pagination , Navigation , Autoplay} from "swiper";
-
 const modules = [ Pagination, Navigation, Autoplay];
+/////////////////////////////////////////////////////////////////////
 const FilterTab = ref(0);
 const propTabs = ref(0);
-//////////////////////////////
-const userHomeStore = useHomeStore();
-const searchQuery = ref("");
-const selectedRole = ref();
-const selectedPlan = ref();
-const selectedStatus = ref();
-const rowPerPage = ref(10);
-const currentPage = ref(1);
-const totalPage = ref(1);
-const totalUsers = ref(0);
-const users = ref([]);
-const market = ref("");
-const land = ref("");
-const type = ref("");
+/////////////////////////////////////////////////////////////////////
 
-//////////////////////////////
-const fetchUsers = () => {
-  userHomeStore
-    .fetchProperty({
-      q: searchQuery.value,
-      status: selectedStatus.value,
-      plan: selectedPlan.value,
-      role: selectedRole.value,
-      perPage: rowPerPage.value,
-      currentPage: currentPage.value,
-      front: 1,
-      market: market.value,
-      land: land.value,
-      type: type.value,
-    })
-    .then((response) => {
-      users.value = response.data.data.properties.data;
-      totalPage.value = response.data.totalPage;
-      totalUsers.value = response.data.totalUsers;
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-};
-
-const resolveStatusText = (val) => {
-  if (val === 1) return "Active";
-  if (val === 0) return "Inactive";
-
-  return "Active";
-};
-
-watchEffect(fetchUsers);
-
-// 👉 watching current page
-watchEffect(() => {
-  if (currentPage.value > totalPage.value) currentPage.value = totalPage.value;
-});
-
-// 👉 Computing pagination data
-const paginationData = computed(() => {
-  const firstIndex = users.value.length
-    ? (currentPage.value - 1) * rowPerPage.value + 1
-    : 0;
-  const lastIndex =
-    users.value.length + (currentPage.value - 1) * rowPerPage.value;
-
-  return `Showing ${firstIndex} to ${lastIndex} of ${totalUsers.value} entries`;
-});
-//////////////////////////////////
 </script>

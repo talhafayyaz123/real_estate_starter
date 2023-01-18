@@ -1017,7 +1017,11 @@ body{
 .condos-listing{
   .breadcrup_header{
     background: url('@images/img/bg-1.jpg');
+    background-position:top center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
   }
+
 }
 .v-dialog-close-btn{
   z-index: 5 !important;

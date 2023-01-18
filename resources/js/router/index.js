@@ -63,6 +63,11 @@ const router = createRouter({
       component: () => import("@/views/pages/landing/blogs/blogDetail.vue"),
     },
     {
+      path: '/area-guide',
+      name: 'area-guide',
+      component: () => import("@/views/pages/landing/areaguides/areaGuides.vue"),
+    },
+    {
       path: '/coming-soon',
       name: 'coming-soon',
       component: () => import("@/views/pages/landing/components/comingSoon.vue"),
