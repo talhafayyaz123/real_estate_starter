@@ -261,6 +261,18 @@ body{
         }
       }
     }
+    .property_short_desc{
+      p{
+        font-size: 14px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        line-clamp: 4; 
+        -webkit-box-orient: vertical;
+        margin: 0px;
+      }
+    }
   }
   .footer_card{
     padding: 12px 25px;
@@ -949,14 +961,30 @@ body{
     color: $primary_color;
   }
 }
+.dev_tag{
+  border-radius: 4px;
+  border: 1px solid #D3D9E5;
+  background: #fff;
+  font-size: 12px;
+  padding: 0.2rem 0.4rem;
+  position: absolute;
+  z-index: 11;
+  bottom: 15px;
+  right: 15px;
+  svg{
+    color: $primary_color;
+  }
+}
 .wishlist{
-  background: rgba(254, 255, 253, 0.2);
-  border-radius: 12px;
+  background:#fff !important;
+  border-radius: 4px;
   position: absolute;
   right: 15px;
   top: 15px;
-  width: 44px;
-  height: 44px;
+  width: 35px !important;
+  height: 35px !important;
+  min-width: 35px !important;
+  min-height: 35px !important;
   z-index: 11;
   display: flex;
   align-items: center;
@@ -965,10 +993,18 @@ body{
   color: #fff;
   svg{
     margin: 0px !important;
-    &:focus{
-      path{
-        fill: #E22826;
-      }
+    color: rgb(231 19 26 / 1);
+    width: 18px;
+  }
+  .fav-heart-filled{
+    display: none;
+  }
+  &:focus{
+    .fav-heart{
+      display: none;
+    }
+    .fav-heart-filled{
+      display: block;
     }
   }
 }
@@ -1017,7 +1053,11 @@ body{
 .condos-listing{
   .breadcrup_header{
     background: url('@images/img/bg-1.jpg');
+    background-position:top center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
   }
+
 }
 .v-dialog-close-btn{
   z-index: 5 !important;
@@ -1207,4 +1247,137 @@ body{
 }
 .contact_section{
   background: #fff;
+}
+.condos_listing{
+  .prop-img{
+    overflow: hidden;
+    img{
+      &:hover{
+        transition: .4s all ease-in-out;
+        scale: 1.1;
+      }
+    }
+  }
+}
+.condos_detail{
+  padding: 50px 0px;
+  background: #fff;
+  .condos_det{
+    h2{
+      font-size: 24px;
+      color: #001D38;
+      margin-bottom: 6px;
+    }
+    ul{
+      width: 100%;
+      li{
+        padding: 6px 5px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #D3D9E5;
+        h5{
+          font-size: 16px;
+          width: 50%;
+          color: #001D38;
+        }
+        h4{
+          font-size: 15px;
+          color: #001D38;
+        }
+        span{
+          font-size: 15px;
+        }
+        a{
+          color: $primary_color;
+        }
+      }
+    }
+  }
+  .condos_images{
+    border: 1px solid #D3D9E5;
+    width: 100%;
+    position: relative;
+    img{
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      vertical-align: bottom;
+    }
+    &:hover{
+      .swiper-button-prev,.swiper-button-next{
+        opacity: 1 !important;
+        transition: .4s all ease-in-out;
+      }
+    }
+    .swiper-button-prev,.swiper-button-next{
+      border: 1px solid #fff;
+      background: #fff;
+      width: 40px !important;
+      height: 40px !important;
+      border-radius: 30px;
+      opacity: 0;
+      
+      &::after{
+        font-size: 16px;
+      }
+    }
+  }
+}
+.condos_detail_tab{
+  .condos_tab_header{
+    border: 1px solid #D3D9E5;
+    border-bottom: 0;
+    .v-tabs.v-tabs-pill .v-tab.v-btn{
+      border-radius: 0 !important;
+      
+    }
+    .v-slide-group-item--active{
+      background: $primary_color !important;
+    }
+  }
+  .condos_tab_body{
+    border: 1px solid #D3D9E5;
+  }
+  .condos_tab_detail{
+    padding: 20px;
+    h2{
+      font-size: 22px;
+      color: #001D38;
+    }
+  }
+}
+.condos_about{
+  h2{
+    font-size: 20px;
+    color: #001D38;
+  }
+  p{
+    margin: 15px 0px;
+  }
+}
+.condos_reviews{
+  border: 1px solid #D3D9E5;
+  padding: 20px;
+  h2{
+    font-size: 20px;
+    color: #001D38;
+  }
+  button{
+    background: $primary_color !important;
+  }
+}
+.request_info{
+  border: 1px solid #D3D9E5;
+  padding: 15px;
+  h2{
+    font-size: 20px;
+    color: #001D38;
+    text-align: center;
+  }
+  p{
+    text-align: center;
+  }
+  button{
+    background: $primary_color !important;
+  }
 }

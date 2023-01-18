@@ -33,6 +33,11 @@ const router = createRouter({
       component: () => import("@/views/pages/landing/condos/condos.vue"),
     },
     {
+      path: '/condo-detail',
+      name: 'condo-detail',
+      component: () => import("@/views/pages/landing/condos/condosDetail.vue"),
+    },
+    {
       path: '/property',
       name: 'property',
       component: () => import("@/views/pages/landing/property/property.vue"),
@@ -61,6 +66,11 @@ const router = createRouter({
       path: '/blogs-detail',
       name: 'blogs-detail',
       component: () => import("@/views/pages/landing/blogs/blogDetail.vue"),
+    },
+    {
+      path: '/area-guide',
+      name: 'area-guide',
+      component: () => import("@/views/pages/landing/areaguides/areaGuides.vue"),
     },
     {
       path: '/coming-soon',
