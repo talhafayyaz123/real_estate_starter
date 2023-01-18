@@ -18,7 +18,7 @@ return new class extends Migration
             $table->uuid('uuid');
             $table->string('title')->nullable();
             $table->string('condos_image')->nullable();
-            $table->string('descrption')->nullable();
+            $table->longText('description')->nullable();
             $table->string('address')->nullable();
             $table->string('location')->nullable();
             $table->string('developer')->nullable();

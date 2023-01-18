@@ -157,7 +157,7 @@ const handleDrawerModelValueUpdate = (val) => {
 
               <Vcol cols="12" class="pl-4">
                 <VTextarea
-                  v-model="descrption"
+                  v-model="description"
                   rows="3"
                   cols="33"
                   label="Description"

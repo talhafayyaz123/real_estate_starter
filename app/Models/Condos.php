@@ -10,7 +10,7 @@ use Carbon\Carbon;
 class Condos extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'condos_image', 'descrption', 'address', 'location', 'developer', 'price', 'one_bed_starting_price', 'two_bed_starting_price', 'category', 'occupency', 'area_size', 'status', 'user_id'];
+    protected $fillable = ['title', 'condos_image', 'description', 'address', 'location', 'developer', 'price', 'one_bed_starting_price', 'two_bed_starting_price', 'category', 'occupency', 'area_size', 'status', 'user_id'];
 
     public static function boot()
     {
