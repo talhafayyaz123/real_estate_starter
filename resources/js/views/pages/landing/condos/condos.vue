@@ -138,7 +138,7 @@
                           <!--======================================-->
                         </div>
                         <div class="property_body">
-                          <h2><RouterLink :to="{ name:'property-deal'}">The Essery Condos</RouterLink></h2>
+                          <h2><RouterLink :to="{ name:'condo-detail'}">The Essery Condos</RouterLink></h2>
                           <div class="property_price">
                             <h3><span>$</span>  1,229,990+</h3>
                           </div>
@@ -173,7 +173,7 @@
                           <!--======================================-->
                         </div>
                         <div class="property_body">
-                          <h2><RouterLink :to="{ name:'property-deal'}">Centricity Condos</RouterLink></h2>
+                          <h2><RouterLink :to="{ name:'condo-detail'}">Centricity Condos</RouterLink></h2>
                           <div class="property_price">
                             <h3><span>$</span> 595,990+</h3>
                           </div>
@@ -208,7 +208,7 @@
                           <!--======================================-->
                         </div>
                         <div class="property_body">
-                          <h2><RouterLink :to="{ name:'property-deal'}">Mirabella Condos</RouterLink></h2>
+                          <h2><RouterLink :to="{ name:'condo-detail'}">Mirabella Condos</RouterLink></h2>
                           <div class="property_price">
                             <h3><span>$</span>725,000+</h3>
                           </div>
@@ -256,7 +256,7 @@
                         </swiper>
                       </div>
                       <div class="property_body">
-                        <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
+                        <h2><RouterLink :to="{ name:'condo-detail'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
                         <div class="property_price">
                           <h3><span>$</span> 1,853,219</h3>
                           <p>315 investors</p>
@@ -313,7 +313,7 @@
                           </swiper>
                         </div>
                         <div class="property_body">
-                          <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
+                          <h2><RouterLink :to="{ name:'condo-detail'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
                           <div class="property_price">
                             <h3><span>$</span> 1,853,219</h3>
                             <p>315 investors</p>
@@ -359,7 +359,7 @@
                           </swiper>
                         </div>
                         <div class="property_body">
-                          <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
+                          <h2><RouterLink :to="{ name:'condo-detail'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
                           <div class="property_price">
                             <h3><span>$</span> 1,853,219</h3>
                             <p>315 investors</p>
@@ -416,7 +416,7 @@
                         </swiper>
                       </div>
                       <div class="property_body">
-                        <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
+                        <h2><RouterLink :to="{ name:'condo-detail'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
                         <div class="property_price">
                           <h3><span>$</span> 1,853,219</h3>
                           <p>315 investors</p>
@@ -462,7 +462,7 @@
                         </swiper>
                       </div>
                       <div class="property_body">
-                        <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
+                        <h2><RouterLink :to="{ name:'condo-detail'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
                         <div class="property_price">
                           <h3><span>$</span> 1,853,219</h3>
                           <p>315 investors</p>
@@ -519,7 +519,7 @@
                           </swiper>
                         </div>
                         <div class="property_body">
-                          <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
+                          <h2><RouterLink :to="{ name:'condo-detail'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
                           <div class="property_price">
                             <h3><span>$</span> 1,853,219</h3>
                             <p>315 investors</p>
@@ -576,7 +576,7 @@
                           </swiper>
                         </div>
                         <div class="property_body">
-                          <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
+                          <h2><RouterLink :to="{ name:'condo-detail'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
                           <div class="property_price">
                             <h3><span>$</span> 1,853,219</h3>
                             <p>315 investors</p>

@@ -1261,6 +1261,7 @@ body{
 }
 .condos_detail{
   padding: 50px 0px;
+  background: #fff;
   .condos_det{
     h2{
       font-size: 24px;
@@ -1295,11 +1296,30 @@ body{
   .condos_images{
     border: 1px solid #D3D9E5;
     width: 100%;
+    position: relative;
     img{
       width: 100%;
       height: 400px;
       object-fit: cover;
       vertical-align: bottom;
+    }
+    &:hover{
+      .swiper-button-prev,.swiper-button-next{
+        opacity: 1 !important;
+        transition: .4s all ease-in-out;
+      }
+    }
+    .swiper-button-prev,.swiper-button-next{
+      border: 1px solid #fff;
+      background: #fff;
+      width: 40px !important;
+      height: 40px !important;
+      border-radius: 30px;
+      opacity: 0;
+      
+      &::after{
+        font-size: 16px;
+      }
     }
   }
 }
@@ -1319,11 +1339,20 @@ body{
     border: 1px solid #D3D9E5;
   }
   .condos_tab_detail{
-    padding: 15px;
+    padding: 20px;
     h2{
       font-size: 22px;
       color: #001D38;
     }
+  }
+}
+.condos_about{
+  h2{
+    font-size: 20px;
+    color: #001D38;
+  }
+  p{
+    margin: 15px 0px;
   }
 }
 .condos_reviews{
@@ -1347,5 +1376,8 @@ body{
   }
   p{
     text-align: center;
+  }
+  button{
+    background: $primary_color !important;
   }
 }
