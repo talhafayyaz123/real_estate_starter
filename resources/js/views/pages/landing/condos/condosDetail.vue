@@ -70,6 +70,66 @@
               <VWindow v-model="CondosTab">
                 <VWindowItem>
                   <h2>Centricity Condos Condominiums For Sale</h2>
+                  <div class="floor_plans mt-5">
+                    <VTabs v-model="FloorTab" class="v-tabs-pill">
+                      <VTab>1 Bed</VTab>
+                      <VTab>2 Bed</VTab>
+                      <VTab>3 Bed</VTab>
+                      <VTab>+More</VTab>
+                    </VTabs>
+                    <VWindow v-model="FloorTab">
+                      <VWindowItem>
+                        <div class="mt-7 apartment">
+                          <VRow>
+                            <VCol cols="12">
+                              <div class="floor_apartments header_apartment">
+                                <div class="apartments floor_img"><h4>Image</h4></div>
+                                <div class="apartments floor_Suite"><h4>Suite</h4></div>
+                                <div class="apartments floor_bed"><h4>Bed</h4></div>
+                                <div class="apartments floor_sqfoot"><h4>Sq.Footage</h4></div>
+                                <div class="apartments floor_price"><h4>Price</h4></div>
+                              </div>
+                            </VCol>
+                            <VCol cols="12">
+                              <div class="floor_apartments">
+                                <div class="apartments floor_img"><a href=""><img src="@images/img/CE.jpg" alt=""/></a></div>
+                                <div class="apartments floor_Suite"><h3>CE</h3></div>
+                                <div class="apartments floor_bed">
+                                  <div class="d-flex align-center"><v-icon size="20" class="mr-1"> mdi-bed</v-icon><span>1</span><v-icon size="20" class="mr-1 ml-1"> mdi-shower</v-icon><span>1</span></div>
+                                </div>
+                                <div class="apartments floor_sqfoot">
+                                  <div class="d-flex align-center"><v-icon size="23" class="mr-1"> mdi-set-square</v-icon><span>995</span></div>
+                                </div>
+                                <div class="apartments floor_price"><h3>$725,000</h3></div>
+                              </div>
+                            </VCol>
+                            <VCol cols="12">
+                              <div class="floor_apartments">
+                                <div class="apartments floor_img"><a href=""><img src="@images/img/CE.jpg" alt=""/></a></div>
+                                <div class="apartments floor_Suite"><h3>CE-W</h3></div>
+                                <div class="apartments floor_bed">
+                                  <div class="d-flex align-center"><v-icon size="20" class="mr-1"> mdi-bed</v-icon><span>1</span><v-icon size="20" class="mr-1 ml-1"> mdi-shower</v-icon><span>1</span></div>
+                                </div>
+                                <div class="apartments floor_sqfoot">
+                                  <div class="d-flex align-center"><v-icon size="23" class="mr-1"> mdi-set-square</v-icon><span>995</span></div>
+                                </div>
+                                <div class="apartments floor_price"><h3>$725,000</h3></div>
+                              </div>
+                            </VCol>
+                          </VRow>
+                        </div>
+                      </VWindowItem>
+                      <VWindowItem>
+
+                      </VWindowItem>
+                      <VWindowItem>
+
+                      </VWindowItem>
+                      <VWindowItem>
+
+                      </VWindowItem>
+                    </VWindow>
+                  </div>
                 </VWindowItem>
                 <VWindowItem>
                   <div class="condos_about">
@@ -103,7 +163,6 @@
                 <VWindowItem>
                   <h2>Location</h2>
                 </VWindowItem>
-
               </VWindow>
             </div>
           </div>
@@ -213,6 +272,7 @@ import { Pagination, Navigation, Autoplay } from "swiper";
 const modules = [Pagination, Navigation, Autoplay];
 /////////////////////////////////////////////////////////////////////
 const CondosTab = ref(0);
+const FloorTab = ref(0);
 const items = ['Yes', 'No']
 /////////////////////////////////////////////////////////////////////
 
