@@ -33,6 +33,11 @@ const router = createRouter({
       component: () => import("@/views/pages/landing/condos/condos.vue"),
     },
     {
+      path: '/condo-detail',
+      name: 'condo-detail',
+      component: () => import("@/views/pages/landing/condos/condosDetail.vue"),
+    },
+    {
       path: '/property',
       name: 'property',
       component: () => import("@/views/pages/landing/property/property.vue"),

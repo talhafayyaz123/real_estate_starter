@@ -106,8 +106,11 @@
           <VTab>Sold Out</VTab>
         </VTabs>
         <VWindow v-model="propTabs">
+          <!--====================================================================-->
+          <!--====================================================================-->
+          <!--====================================================================-->
           <VWindowItem>
-            <div class="property_list real_Section">
+            <div class="condos_listing property_list real_Section">
               <div class="container">
                 <VRow>
                   <VCol lg="4">
@@ -118,41 +121,65 @@
                           <div class="property_tags">
                             <div class="hot_tag"><v-icon size="24" class=""> mdi-fire</v-icon></div>
                           </div>
-                          <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
-                          <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
+                          <button class="wishlist">
+                            <svg data-v-5542f78a="" aria-labelledby="svg-inline--fa-title-BdjCU3hBHwzS" data-prefix="far" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="text-tridelRed fav-heart h-6 w-6 svg-inline--fa fa-heart"><title data-v-5542f78a="" id="svg-inline--fa-title-BdjCU3hBHwzS" class="">heart icon</title><path data-v-5542f78a="" fill="currentColor" d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z" class=""></path></svg>
+                            <svg data-v-5542f78a="" aria-labelledby="svg-inline--fa-title-9EAZG4s4WHmu" data-prefix="fas" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="text-tridelRed fav-heart-filled h-6 w-6 svg-inline--fa fa-heart"><title data-v-5542f78a="" id="svg-inline--fa-title-9EAZG4s4WHmu" class="">heart icon</title><path data-v-5542f78a="" fill="currentColor" d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z" class=""></path></svg>
+                          </button>
+                          <div class="">
+                            <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
+                            <span class="dev_tag"><v-icon size="16" class=""> mdi-office-building   </v-icon>Aspen Ridge</span>
+                          </div>
                           <!--======================================-->
                           <!--======================================-->
-                          <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
-                            <swiper-slide>
-                              <div class="prop-img">
-                                <img src="@images/img/condos/condo1.jpg" alt="">
-                              </div>
-                            </swiper-slide>
-                            <swiper-slide>
+                          <div class="prop-img">
+                            <img src="@images/img/condos/condo14.jpg" alt="">
+                          </div>
+                          <!--======================================-->
+                          <!--======================================-->
+                        </div>
+                        <div class="property_body">
+                          <h2><RouterLink :to="{ name:'property-deal'}">The Essery Condos</RouterLink></h2>
+                          <div class="property_price">
+                            <h3><span>$</span>  1,229,990+</h3>
+                          </div>
+                          <div class="property_short_desc">
+                            <p>The‌ ‌Essery Condos by‌ Aspen Ridge Homes is‌ ‌a‌ ‌new condo development ‌at‌ 109 Niagara St, Toronto, Ontario, M5v 1c3.‌ ‌This‌ project ‌offers‌ ‌a‌ ‌low-rise</p>
+                          </div>
+                        </div>
+                    </div>
+                  </VCol>
+                  <VCol lg="4">
+                    <div class="property-card">
+                        <div class="prop-img">
+                          <!--======================================-->
+                          <!--======================================-->
+                          <div class="property_tags">
+                            <div class="hot_tag"><v-icon size="24" class=""> mdi-fire</v-icon></div>
+                          </div>
+                          <button class="wishlist">
+                            <svg data-v-5542f78a="" aria-labelledby="svg-inline--fa-title-BdjCU3hBHwzS" data-prefix="far" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="text-tridelRed fav-heart h-6 w-6 svg-inline--fa fa-heart"><title data-v-5542f78a="" id="svg-inline--fa-title-BdjCU3hBHwzS" class="">heart icon</title><path data-v-5542f78a="" fill="currentColor" d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z" class=""></path></svg>
+                            <svg data-v-5542f78a="" aria-labelledby="svg-inline--fa-title-9EAZG4s4WHmu" data-prefix="fas" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="text-tridelRed fav-heart-filled h-6 w-6 svg-inline--fa fa-heart"><title data-v-5542f78a="" id="svg-inline--fa-title-9EAZG4s4WHmu" class="">heart icon</title><path data-v-5542f78a="" fill="currentColor" d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z" class=""></path></svg>
+                          </button>
+                          <div class="">
+                            <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
+                            <span class="dev_tag"><v-icon size="16" class=""> mdi-office-building   </v-icon> Graywood Developments</span>
+                          </div>
+                          <!--======================================-->
+                          <!--======================================-->
+                          <div class="prop-img">
                             <img src="@images/img/condos/condo2.jpg" alt="">
-                            </swiper-slide>
-                            <swiper-slide>
-                            <img src="@images/img/condos/condo3.jpg" alt="">
-                            </swiper-slide>
-                          </swiper>
+                          </div>
+                          <!--======================================-->
+                          <!--======================================-->
                         </div>
                         <div class="property_body">
-                          <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
+                          <h2><RouterLink :to="{ name:'property-deal'}">Centricity Condos</RouterLink></h2>
                           <div class="property_price">
-                            <h3><span>$</span> 1,853,219</h3>
-                            <p>315 investors</p>
+                            <h3><span>$</span> 595,990+</h3>
                           </div>
-                          <ul class="property_det">
-                            <li>
-                              <p>Available Unit</p><span>188</span>
-                            </li>
-                            <li>
-                              <p>Rating </p><span>4.5</span>
-                            </li>
-                            <li>
-                              <p>Capital ROI :</p><span>+11.84 %</span>
-                            </li>
-                          </ul>
+                          <div class="property_short_desc">
+                            <p>Centricity Condos is a new condominium development that is currently in the pre construction phase by Graywood Developments LTD, located at 241 Church Street, Toronto</p>
+                          </div>
                         </div>
                     </div>
                   </VCol>
@@ -162,227 +189,32 @@
                           <!--======================================-->
                           <!--======================================-->
                           <div class="property_tags">
-                            <div class="blue_tag tag featured_tag">Featured</div>
+                            <div class="hot_tag"><v-icon size="24" class=""> mdi-fire</v-icon></div>
                           </div>
-                          <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
-                          <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
+                          <button class="wishlist">
+                            <svg data-v-5542f78a="" aria-labelledby="svg-inline--fa-title-BdjCU3hBHwzS" data-prefix="far" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="text-tridelRed fav-heart h-6 w-6 svg-inline--fa fa-heart"><title data-v-5542f78a="" id="svg-inline--fa-title-BdjCU3hBHwzS" class="">heart icon</title><path data-v-5542f78a="" fill="currentColor" d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z" class=""></path></svg>
+                            <svg data-v-5542f78a="" aria-labelledby="svg-inline--fa-title-9EAZG4s4WHmu" data-prefix="fas" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="text-tridelRed fav-heart-filled h-6 w-6 svg-inline--fa fa-heart"><title data-v-5542f78a="" id="svg-inline--fa-title-9EAZG4s4WHmu" class="">heart icon</title><path data-v-5542f78a="" fill="currentColor" d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z" class=""></path></svg>
+                          </button>
+                          <div class="">
+                            <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon>Etobicoke</span>
+                            <span class="dev_tag"><v-icon size="16" class=""> mdi-office-building   </v-icon> Diamante</span>
+                          </div>
                           <!--======================================-->
                           <!--======================================-->
-                          <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
-                            <swiper-slide>
-                              <div class="prop-img">
-                                <img src="@images/img/condos/condo4.jpg" alt="">
-                              </div>
-                            </swiper-slide>
-                            <swiper-slide>
-                            <img src="@images/img/condos/condo9.jpg" alt="">
-                            </swiper-slide>
-                            <swiper-slide>
-                            <img src="@images/img/condos/condo6.jpg" alt="">
-                            </swiper-slide>
-                          </swiper>
+                          <div class="prop-img">
+                            <img src="@images/img/condos/condo18.jpg" alt="">
+                          </div>
+                          <!--======================================-->
+                          <!--======================================-->
                         </div>
                         <div class="property_body">
-                          <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
+                          <h2><RouterLink :to="{ name:'property-deal'}">Mirabella Condos</RouterLink></h2>
                           <div class="property_price">
-                            <h3><span>$</span> 1,853,219</h3>
-                            <p>315 investors</p>
+                            <h3><span>$</span>725,000+</h3>
                           </div>
-                          <ul class="property_det">
-                            <li>
-                              <p>Available Unit</p><span>188</span>
-                            </li>
-                            <li>
-                              <p>Rating </p><span>4.5</span>
-                            </li>
-                            <li>
-                              <p>Capital ROI :</p><span>+11.84 %</span>
-                            </li>
-                          </ul>
-                        </div>
-                    </div>
-                  </VCol>
-                  <VCol lg="4">
-                    <div class="property-card">
-                        <div class="prop-img">
-                          <!--======================================-->
-                          <!--======================================-->
-                          <div class="property_tags">
-                            <div class="blue_tag tag featured_tag">Featured</div>
+                          <div class="property_short_desc">
+                            <p>Situated in Windermere and Lake Shore W, Toronto is a new condominium development by Diamante, named the Mirabella Condos. Characterized by two aesthetically pleasing towers</p>
                           </div>
-                          <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
-                          <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
-                          <!--======================================-->
-                          <!--======================================-->
-                          <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
-                            <swiper-slide>
-                              <div class="prop-img">
-                                <img src="@images/img/condos/condo9.jpg" alt="">
-                              </div>
-                            </swiper-slide>
-                            <swiper-slide>
-                            <img src="@images/img/condos/condo9.jpg" alt="">
-                            </swiper-slide>
-                            <swiper-slide>
-                            <img src="@images/img/condos/condo7.jpg" alt="">
-                            </swiper-slide>
-                          </swiper>
-                        </div>
-                        <div class="property_body">
-                          <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
-                          <div class="property_price">
-                            <h3><span>$</span> 1,853,219</h3>
-                            <p>315 investors</p>
-                          </div>
-                          <ul class="property_det">
-                            <li>
-                              <p>Available Unit</p><span>188</span>
-                            </li>
-                            <li>
-                              <p>Rating </p><span>4.5</span>
-                            </li>
-                            <li>
-                              <p>Capital ROI :</p><span>+11.84 %</span>
-                            </li>
-                          </ul>
-                        </div>
-                    </div>
-                  </VCol>
-                  <VCol lg="4">
-                    <div class="property-card">
-                        <div class="prop-img">
-                          <!--======================================-->
-                          <!--======================================-->
-                          <div class="property_tags">
-                            <div class="green_tag tag featured_tag">New Listing</div>
-                          </div>
-                          <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
-                          <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
-                          <!--======================================-->
-                          <!--======================================-->
-                          <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
-                            <swiper-slide>
-                              <div class="prop-img">
-                                <img src="@images/img/condos/condo12.jpg" alt="">
-                              </div>
-                            </swiper-slide>
-                            <swiper-slide>
-                            <img src="@images/img/condos/condo17.jpg" alt="">
-                            </swiper-slide>
-                            <swiper-slide>
-                            <img src="@images/img/condos/condo10.jpg" alt="">
-                            </swiper-slide>
-                          </swiper>
-                        </div>
-                        <div class="property_body">
-                          <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
-                          <div class="property_price">
-                            <h3><span>$</span> 1,853,219</h3>
-                            <p>315 investors</p>
-                          </div>
-                          <ul class="property_det">
-                            <li>
-                              <p>Available Unit</p><span>188</span>
-                            </li>
-                            <li>
-                              <p>Rating </p><span>4.5</span>
-                            </li>
-                            <li>
-                              <p>Capital ROI :</p><span>+11.84 %</span>
-                            </li>
-                          </ul>
-                        </div>
-                    </div>
-                  </VCol>
-                  <VCol lg="4">
-                    <div class="property-card">
-                        <div class="prop-img">
-                          <!--======================================-->
-                          <!--======================================-->
-                          <div class="property_tags">
-                            <div class="green_tag tag featured_tag">New Listing</div>
-                          </div>
-                          <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
-                          <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
-                          <!--======================================-->
-                          <!--======================================-->
-                          <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
-                            <swiper-slide>
-                              <div class="prop-img">
-                                <img src="@images/img/condos/condo14.jpg" alt="">
-                              </div>
-                            </swiper-slide>
-                            <swiper-slide>
-                            <img src="@images/img/condos/condo9.jpg" alt="">
-                            </swiper-slide>
-                            <swiper-slide>
-                            <img src="@images/img/condos/condo1.jpg" alt="">
-                            </swiper-slide>
-                          </swiper>
-                        </div>
-                        <div class="property_body">
-                          <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
-                          <div class="property_price">
-                            <h3><span>$</span> 1,853,219</h3>
-                            <p>315 investors</p>
-                          </div>
-                          <ul class="property_det">
-                            <li>
-                              <p>Available Unit</p><span>188</span>
-                            </li>
-                            <li>
-                              <p>Rating </p><span>4.5</span>
-                            </li>
-                            <li>
-                              <p>Capital ROI :</p><span>+11.84 %</span>
-                            </li>
-                          </ul>
-                        </div>
-                    </div>
-                  </VCol>
-                  <VCol lg="4">
-                    <div class="property-card">
-                        <div class="prop-img">
-                          <!--======================================-->
-                          <!--======================================-->
-                          <div class="property_tags">
-                            <div class="danger_tag tag sold_tag">Coming Sooon</div>
-                          </div>
-                          <div class="wishlist"><v-icon size="24"> mdi-heart-outline  </v-icon></div>
-                          <span class="loction_tag"><v-icon size="16" class=""> mdi-location  </v-icon> Canada</span>
-                          <!--======================================-->
-                          <!--======================================-->
-                          <swiper :navigation="true" :pagination="true" :autoplay="{ delay: 3500, disableOnInteraction: false, }" :modules="modules" class="property_img_slider">
-                            <swiper-slide>
-                              <div class="prop-img">
-                                <img src="@images/img/condos/condo11.jpg" alt="">
-                              </div>
-                            </swiper-slide>
-                            <swiper-slide>
-                            <img src="@images/img/condos/condo11.jpg" alt="">
-                            </swiper-slide>
-                            <swiper-slide>
-                            <img src="@images/img/condos/condo11.jpg" alt="">
-                            </swiper-slide>
-                          </swiper>
-                        </div>
-                        <div class="property_body">
-                          <h2><RouterLink :to="{ name:'property-deal'}">18474 Glenmore St Redford, MI 48240</RouterLink></h2>
-                          <div class="property_price">
-                            <h3><span>$</span> 1,853,219</h3>
-                            <p>315 investors</p>
-                          </div>
-                          <ul class="property_det">
-                            <li>
-                              <p>Available Unit</p><span>188</span>
-                            </li>
-                            <li>
-                              <p>Rating </p><span>4.5</span>
-                            </li>
-                            <li>
-                              <p>Capital ROI :</p><span>+11.84 %</span>
-                            </li>
-                          </ul>
                         </div>
                     </div>
                   </VCol>
@@ -390,6 +222,9 @@
               </div>
             </div>
           </VWindowItem>
+          <!--====================================================================-->
+          <!--====================================================================-->
+          <!--====================================================================-->
           <VWindowItem>
             <div class="property_list real_Section">
               <div class="container">
@@ -444,6 +279,9 @@
               </div>
             </div>
           </VWindowItem>
+          <!--====================================================================-->
+          <!--====================================================================-->
+          <!--====================================================================-->
           <VWindowItem>
             <div class="property_list real_Section">
               <div class="container">
@@ -544,6 +382,9 @@
               </div>
             </div>
           </VWindowItem>
+          <!--====================================================================-->
+          <!--====================================================================-->
+          <!--====================================================================-->
           <VWindowItem>
             <div class="property_list real_Section">
               <div class="container">
@@ -644,6 +485,9 @@
               </div>
             </div>
           </VWindowItem>
+          <!--====================================================================-->
+          <!--====================================================================-->
+          <!--====================================================================-->
           <VWindowItem>
             <div class="property_list real_Section">
               <div class="container">
@@ -698,6 +542,9 @@
               </div>
             </div>
           </VWindowItem>
+          <!--====================================================================-->
+          <!--====================================================================-->
+          <!--====================================================================-->
           <VWindowItem>
             <div class="property_list real_Section">
               <div class="container">
@@ -752,6 +599,9 @@
               </div>
             </div>
           </VWindowItem>
+          <!--====================================================================-->
+          <!--====================================================================-->
+          <!--====================================================================-->
         </VWindow>
       </div>
     </section>
