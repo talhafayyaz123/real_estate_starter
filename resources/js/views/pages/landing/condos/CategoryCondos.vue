@@ -49,7 +49,13 @@
               </div>
               <div class="property_body">
                 <h2>
-                  <RouterLink :to="{ name: 'condo-detail' }">
+              
+                  <RouterLink
+                    :to="{
+                      name: 'landing-condos-preview-detail',
+                      params: { detail: condo.uuid },
+                    }"
+                  >
                     {{ condo.title }}
                   </RouterLink>
                 </h2>

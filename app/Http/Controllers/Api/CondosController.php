@@ -58,9 +58,15 @@ class CondosController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Condos $id)
     {
-        //
+        return $this->respond([
+            'status' => true,
+            'message' => 'Condo Detail has been fetched succefully!',
+            'data' => [
+                'condo' => $id
+            ],
+        ]);
     }
 
     /**

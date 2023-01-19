@@ -44,5 +44,12 @@ export const useHomeStore = defineStore('HomeStore', {
         axios.get(`/apps/users/${id}`).then(response => resolve(response)).catch(error => reject(error))
       })
     },
+
+    fetchCondo(id) {
+      return new Promise((resolve, reject) => {
+        axios.get(`/api/get-condo-detail/${id}`).then(response => resolve(response)).catch(error => reject(error))
+      })
+    },
+
   },
 })

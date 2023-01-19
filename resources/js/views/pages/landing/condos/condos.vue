@@ -112,6 +112,24 @@
           <!--====================================================================-->
           <VWindowItem>
             <CategoryCondos category="all" :condos="condos" />
+
+            <!-- <VDivider />
+
+            <VCardText class="d-flex align-center flex-wrap gap-4 py-3">
+
+              <span class="text-sm text-disabled">
+                {{ paginationData }}
+              </span>
+
+              <VSpacer />
+
+              <VPagination
+                v-model="currentPage"
+                size="small"
+                :total-visible="2"
+                :length="totalPage"
+              />
+            </VCardText> -->
           </VWindowItem>
           <!--====================================================================-->
           <!--====================================================================-->
@@ -201,6 +219,7 @@ const totalCondos = ref(0);
 const condos = ref([]);
 const location = ref("");
 const category = ref("");
+const selectedRows = ref([]);
 const fetchCondos = () => {
   userHomeStore
     .fetchCondos({
@@ -216,8 +235,8 @@ const fetchCondos = () => {
     })
     .then((response) => {
       condos.value = response.data.data.condos.data;
-      totalPage.value = response.data.totalPage;
-      totalCondos.value = response.data.total;
+      totalPage.value = response.data.data.perPage;
+      totalCondos.value = response.data.data.condos.total;
     })
     .catch((error) => {
       console.error(error);
@@ -235,4 +254,15 @@ watchEffect(fetchCondos);
 watchEffect(() => {
   if (currentPage.value > totalPage.value) currentPage.value = totalPage.value;
 });
+
+// 👉 Computing pagination data
+/* const paginationData = computed(() => {
+  const firstIndex = condos.value.length
+    ? (currentPage.value - 1) * rowPerPage.value + 1
+    : 0;
+  const lastIndex =
+    condos.value.length + (currentPage.value - 1) * rowPerPage.value;
+
+  return `Showing ${firstIndex} to ${lastIndex} of ${totalCondos.value} entries`;
+}); */
 </script>
