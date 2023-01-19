@@ -113,10 +113,9 @@
           <VWindowItem>
             <CategoryCondos category="all" :condos="condos" />
 
-            <!-- <VDivider />
+           <!--  <VDivider />
 
             <VCardText class="d-flex align-center flex-wrap gap-4 py-3">
-
               <span class="text-sm text-disabled">
                 {{ paginationData }}
               </span>
@@ -235,7 +234,8 @@ const fetchCondos = () => {
     })
     .then((response) => {
       condos.value = response.data.data.condos.data;
-      totalPage.value = response.data.data.perPage;
+      totalPage.value = response.data.data.condos.perPage;
+
       totalCondos.value = response.data.data.condos.total;
     })
     .catch((error) => {
