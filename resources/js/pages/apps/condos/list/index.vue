@@ -105,42 +105,24 @@ const CondoStatusChange = (uuid, status) => {
 
           <VCardText class="d-flex flex-wrap py-4 gap-4">
             <div class="me-3" style="width: 80px">
-              <VSelect
-                v-model="rowPerPage"
-                density="compact"
-                variant="outlined"
-                :items="[10, 20, 30, 50]"
-              />
+              <VSelect v-model="rowPerPage" density="compact" variant="outlined" :items="[10, 20, 30, 50]" />
             </div>
 
             <VSpacer />
 
-            <div
-              class="app-user-search-filter d-flex align-center flex-wrap gap-4"
-            >
+            <div class="app-user-search-filter d-flex align-center flex-wrap gap-4">
               <!-- 👉 Search  -->
               <div style="width: 10rem">
-                <VTextField
-                  v-model="searchQuery"
-                  placeholder="Search"
-                  density="compact"
-                />
+                <VTextField v-model="searchQuery" placeholder="Search" density="compact" />
               </div>
 
               <!-- 👉 Export button -->
-              <VBtn
-                variant="tonal"
-                color="secondary"
-                prepend-icon="tabler-screen-share"
-              >
+              <VBtn variant="tonal" color="secondary" prepend-icon="tabler-screen-share">
                 Export
               </VBtn>
 
               <!-- 👉 Add user button -->
-              <VBtn
-                prepend-icon="tabler-plus"
-                @click="isAddNewCondoPopupVisible = true"
-              >
+              <VBtn prepend-icon="tabler-plus" @click="isAddNewCondoPopupVisible = true">
                 Add Condo
               </VBtn>
             </div>
@@ -166,19 +148,12 @@ const CondoStatusChange = (uuid, status) => {
             </thead>
             <!-- 👉 table body -->
             <tbody>
-              <tr
-                v-for="condo in condos"
-                :key="condo.id"
-                style="height: 3.75rem"
-              >
+              <tr v-for="condo in condos" :key="condo.id" style="height: 3.75rem">
                 <!-- 👉 User -->
                 <td>
                   <div class="d-flex align-center">
                     <VAvatar variant="tonal" class="me-3" size="38">
-                      <VImg
-                        v-if="condo.condos_image"
-                        :src="condo.condos_image"
-                      />
+                      <VImg v-if="condo.condos_image" :src="condo.condos_image" />
                     </VAvatar>
                   </div>
                 </td>
@@ -186,16 +161,12 @@ const CondoStatusChange = (uuid, status) => {
                 <!-- 👉 Role -->
                 <td>
                   <span class="text-capitalize text-base">
-                    {{ condo.title }}</span
-                  >
+                    {{ condo.title }}</span>
                 </td>
 
                 <!-- 👉 Plan -->
                 <td>
-                  <span
-                    class="text-capitalize text-base font-weight-semibold"
-                    >{{ condo.address }}</span
-                  >
+                  <span class="text-capitalize text-base font-weight-semibold">{{ condo.address }}</span>
                 </td>
 
                 <!-- 👉 Billing -->
@@ -216,12 +187,7 @@ const CondoStatusChange = (uuid, status) => {
                 </td>
                 <!-- 👉 Status -->
                 <td>
-                  <VChip
-                    label
-                    :color="resolveUserStatusVariant(condo.status)"
-                    size="small"
-                    class="text-capitalize"
-                  >
+                  <VChip label :color="resolveUserStatusVariant(condo.status)" size="small" class="text-capitalize">
                     {{ resolveStatusText(condo.status) }}
                   </VChip>
                 </td>
@@ -232,13 +198,7 @@ const CondoStatusChange = (uuid, status) => {
                     <VIcon size="22" icon="tabler-edit" />
                   </VBtn>
 
-                  <VBtn
-                    icon
-                    size="x-small"
-                    color="default"
-                    variant="text"
-                    @click="deleteCondo(condo.uuid)"
-                  >
+                  <VBtn icon size="x-small" color="default" variant="text" @click="deleteCondo(condo.uuid)">
                     <VIcon size="22" icon="tabler-trash" />
                   </VBtn>
 
@@ -247,10 +207,8 @@ const CondoStatusChange = (uuid, status) => {
 
                     <VMenu activator="parent">
                       <VList>
-                        <VListItem
-                          :title="condo.status == 1 ? 'Inactive' : 'Active'"
-                          @click="CondoStatusChange(condo.uuid, condo.status)"
-                        />
+                        <VListItem :title="condo.status == 1 ? 'Inactive' : 'Active'"
+                          @click="CondoStatusChange(condo.uuid, condo.status)" />
                       </VList>
                     </VMenu>
                   </VBtn>
@@ -268,29 +226,19 @@ const CondoStatusChange = (uuid, status) => {
 
           <VDivider />
 
-          <VCardText
-            class="d-flex align-center flex-wrap justify-space-between gap-4 py-3 px-5"
-          >
+          <VCardText class="d-flex align-center flex-wrap justify-space-between gap-4 py-3 px-5">
             <span class="text-sm text-disabled">
               {{ paginationData }}
             </span>
 
-            <VPagination
-              v-model="currentPage"
-              size="small"
-              :total-visible="5"
-              :length="totalPage"
-            />
+            <VPagination v-model="currentPage" size="small" :total-visible="5" :length="totalPage" />
           </VCardText>
         </VCard>
       </VCol>
     </VRow>
 
     <!-- 👉 Add New User -->
-    <AddNewCondo
-      v-model:isCondoOpen="isAddNewCondoPopupVisible"
-      @condo-data="addNewCondo"
-    />
+    <AddNewCondo v-model:isCondoOpen="isAddNewCondoPopupVisible" @condo-data="addNewCondo" />
   </section>
 </template>
 
