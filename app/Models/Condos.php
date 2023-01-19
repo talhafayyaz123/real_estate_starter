@@ -20,7 +20,10 @@ class Condos extends Model
         });
     }
 
-
+    public function getRouteKeyName()
+    {
+        return 'uuid';
+    }
     public static function getCondos($request)
     {
 
