@@ -1260,7 +1260,7 @@ body{
   }
 }
 .condos_detail{
-  padding: 50px 0px;
+  padding: 0px 0px;
   background: #fff;
   .condos_det{
     h2{
@@ -1417,7 +1417,6 @@ body{
     width: 20%;
   }
 }
-
 .floor_apartments{
   display: flex;
   align-items: center;
@@ -1470,4 +1469,150 @@ body{
     color: #001D38;
     margin-bottom: 30px;
   }
+}
+/////////////////////////////////////////////////////
+.con_images_sec{
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  .v-row{
+    margin: 0px;
+  }
+  .v-col{
+    padding: 0px;
+  }
+  .left_image_sec{
+    img{
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      vertical-align: bottom;
+    }
+  }
+  .right_image_sec{
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+    .image_rig{
+      padding: 0px 0px 5px 5px;
+    }
+    img{
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      vertical-align: bottom;
+    }
+  }
+}
+.cod_detail{
+  padding: 30px 0px;
+  .cod_heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h2{
+      font-size: 28px;
+      color: #001D38;
+    }
+    .cod_meta{
+      display: flex;
+      align-items: center;
+      button{
+        background: transparent;
+        border: 1px solid $primary_color;
+        padding: 6px 10px;
+        border-radius: 4px;
+      }
+      .share{
+        color: $primary_color;
+      }
+      .wishlist{
+        position: relative;
+        left: inherit;
+        right: inherit;
+        top: inherit;
+        width: auto !important;
+        height: auto !important;
+        svg{
+          width: 24px;
+        }
+      }
+    }
+  }
+  .suite{
+    p{
+      font-size: 20px;
+    }
+  }
+  .cod_info_container{
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    border: 1px solid $primary_color;
+    border-radius: 8px;
+    .cod_info{
+      width: 33.33%;
+      text-align: center;
+      p{
+        font-size: 18px;
+        margin: 0px;
+      }
+      h3{
+        font-size: 16px;
+        color: #001D38;
+      }
+    }
+  }
+  .codos_info{
+    margin-bottom: 20px;
+    ul{
+      width: 50%;
+      li{
+        padding: 6px 5px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #D3D9E5;
+        h5{
+          font-size: 16px;
+          width: 50%;
+          color: #001D38;
+        }
+        h4{
+          font-size: 15px;
+          color: #001D38;
+        }
+        span{
+          font-size: 15px;
+        }
+        a{
+          color: $primary_color;
+        }
+      }
+    }
+  }
+  
+}
+.contact_condos_sec{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding: 30px 0px;
+}
+.contact_condos{
+  width: 100%;
+  position: sticky;
+  top: 2rem;
+  display: flex;
+  flex-direction: column;
+  .contact_condos_box{
+    border: 1px solid #D3D9E5;
+    border-radius: 4px;
+    padding: 20px;
+    h2{
+      font-size: 26px;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+ 
 }
