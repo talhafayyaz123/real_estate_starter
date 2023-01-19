@@ -32,33 +32,27 @@
                   <div class="filter_grid">
                     <div class="filter_s">
                       <VSelect
-                        v-model="market"
-                        label="Market"
+                        v-model="location"
+                        label="Location"
                         :items="['All Market', 'UAE', 'Canada', 'USA', 'KSA']"
                       />
                     </div>
                     <div class="filter_s">
                       <VSelect
-                        v-model="land"
-                        label="Land"
-                        :items="['Residential', 'Commercial', 'Industrial']"
-                      />
-                    </div>
-                    <div class="filter_s">
-                      <VSelect
-                        v-model="type"
-                        label="Type"
+                        v-model="category"
+                        label="Category"
                         :items="[
-                          'Plaza',
-                          'Office',
-                          'Hotel',
-                          'Apartment',
-                          'Condo',
+                          'New Listing',
+                          'Hot',
+                          'Featured',
+                          'Coming Soon',
+                          'Sold Out',
                         ]"
                       />
                     </div>
+
                     <div class="filter_b">
-                      <v-btn class="find_filter" @click="fetchUsers"
+                      <v-btn class="find_filter" @click="fetchCondos"
                         >Find</v-btn
                       >
                     </div>
@@ -71,33 +65,26 @@
                   <div class="filter_grid">
                     <div class="filter_s">
                       <VSelect
-                        v-model="market"
-                        label="Market"
+                        v-model="location"
+                        label="Location"
                         :items="['All Market', 'UAE', 'Canada', 'USA', 'KSA']"
                       />
                     </div>
                     <div class="filter_s">
                       <VSelect
-                        v-model="land"
-                        label="Land"
-                        :items="['Residential', 'Commercial', 'Industrial']"
-                      />
-                    </div>
-                    <div class="filter_s">
-                      <VSelect
-                        v-model="type"
-                        label="Type"
+                        v-model="category"
+                        label="Category"
                         :items="[
-                          'Plaza',
-                          'Office',
-                          'Hotel',
-                          'Apartment',
-                          'Condo',
+                          'New Listing',
+                          'Hot',
+                          'Featured',
+                          'Coming Soon',
+                          'Sold Out',
                         ]"
                       />
                     </div>
                     <div class="filter_b">
-                      <v-btn @click="fetchUsers">Find</v-btn>
+                      <v-btn @click="fetchCondos">Find</v-btn>
                     </div>
                   </div>
                 </div>
@@ -126,308 +113,113 @@
           <VWindowItem>
             <div class="condos_listing property_list real_Section">
               <div class="container">
-                <VRow>
-                  <VCol lg="4">
-                    <div class="property-card">
-                      <div class="prop-img">
-                        <!--======================================-->
-                        <!--======================================-->
-                        <div class="property_tags">
-                          <div class="hot_tag">
-                            <v-icon size="24" class=""> mdi-fire</v-icon>
-                          </div>
-                        </div>
-                        <button class="wishlist">
-                          <svg
-                            data-v-5542f78a=""
-                            aria-labelledby="svg-inline--fa-title-BdjCU3hBHwzS"
-                            data-prefix="far"
-                            data-icon="heart"
-                            role="img"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"
-                            class="text-tridelRed fav-heart h-6 w-6 svg-inline--fa fa-heart"
-                          >
-                            <title
-                              data-v-5542f78a=""
-                              id="svg-inline--fa-title-BdjCU3hBHwzS"
-                              class=""
-                            >
-                              heart icon
-                            </title>
-                            <path
-                              data-v-5542f78a=""
-                              fill="currentColor"
-                              d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"
-                              class=""
-                            ></path>
-                          </svg>
-                          <svg
-                            data-v-5542f78a=""
-                            aria-labelledby="svg-inline--fa-title-9EAZG4s4WHmu"
-                            data-prefix="fas"
-                            data-icon="heart"
-                            role="img"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"
-                            class="text-tridelRed fav-heart-filled h-6 w-6 svg-inline--fa fa-heart"
-                          >
-                            <title
-                              data-v-5542f78a=""
-                              id="svg-inline--fa-title-9EAZG4s4WHmu"
-                              class=""
-                            >
-                              heart icon
-                            </title>
-                            <path
-                              data-v-5542f78a=""
-                              fill="currentColor"
-                              d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"
-                              class=""
-                            ></path>
-                          </svg>
-                        </button>
-                        <div class="">
-                          <span class="loction_tag"
-                            ><v-icon size="16" class=""> mdi-location </v-icon>
-                            Canada</span
-                          >
-                          <span class="dev_tag"
-                            ><v-icon size="16" class="">
-                              mdi-office-building </v-icon
-                            >Aspen Ridge</span
-                          >
-                        </div>
-                        <!--======================================-->
-                        <!--======================================-->
+                <div v-if="condos.length > 0">
+                  <VRow>
+                    <VCol lg="4" v-for="(condo, index) in condos">
+                      <div class="property-card">
                         <div class="prop-img">
-                          <img src="@images/img/condos/condo14.jpg" alt="" />
-                        </div>
-                        <!--======================================-->
-                        <!--======================================-->
-                      </div>
-                      <div class="property_body">
-                        <h2>
-                          <RouterLink :to="{ name: 'condo-detail' }"
-                            >The Essery Condos</RouterLink
-                          >
-                        </h2>
-                        <div class="property_price">
-                          <h3><span>$</span> 1,229,990+</h3>
-                        </div>
-                        <div class="property_short_desc">
-                          <p>
-                            The‌ ‌Essery Condos by‌ Aspen Ridge Homes is‌ ‌a‌
-                            ‌new condo development ‌at‌ 109 Niagara St, Toronto,
-                            Ontario, M5v 1c3.‌ ‌This‌ project ‌offers‌ ‌a‌
-                            ‌low-rise
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </VCol>
-                  <VCol lg="4">
-                    <div class="property-card">
-                      <div class="prop-img">
-                        <!--======================================-->
-                        <!--======================================-->
-                        <div class="property_tags">
-                          <div class="hot_tag">
-                            <v-icon size="24" class=""> mdi-fire</v-icon>
-                          </div>
-                        </div>
-                        <button class="wishlist">
-                          <svg
-                            data-v-5542f78a=""
-                            aria-labelledby="svg-inline--fa-title-BdjCU3hBHwzS"
-                            data-prefix="far"
-                            data-icon="heart"
-                            role="img"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"
-                            class="text-tridelRed fav-heart h-6 w-6 svg-inline--fa fa-heart"
-                          >
-                            <title
-                              data-v-5542f78a=""
-                              id="svg-inline--fa-title-BdjCU3hBHwzS"
-                              class=""
-                            >
-                              heart icon
-                            </title>
-                            <path
-                              data-v-5542f78a=""
-                              fill="currentColor"
-                              d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"
-                              class=""
-                            ></path>
-                          </svg>
-                          <svg
-                            data-v-5542f78a=""
-                            aria-labelledby="svg-inline--fa-title-9EAZG4s4WHmu"
-                            data-prefix="fas"
-                            data-icon="heart"
-                            role="img"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"
-                            class="text-tridelRed fav-heart-filled h-6 w-6 svg-inline--fa fa-heart"
-                          >
-                            <title
-                              data-v-5542f78a=""
-                              id="svg-inline--fa-title-9EAZG4s4WHmu"
-                              class=""
-                            >
-                              heart icon
-                            </title>
-                            <path
-                              data-v-5542f78a=""
-                              fill="currentColor"
-                              d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"
-                              class=""
-                            ></path>
-                          </svg>
-                        </button>
-                        <div class="">
-                          <span class="loction_tag"
-                            ><v-icon size="16" class=""> mdi-location </v-icon>
-                            Canada</span
-                          >
-                          <span class="dev_tag"
-                            ><v-icon size="16" class="">
-                              mdi-office-building
-                            </v-icon>
-                            Graywood Developments</span
-                          >
-                        </div>
-                        <!--======================================-->
-                        <!--======================================-->
-                        <div class="prop-img">
-                          <img src="@images/img/condos/condo2.jpg" alt="" />
-                        </div>
-                        <!--======================================-->
-                        <!--======================================-->
-                      </div>
-                      <div class="property_body">
-                        <h2>
-                          <RouterLink :to="{ name: 'condo-detail' }"
-                            >Centricity Condos</RouterLink
-                          >
-                        </h2>
-                        <div class="property_price">
-                          <h3><span>$</span> 595,990+</h3>
-                        </div>
-                        <div class="property_short_desc">
-                          <p>
-                            Centricity Condos is a new condominium development
-                            that is currently in the pre construction phase by
-                            Graywood Developments LTD, located at 241 Church
-                            Street, Toronto
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </VCol>
+                          <!--======================================-->
+                          <!--======================================-->
+                          <div class="property_tags">
+                            <div class="hot_tag" v-if="condo.category == 'Hot'">
+                              <v-icon size="24"> mdi-fire</v-icon>
+                            </div>
 
-                  <VCol lg="4">
-                    <div class="property-card">
-                      <div class="prop-img">
-                        <!--======================================-->
-                        <!--======================================-->
-                        <div class="property_tags">
-                          <div class="hot_tag">
-                            <v-icon size="24" class=""> mdi-fire</v-icon>
+                            <div :class="`${getCategory(condo.category)}`">
+                              {{ condo.category }}
+                            </div>
+                          </div>
+                          <button class="wishlist">
+                            <svg
+                              data-v-5542f78a=""
+                              aria-labelledby="svg-inline--fa-title-BdjCU3hBHwzS"
+                              data-prefix="far"
+                              data-icon="heart"
+                              role="img"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 512 512"
+                              class="text-tridelRed fav-heart h-6 w-6 svg-inline--fa fa-heart"
+                            >
+                              <title
+                                data-v-5542f78a=""
+                                id="svg-inline--fa-title-BdjCU3hBHwzS"
+                                class=""
+                              >
+                                heart icon
+                              </title>
+                              <path
+                                data-v-5542f78a=""
+                                fill="currentColor"
+                                d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"
+                                class=""
+                              ></path>
+                            </svg>
+                            <svg
+                              data-v-5542f78a=""
+                              aria-labelledby="svg-inline--fa-title-9EAZG4s4WHmu"
+                              data-prefix="fas"
+                              data-icon="heart"
+                              role="img"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 512 512"
+                              class="text-tridelRed fav-heart-filled h-6 w-6 svg-inline--fa fa-heart"
+                            >
+                              <title
+                                data-v-5542f78a=""
+                                id="svg-inline--fa-title-9EAZG4s4WHmu"
+                                class=""
+                              >
+                                heart icon
+                              </title>
+                              <path
+                                data-v-5542f78a=""
+                                fill="currentColor"
+                                d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"
+                                class=""
+                              ></path>
+                            </svg>
+                          </button>
+                          <div class="">
+                            <span class="loction_tag"
+                              ><v-icon size="16" class="">
+                                mdi-location
+                              </v-icon>
+                              {{ condo.location }}</span
+                            >
+                            <span class="dev_tag"
+                              ><v-icon size="16" class="">
+                                mdi-office-building </v-icon
+                              >Aspen Ridge</span
+                            >
+                          </div>
+                          <!--======================================-->
+                          <!--======================================-->
+                          <div class="prop-img">
+                            <img src="@images/img/condos/condo14.jpg" alt="" />
+                          </div>
+                          <!--======================================-->
+                          <!--======================================-->
+                        </div>
+                        <div class="property_body">
+                          <h2>
+                            <RouterLink :to="{ name: 'condo-detail' }">
+                              {{ condo.title }}
+                            </RouterLink>
+                          </h2>
+                          <div class="property_price">
+                            <h3><span>$</span> {{ condo.price }}</h3>
+                          </div>
+                          <div class="property_short_desc">
+                            <p>
+                              {{ condo.description }}
+                            </p>
                           </div>
                         </div>
-                        <button class="wishlist">
-                          <svg
-                            data-v-5542f78a=""
-                            aria-labelledby="svg-inline--fa-title-BdjCU3hBHwzS"
-                            data-prefix="far"
-                            data-icon="heart"
-                            role="img"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"
-                            class="text-tridelRed fav-heart h-6 w-6 svg-inline--fa fa-heart"
-                          >
-                            <title
-                              data-v-5542f78a=""
-                              id="svg-inline--fa-title-BdjCU3hBHwzS"
-                              class=""
-                            >
-                              heart icon
-                            </title>
-                            <path
-                              data-v-5542f78a=""
-                              fill="currentColor"
-                              d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"
-                              class=""
-                            ></path>
-                          </svg>
-                          <svg
-                            data-v-5542f78a=""
-                            aria-labelledby="svg-inline--fa-title-9EAZG4s4WHmu"
-                            data-prefix="fas"
-                            data-icon="heart"
-                            role="img"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"
-                            class="text-tridelRed fav-heart-filled h-6 w-6 svg-inline--fa fa-heart"
-                          >
-                            <title
-                              data-v-5542f78a=""
-                              id="svg-inline--fa-title-9EAZG4s4WHmu"
-                              class=""
-                            >
-                              heart icon
-                            </title>
-                            <path
-                              data-v-5542f78a=""
-                              fill="currentColor"
-                              d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"
-                              class=""
-                            ></path>
-                          </svg>
-                        </button>
-                        <div class="">
-                          <span class="loction_tag"
-                            ><v-icon size="16" class=""> mdi-location </v-icon
-                            >Etobicoke</span
-                          >
-                          <span class="dev_tag"
-                            ><v-icon size="16" class="">
-                              mdi-office-building
-                            </v-icon>
-                            Diamante</span
-                          >
-                        </div>
-                        <!--======================================-->
-                        <!--======================================-->
-                        <div class="prop-img">
-                          <img src="@images/img/condos/condo18.jpg" alt="" />
-                        </div>
-                        <!--======================================-->
-                        <!--======================================-->
                       </div>
-                      <div class="property_body">
-                        <h2>
-                          <RouterLink :to="{ name: 'condo-detail' }"
-                            >Mirabella Condos</RouterLink
-                          >
-                        </h2>
-                        <div class="property_price">
-                          <h3><span>$</span>725,000+</h3>
-                        </div>
-                        <div class="property_short_desc">
-                          <p>
-                            Situated in Windermere and Lake Shore W, Toronto is
-                            a new condominium development by Diamante, named the
-                            Mirabella Condos. Characterized by two aesthetically
-                            pleasing towers
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </VCol>
-                </VRow>
+                    </VCol>
+                  </VRow>
+                </div>
+                <VCol v-else>Not Record Found</VCol>
               </div>
             </div>
           </VWindowItem>
@@ -1017,6 +809,7 @@
 import HeaderComp from "../components/header.vue";
 import FooterComp from "../components/footer.vue";
 import breadcrumpHeader from "../components/breadcrumpHeader.vue";
+import { computed } from "vue";
 /////////////////////////////////////////////////////////////////////
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { useHomeStore } from "../useHomeStore";
@@ -1036,12 +829,11 @@ const selectedStatus = ref();
 const rowPerPage = ref(10);
 const currentPage = ref(1);
 const totalPage = ref(1);
-const totalUsers = ref(0);
-const users = ref([]);
-const market = ref("");
-const land = ref("");
-const type = ref("");
-const fetchUsers = () => {
+const totalCondos = ref(0);
+const condos = ref([]);
+const location = ref("");
+const category = ref("");
+const fetchCondos = () => {
   userHomeStore
     .fetchCondos({
       q: searchQuery.value,
@@ -1051,14 +843,13 @@ const fetchUsers = () => {
       perPage: rowPerPage.value,
       currentPage: currentPage.value,
       front: 1,
-      //market: market.value,
-      //land: land.value,
-      //type: type.value,
+      category: category.value,
+      location: location.value,
     })
     .then((response) => {
-      users.value = response.data.data.properties.data;
+      condos.value = response.data.data.condos.data;
       totalPage.value = response.data.totalPage;
-      totalUsers.value = response.data.totalUsers;
+      totalCondos.value = response.data.total;
     })
     .catch((error) => {
       console.error(error);
@@ -1071,7 +862,18 @@ const resolveStatusText = (val) => {
 
   return "Active";
 };
-watchEffect(fetchUsers);
+
+const getCategory = (category) => {
+  if (category === "Featured") {
+    return "blue_tag tag featured_tag";
+  } else if (category === "New Listing") {
+    return "green_tag tag featured_tag";
+  } else if (category === "Coming Soon" || category === "Sold Out") {
+    return "danger_tag tag sold_tag";
+  }
+};
+
+watchEffect(fetchCondos);
 watchEffect(() => {
   if (currentPage.value > totalPage.value) currentPage.value = totalPage.value;
 });

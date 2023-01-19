@@ -16,23 +16,25 @@ const condos = ref([]);
 
 // 👉 Fetching condos
 const fetchCondos = () => {
-  condosListStore
-    .fetchCondos({
-      q: searchQuery.value,
-      status: selectedStatus.value,
-      plan: selectedPlan.value,
-      role: selectedRole.value,
-      perPage: rowPerPage.value,
-      currentPage: currentPage.value,
-    })
-    .then((response) => {
-      condos.value = response.data.data.condos.data;
-      totalPage.value = response.data.totalPage;
-      totalUsers.value = response.data.totalUsers;
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+  setTimeout(() => {
+    condosListStore
+      .fetchCondos({
+        q: searchQuery.value,
+        status: selectedStatus.value,
+        plan: selectedPlan.value,
+        role: selectedRole.value,
+        perPage: rowPerPage.value,
+        currentPage: currentPage.value,
+      })
+      .then((response) => {
+        condos.value = response.data.data.condos.data;
+        totalPage.value = response.data.totalPage;
+        totalUsers.value = response.data.totalUsers;
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, 2000);
 };
 
 watchEffect(fetchCondos);
@@ -43,26 +45,24 @@ watchEffect(() => {
 });
 
 const resolveUserStatusVariant = (stat) => {
-  if (stat === "pending") return "warning";
-  if (stat === 1) return "success";
-  if (stat === 0) return "secondary";
+  console.log("resolveUserStatusVariant");
+  console.log(typeof stat);
+  if (stat == 1) return "success";
+  if (stat == 0) return "secondary";
 
   return "success";
 };
 
 const resolveStatusText = (val) => {
-  if (val === 1) return "Active";
-  if (val === 0) return "Inactive";
+  console.log("resolveStatusText");
+  console.log(typeof val);
+  if (val == 1) return "Active";
+  if (val == 0) return "Inactive";
 
   return "Active";
 };
 
 const isAddNewCondoPopupVisible = ref(false);
-
-// 👉 watching current page
-watchEffect(() => {
-  if (currentPage.value > totalPage.value) currentPage.value = totalPage.value;
-});
 
 // 👉 Computing pagination data
 const paginationData = computed(() => {

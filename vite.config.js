@@ -14,7 +14,7 @@ import laravel from 'laravel-vite-plugin'
 export default defineConfig({
   server: {
     hmr: {
-      host: "127.0.0.1",
+      host: "https://future-estate.talhafayyaz.com",
     },
   },
   plugins: [

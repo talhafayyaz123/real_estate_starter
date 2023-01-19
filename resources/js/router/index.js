@@ -5,7 +5,7 @@ import routes from '~pages'
 import { isUserLoggedIn } from './utils'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory('/'),
   routes: [
 
     {
