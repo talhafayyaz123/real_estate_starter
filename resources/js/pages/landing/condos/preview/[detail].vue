@@ -28,6 +28,9 @@
         </VCol>
       </VRow>
     </div>
+    <div class="see_all_img">
+      <VBtn rounded="pill" >View all Photos</VBtn>
+    </div>
     <div class="container">
       <VRow>
         <VCol md="8">
@@ -98,7 +101,7 @@
               </div>
               <div class="cod_info">
                 <p>Sq.Footage</p>
-                <h3>1406</h3>
+                <h3>{{ condoDetail?.area_size }}</h3>
               </div>
             </div>
             <!--/////////////////////////////////////////////////-->
@@ -115,18 +118,7 @@
                 <div class="cod_detail_tab_info">
                   <h2>Detail</h2>
                   <div class="cod_data">
-                    <p>12 Month Lease, $3,000 deposit, Available Now</p>
-                    <p>Be the first to lease this newly renovated 2 bedroom, south facing, sunny unit situated between
-                      the Gold Coast and Old Town, walking distance to Lincoln Park. This beautiful condo is finished
-                      with high end cabinetry, appliances, and lighting throughout. The large master bedroom has a full
-                      size closet and is located adjacent to the fully remodeled bathroom with a large walk-in shower.
-                      The second bedroom is perfect as a guest room or office. There is ample closet space in the
-                      hallways including a coat closet, pantry, and large walk-in closet. Lowell House is a well managed
-                      building within the Sandburg community offering a fully remodeled contemporary lobby, a Door
-                      Person, 24 hour lobby security, and a first floor shared laundry room. There is garage parking in
-                      the building for a fee with options for guest parking. Be the first tenants to enjoy this
-                      beautiful unit and the amenities of the Sandburg community including two full size pools and
-                      tennis courts.</p>
+                    <p>{{ condoDetail?.description }}</p>
                   </div>
                   <ul class="cod_data_list">
                     <li>

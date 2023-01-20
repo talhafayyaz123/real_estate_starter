@@ -939,10 +939,13 @@ body{
 .property_tabs{
   margin-top: 50px;
   .v-slide-group__content{
-    justify-content: center;
+    // justify-content: center;
     button.v-slide-group-item--active{
       background: $primary_color !important;
     }
+  }
+  .filter_btn{
+    background: $primary_color !important;
   }
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1377,8 +1380,14 @@ body{
 }
 /////////////////////////////////////////////////////
 .condos_detail{
-  padding: 30px 0px;
-  background: #f6f7f9;
+  padding: 0px 0px 40px;
+  background: #fff;
+}
+.see_all_img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -20px;
 }
 .cod_detail_tab{
   .v-tabs.v-tabs-pill .v-tab.v-btn{
