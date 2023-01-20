@@ -1259,102 +1259,7 @@ body{
     }
   }
 }
-.condos_detail{
-  padding: 0px 0px;
-  background: #fff;
-  .condos_det{
-    h2{
-      font-size: 24px;
-      color: #001D38;
-      margin-bottom: 6px;
-    }
-    ul{
-      width: 100%;
-      li{
-        padding: 6px 5px;
-        display: flex;
-        align-items: center;
-        border-bottom: 1px solid #D3D9E5;
-        h5{
-          font-size: 16px;
-          width: 50%;
-          color: #001D38;
-        }
-        h4{
-          font-size: 15px;
-          color: #001D38;
-        }
-        span{
-          font-size: 15px;
-        }
-        a{
-          color: $primary_color;
-        }
-      }
-    }
-  }
-  .condos_images{
-    border: 1px solid #D3D9E5;
-    width: 100%;
-    position: relative;
-    img{
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      vertical-align: bottom;
-    }
-    &:hover{
-      .swiper-button-prev,.swiper-button-next{
-        opacity: 1 !important;
-        transition: .4s all ease-in-out;
-      }
-    }
-    .swiper-button-prev,.swiper-button-next{
-      border: 1px solid #fff;
-      background: #fff;
-      width: 40px !important;
-      height: 40px !important;
-      border-radius: 30px;
-      opacity: 0;
-      
-      &::after{
-        font-size: 16px;
-      }
-    }
-  }
-}
-.condos_detail_tab{
-  .condos_tab_header{
-    border: 1px solid #D3D9E5;
-    border-bottom: 0;
-    .v-tabs.v-tabs-pill .v-tab.v-btn{
-      border-radius: 0 !important;
-      
-    }
-    .v-slide-group-item--active{
-      background: $primary_color !important;
-    }
-  }
-  .condos_tab_body{
-    border: 1px solid #D3D9E5;
-  }
-  .condos_tab_detail{
-    padding: 20px;
-    h2{
-      font-size: 22px;
-      color: #001D38;
-    }
-  }
-}
-.condos_about{
-  h2{
-    font-size: 20px;
-    color: #001D38;
-  }
-  p{
-    margin: 15px 0px;
-  }
-}
+
 .condos_reviews{
   border: 1px solid #D3D9E5;
   padding: 20px;
@@ -1471,6 +1376,49 @@ body{
   }
 }
 /////////////////////////////////////////////////////
+.condos_detail{
+  padding: 30px 0px;
+  background: #f6f7f9;
+}
+.cod_detail_tab{
+  .v-tabs.v-tabs-pill .v-tab.v-btn{
+    border-radius: 0 !important;
+    background: #ddd;
+    margin-right: 10px;
+  }
+  .v-slide-group-item--active{
+    background: $primary_color !important;
+  }
+}
+.cod_detail_tab_info{
+  margin-top: 20px;
+  h2{
+    font-size: 24px;
+    color: #001D38;
+  }
+
+}
+.cod_data{
+  p{
+    margin: 10px 0px;
+    font-size: 15px;
+    color: #333;
+  }
+  a{
+    color: $primary_color;
+  }
+}
+.cod_data_list{
+  list-style: disc !important;
+  margin-left: 20px;
+  li{
+    p{
+      margin: 0px;
+      font-size: 15px;
+      color: #333;
+    }
+  }
+}
 .con_images_sec{
   height: 500px;
   width: 100%;
@@ -1511,17 +1459,21 @@ body{
     align-items: center;
     justify-content: space-between;
     h2{
-      font-size: 28px;
+      font-size: 34px;
       color: #001D38;
+      text-transform: capitalize;
     }
     .cod_meta{
       display: flex;
       align-items: center;
       button{
-        background: transparent;
+        background: #fff !important;
         border: 1px solid $primary_color;
         padding: 6px 10px;
         border-radius: 4px;
+        &:hover{
+          background: #f6f7f9 !important;
+        }
       }
       .share{
         color: $primary_color;
@@ -1548,7 +1500,7 @@ body{
     padding: 20px 0px;
     display: flex;
     align-items: center;
-    border: 1px solid $primary_color;
+    border: 1px solid #d2d2d2;
     border-radius: 8px;
     .cod_info{
       width: 33.33%;
@@ -1571,10 +1523,10 @@ body{
         padding: 6px 5px;
         display: flex;
         align-items: center;
+        justify-content: space-between;
         border-bottom: 1px solid #D3D9E5;
         h5{
           font-size: 16px;
-          width: 50%;
           color: #001D38;
         }
         h4{
@@ -1615,4 +1567,75 @@ body{
     }
   }
  
+}
+.amenty_container{
+  display: grid;
+  column-gap: 1rem;
+  grid-row-gap: 1rem;
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(4,1fr);
+  .amenty_card{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-width: 100%;
+    margin-bottom: 0;
+    margin-right: 0;
+    border: 0.0625rem solid #d2d2d2;
+    border-radius: 0.25rem;
+    flex: 1 0 0;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    padding: 0.83125rem;
+    text-align: center;
+    min-height: 8.234375rem;
+    p{
+      margin: 0px;
+      color: #333;
+    }
+  }
+}
+.cod_features{
+  h3{
+    color: #001D38;
+    font-size: 20px;
+    margin: 10px 0px;
+  }
+}
+.cod_am_listing{
+  ul{
+    column-count: 3;
+    margin: 0.75rem 0px;
+    margin-left: 20px;
+    padding: 0;
+    list-style: disc !important;
+    li{
+      color: #333;
+      font-size: 1rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+      margin-left: 0;
+      float: none;
+      width: auto;
+    }
+  }
+}
+.cod_location{
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  p{
+    margin: 0px;
+    color: #333;
+  }
+  a{
+    color: $primary_color;
+    display: flex;
+    align-items: flex-end;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
 }
