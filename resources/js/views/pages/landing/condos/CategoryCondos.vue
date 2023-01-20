@@ -49,17 +49,15 @@
               </div>
               <div class="property_body">
                 <h2>
-              
-                  <RouterLink
-                    :to="{
-                      name: 'landing-condos-preview-detail',
-                      params: { detail: condo.uuid },
-                    }"
-                  >
+                  <RouterLink :to="{
+                    name: 'landing-condos-preview-detail',
+                    params: { detail: condo.uuid },
+                  }">
                     {{ condo.title }}
                   </RouterLink>
                 </h2>
                 <div class="property_price">
+                  <p>Chicago, IL 60610</p>
                   <h3><span>$</span> {{ condo.price }}</h3>
                 </div>
                 <div class="property_short_desc">
