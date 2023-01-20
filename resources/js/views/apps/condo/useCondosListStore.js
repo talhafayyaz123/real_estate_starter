@@ -7,7 +7,6 @@ export const CondosListStore = defineStore('CondosListStore', {
     fetchUsers(params) { return axios.get('/apps/users/list', { params }) },
     fetchCondos(params) { return axios.get('/api/condos', { params }) },
 
-    // 👉 Add User
     addUser(userData) {
 
 
@@ -56,14 +55,32 @@ export const CondosListStore = defineStore('CondosListStore', {
           });
       });
     },
-    searchProperty(name) {
+    updateCondo(params) {
 
+      return new Promise((resolve, reject) => {
+        console.log(params);
+        axios
+          .put(`/api/condos/${params.uuid}`,params)
+          .then((response) => {
+            resolve(response);
+          })
+          .catch((error) => reject(error))
+          .finally(() => {
+          });
+      });
+    },
+    searchProperty(name) {
       return new Promise((resolve, reject) => {
         axios.get(`/search/properties/${name}`).then(response => resolve(response)).catch(error => reject(error))
       })
     },
 
-    // 👉 fetch single user
+    fetchCondo(id) {
+      return new Promise((resolve, reject) => {
+        axios.get(`/api/get-condo-detail/${id}`).then(response => resolve(response)).catch(error => reject(error))
+      })
+    },
+
     fetchUser(id) {
       return new Promise((resolve, reject) => {
         axios.get(`/apps/users/${id}`).then(response => resolve(response)).catch(error => reject(error))

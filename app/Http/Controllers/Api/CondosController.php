@@ -78,7 +78,20 @@ class CondosController extends ApiController
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'uuid' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
+        $property = Condos::updateCondo($request);
+        return $this->respond([
+            'status' => true,
+            'message' => 'Condo has been updated successfully!',
+            'data' => [
+                'condo' => ''
+            ],
+        ]);
     }
 
     /**

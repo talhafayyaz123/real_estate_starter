@@ -36,5 +36,4 @@ Route::post('forgot-password', [AuthController::class, 'forgotPassword']);
 Route::post('reset-password', [AuthController::class, 'resetPassword']);
 Route::get('get-properties', [PropertyController::class, 'getProperties']);
 Route::get('get-condos', [CondosController::class, 'index']);
-
 Route::get('get-condo-detail/{id}', [CondosController::class, 'show']);

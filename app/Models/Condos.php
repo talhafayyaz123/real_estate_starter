@@ -102,4 +102,15 @@ class Condos extends Model
             return NULL;
         }
     }
+
+    public static function updateCondo($request)
+    {
+        $property = self::where('uuid', $request->uuid)->first();
+        $data = $request->all();
+        if ($request->has('status')) {
+            $data['status'] = $request->boolean('status');
+        }
+        $property->update($data);
+        return $property;
+    }
 }
