@@ -267,7 +267,7 @@ const CondoStatusChange = (uuid, status) => {
             <!-- 👉 table footer  -->
             <tfoot v-show="!condos.length">
               <tr>
-                <td colspan="7" class="text-center">No data available</td>
+                <td colspan="7" class="text-center">No Data Available</td>
               </tr>
             </tfoot>
           </VTable>
