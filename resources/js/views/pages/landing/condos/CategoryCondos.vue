@@ -10,7 +10,6 @@
                   <div class="hot_tag" v-if="condo.category == 'Hot'">
                     <v-icon size="24"> mdi-fire</v-icon>
                   </div>
-
                   <div :class="`${getCategory(condo.category)}`">
                     {{ condo.category }}
                   </div>
@@ -42,24 +41,21 @@
                     {{ condo.location }}</span>
                   <span class="dev_tag"><v-icon size="16" class=""> mdi-office-building </v-icon>Aspen Ridge</span>
                 </div>
-
                 <div class="prop-img">
                   <img src="@images/img/condos/condo14.jpg" alt="" />
                 </div>
               </div>
               <div class="property_body">
                 <h2>
-              
-                  <RouterLink
-                    :to="{
-                      name: 'landing-condos-preview-detail',
-                      params: { detail: condo.uuid },
-                    }"
-                  >
+                  <RouterLink :to="{
+                    name: 'landing-condos-preview-detail',
+                    params: { detail: condo.uuid },
+                  }">
                     {{ condo.title }}
                   </RouterLink>
                 </h2>
                 <div class="property_price">
+                  <p>Chicago, IL 60610</p>
                   <h3><span>$</span> {{ condo.price }}</h3>
                 </div>
                 <div class="property_short_desc">
