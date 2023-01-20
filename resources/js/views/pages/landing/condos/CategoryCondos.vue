@@ -10,7 +10,6 @@
                   <div class="hot_tag" v-if="condo.category == 'Hot'">
                     <v-icon size="24"> mdi-fire</v-icon>
                   </div>
-
                   <div :class="`${getCategory(condo.category)}`">
                     {{ condo.category }}
                   </div>
@@ -42,7 +41,6 @@
                     {{ condo.location }}</span>
                   <span class="dev_tag"><v-icon size="16" class=""> mdi-office-building </v-icon>Aspen Ridge</span>
                 </div>
-
                 <div class="prop-img">
                   <img src="@images/img/condos/condo14.jpg" alt="" />
                 </div>
