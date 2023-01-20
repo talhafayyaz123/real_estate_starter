@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Condos;
+use App\Http\Resources\CondosByCategoryResource;
 use Illuminate\Support\Facades\Validator;
 
 class CondosController extends ApiController
@@ -60,11 +61,14 @@ class CondosController extends ApiController
      */
     public function show(Condos $id)
     {
+
+        $condos =   $this->getCondosByCategory($id->category, $id->uuid);
         return $this->respond([
             'status' => true,
             'message' => 'Condo Detail has been fetched succefully!',
             'data' => [
-                'condo' => $id
+                'condo' => $id,
+                'related_condos' =>  CondosByCategoryResource::collection($condos)
             ],
         ]);
     }
@@ -118,5 +122,10 @@ class CondosController extends ApiController
             'message' => 'Condo Status has been updated successfully!',
             'data' => [],
         ]);
+    }
+
+    public function getCondosByCategory($category, $uuid)
+    {
+        return $condos = Condos::where([['category', $category], ['uuid', '!=', $uuid], ['status', 1]])->get();
     }
 }

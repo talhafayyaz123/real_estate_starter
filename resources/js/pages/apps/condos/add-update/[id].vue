@@ -1,7 +1,7 @@
 <template>
   <VRow>
     <VCol cols="12">
-      <VCard title="Add Condo">
+      <VCard :title="`${type} Condo`">
         <VDivider />
         <VCardText class="d-flex flex-wrap py-4 gap-4">
           <VForm ref="refForm" v-model="isFormValid" @submit.prevent="onSubmit">
@@ -110,8 +110,12 @@ const condosListStore = CondosListStore();
 const router = useRouter();
 const condoData = ref();
 const condoUuid = ref();
+const type = ref();
+
+type.value = "Add";
 
 if (route.params.id != 0) {
+  type.value = "Update";
   condosListStore.fetchCondo(route.params.id).then((response) => {
     condoData.value = response.data.data.condo;
     const {
