@@ -82,6 +82,7 @@ class CondosController extends ApiController
      */
     public function update(Request $request, $id)
     {
+
         $validator = Validator::make($request->all(), [
             'uuid' => 'required',
         ]);

@@ -57,13 +57,24 @@
                   type="number"
                 />
               </VCol>
+
               <VCol md="6">
-                <VTextarea
-                  v-model="condoDescription"
-                  rows="3"
-                  cols="33"
-                  label="Description"
-                  placeholder="Description"
+                <VTextField v-model="condoDeveloper" label="Developer" />
+              </VCol>
+              <VCol md="6">
+                <VTextField v-model="condoAddress" label="Address" />
+              </VCol>
+
+              <VCol md="6">
+                <VFileInput
+                  v-model="condoImage"
+                  @change="selectImage($event)"
+                  ref="image"
+                  chips
+                  label="Image"
+                  prepend-icon=""
+                  prepend-inner-icon="mdi-camera"
+                  accept="image/png, image/jpeg, image/bmp"
                 />
               </VCol>
               <VCol md="6">
@@ -75,6 +86,16 @@
                     { title: 'Active', value: 'true' },
                     { title: 'Inactive', value: 'false' },
                   ]"
+                />
+              </VCol>
+
+              <VCol md="6">
+                <VTextarea
+                  v-model="condoDescription"
+                  rows="3"
+                  cols="33"
+                  label="Description"
+                  placeholder="Description"
                 />
               </VCol>
 
@@ -111,6 +132,9 @@ const router = useRouter();
 const condoData = ref();
 const condoUuid = ref();
 const type = ref();
+const condoDeveloper = ref();
+const condoAddress = ref();
+const condoImage = ref();
 
 type.value = "Add";
 
@@ -127,6 +151,8 @@ if (route.params.id != 0) {
       title,
       status,
       area_size,
+      address,
+      developer,
       uuid,
     } = condoData.value;
 
@@ -139,38 +165,45 @@ if (route.params.id != 0) {
     condoTitle.value = title;
     condoStatus.value = resolveStatusText(status);
     condoUuid.value = uuid;
+    condoDeveloper.value = developer;
+    condoAddress.value = address;
   });
 }
 
 const onSubmit = () => {
   refForm.value?.validate().then(({ valid }) => {
     if (valid) {
+      let formData = new FormData();
+      formData.append("condos_image", condoImage.value);
+      formData.append("price", condoPrice.value);
+      formData.append("location", condoLocation.value);
+      formData.append("category", condoCategory.value);
+      formData.append("area_size", condoAreaSize.value);
+      formData.append("status", condoStatus.value);
+      formData.append("occupency", condoOccupency.value);
+      formData.append("title", condoTitle.value);
+      formData.append("description", condoDescription.value);
+      formData.append("address", condoAddress.value);
+      formData.append("developer", condoDeveloper.value);
+
       const uuid = route.params.id;
-      let condoData = {
-        price: condoPrice.value,
-        location: condoLocation.value,
-        category: condoCategory.value,
-        area_size: condoAreaSize.value,
-        status: condoStatus.value,
-        occupency: condoOccupency.value,
-        title: condoTitle.value,
-        description: condoDescription.value,
-      };
+
       if (uuid == 0) {
-        condosListStore.addCondo(condoData);
+        condosListStore.addCondo(formData);
       } else {
-        let newObj = { ...condoData, uuid: condoUuid.value };
-        condosListStore.updateCondo(newObj);
+        formData.append("uuid", condoUuid.value);
+        formData.append("_method", "PUT");
+        condosListStore.updateCondo(formData, condoUuid.value);
       }
-      nextTick(() => {
-        refForm.value?.reset();
-        refForm.value?.resetValidation();
-      });
+     
       router.push({ path: "/apps/condos/list" });
     }
   });
 };
 
+const selectImage = (event) => {
+  condoImage.value = event.target.files[0];
+};
 const resolveStatusText = (val) => {
   if (val == 1) return "Active";
   if (val == 0) return "Inactive";
