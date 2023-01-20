@@ -64,6 +64,29 @@
                   </p>
                 </div>
               </div>
+              <VDivider/>
+              <div class="footer_card">
+                <ul>
+                  <li>
+                    <div class="property_card_info">
+                      <v-icon size="16" class="mr-1"> mdi-shape-square-plus </v-icon>
+                      <span>{{ condo?.area_size }} Sqft</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="property_card_info">
+                      <v-icon size="16" class="mr-1"> mdi-bed-outline </v-icon>
+                      <span>2 Bed</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="property_card_info">
+                      <v-icon size="16" class="mr-1"> mdi-shower </v-icon>
+                      <span>2 Bath</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </VCol>
         </VRow>
