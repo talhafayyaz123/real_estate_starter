@@ -105,15 +105,17 @@ class Condos extends Model
 
     public static function updateCondo($request)
     {
-        $property = self::where('uuid', $request->uuid)->first();
+        $condo = self::where('uuid', $request->uuid)->first();
         $data = $request->all();
+
         if ($request->has('status')) {
             $data['status'] = $request->boolean('status');
         }
         if ($request->has('condos_image')) {
             $data['condos_image'] = self::uploadPropertyMedia($request, 'condos_image');
         }
-        $property->update($data);
-        return $property;
+
+        $condo->update($data);
+        return $condo;
     }
 }

@@ -165,7 +165,7 @@ const CondoStatusChange = (uuid, status) => {
                     <VAvatar variant="tonal" class="me-3" size="38">
                       <VImg
                         v-if="condo.condos_image"
-                        :src="condo.condos_image"
+                        :src="`/${condo.condos_image}`"
                       />
                     </VAvatar>
                   </div>
