@@ -83,9 +83,9 @@ class Condos extends Model
     {
         $condo = new self($request->all());
         $condo->status = $request->boolean('status');
-        /* if ($condo->has('condos_image')) {
+        if ($request->has('condos_image')) {
             $condo->condos_image = self::uploadPropertyMedia($request, 'condos_image');
-        } */
+        }
         $condo->save();
         return $condo;
     }
@@ -109,6 +109,9 @@ class Condos extends Model
         $data = $request->all();
         if ($request->has('status')) {
             $data['status'] = $request->boolean('status');
+        }
+        if ($request->has('condos_image')) {
+            $data['condos_image'] = self::uploadPropertyMedia($request, 'condos_image');
         }
         $property->update($data);
         return $property;

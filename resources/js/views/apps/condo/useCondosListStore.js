@@ -55,12 +55,11 @@ export const CondosListStore = defineStore('CondosListStore', {
           });
       });
     },
-    updateCondo(params) {
+    updateCondo(params,uuid) {
 
       return new Promise((resolve, reject) => {
-        console.log(params);
         axios
-          .put(`/api/condos/${params.uuid}`,params)
+          .post(`/api/condos/${uuid}`,params)
           .then((response) => {
             resolve(response);
           })
