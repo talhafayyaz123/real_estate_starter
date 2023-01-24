@@ -7,7 +7,8 @@
       <VRow>
         <VCol md="6" class="">
           <div class="left_image_sec">
-            <img src="@images/img/condos/condo1.jpg" alt="" />
+            <img v-if="condoDetail?.condos_image" :src="`/${condoDetail?.condos_image}`"/>
+            <img v-else src="@images/img/default-img.jpg" alt="" />
           </div>
         </VCol>
         <VCol md="6" class="">
@@ -46,6 +47,18 @@
         <VCol md="8">
           <div class="cod_detail">
             <!--/////////////////////////////////////////////////-->
+            <div class="condos_det_tags mb-3">
+              <div class="tag activeTag">Active</div>
+              
+              <!-- <div class="tag inactiveTag">Inactive</div> -->
+              <div class="hot_tag" v-if="condoDetail?.category === 'Hot'">
+                <v-icon size="24"> mdi-fire</v-icon>
+              </div>
+               <div v-else :class="`${getCategory(condoDetail?.category)}`">
+                {{ condoDetail?.category }}
+              </div>
+              <div class="tag locationtag"><v-icon size="16" class=""> mdi-location </v-icon> {{ condoDetail?.location }}</div>
+            </div>
             <div class="cod_heading">
               <h2>{{ condoDetail?.title }}</h2>
               <div class="cod_meta">
@@ -55,53 +68,25 @@
                   </v-icon>
                 </button>
                 <button class="wishlist">
-                  <svg
-                    data-v-5542f78a=""
-                    aria-labelledby="svg-inline--fa-title-BdjCU3hBHwzS"
-                    data-prefix="far"
-                    data-icon="heart"
-                    role="img"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
-                    class="text-tridelRed fav-heart h-6 w-6 svg-inline--fa fa-heart"
-                  >
-                    <title
-                      data-v-5542f78a=""
-                      id="svg-inline--fa-title-BdjCU3hBHwzS"
-                      class=""
-                    >
+                  <svg data-v-5542f78a="" aria-labelledby="svg-inline--fa-title-BdjCU3hBHwzS" data-prefix="far"
+                    data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                    class="text-tridelRed fav-heart h-6 w-6 svg-inline--fa fa-heart">
+                    <title data-v-5542f78a="" id="svg-inline--fa-title-BdjCU3hBHwzS" class="">
                       heart icon
                     </title>
-                    <path
-                      data-v-5542f78a=""
-                      fill="currentColor"
+                    <path data-v-5542f78a="" fill="currentColor"
                       d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"
-                      class=""
-                    ></path>
+                      class=""></path>
                   </svg>
-                  <svg
-                    data-v-5542f78a=""
-                    aria-labelledby="svg-inline--fa-title-9EAZG4s4WHmu"
-                    data-prefix="fas"
-                    data-icon="heart"
-                    role="img"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
-                    class="text-tridelRed fav-heart-filled h-6 w-6 svg-inline--fa fa-heart"
-                  >
-                    <title
-                      data-v-5542f78a=""
-                      id="svg-inline--fa-title-9EAZG4s4WHmu"
-                      class=""
-                    >
+                  <svg data-v-5542f78a="" aria-labelledby="svg-inline--fa-title-9EAZG4s4WHmu" data-prefix="fas"
+                    data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                    class="text-tridelRed fav-heart-filled h-6 w-6 svg-inline--fa fa-heart">
+                    <title data-v-5542f78a="" id="svg-inline--fa-title-9EAZG4s4WHmu" class="">
                       heart icon
                     </title>
-                    <path
-                      data-v-5542f78a=""
-                      fill="currentColor"
+                    <path data-v-5542f78a="" fill="currentColor"
                       d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"
-                      class=""
-                    ></path>
+                      class=""></path>
                   </svg>
                 </button>
               </div>
@@ -123,9 +108,7 @@
                 </li>
                 <li>
                   <h5>Developer</h5>
-                  <span
-                    ><a href="">{{ condoDetail?.developer }}</a></span
-                  >
+                  <span><a href="">{{ condoDetail?.developer }}</a></span>
                 </li>
               </ul>
             </div>
@@ -136,11 +119,11 @@
                 <h3>${{ condoDetail?.price }}</h3>
               </div>
               <div class="cod_info">
-                <p>Bed</p>
+                <p>Bedroom</p>
                 <h3>3</h3>
               </div>
               <div class="cod_info">
-                <p>Bath</p>
+                <p>Bathroom</p>
                 <h3>2</h3>
               </div>
               <div class="cod_info">
@@ -229,8 +212,7 @@
                     </div>
                     <div class="amenty_card">
                       <v-icon size="34" class="mb-2">
-                        mdi-countertop-outline</v-icon
-                      >
+                        mdi-countertop-outline</v-icon>
                       <p>Granite Countertops</p>
                     </div>
                     <div class="amenty_card">
@@ -239,14 +221,12 @@
                     </div>
                     <div class="amenty_card">
                       <v-icon size="34" class="mb-2">
-                        mdi-fridge-outline</v-icon
-                      >
+                        mdi-fridge-outline</v-icon>
                       <p>Refrigerator</p>
                     </div>
                     <div class="amenty_card">
                       <v-icon size="34" class="mb-2">
-                        mdi-hexagon-slice-6</v-icon
-                      >
+                        mdi-hexagon-slice-6</v-icon>
                       <p>Freezer</p>
                     </div>
                     <div class="amenty_card">
@@ -328,13 +308,10 @@
                 <div class="cod_detail_tab_info">
                   <h2>Location</h2>
                   <div class="cod_location">
-                    <p>88 W Schiller St, Chicago, IL 60610</p>
-                    <a href=""
-                      ><v-icon size="24" class="mr-1">
-                        mdi-directions-fork</v-icon
-                      >
-                      Get Directions</a
-                    >
+                    <p>{{ condoDetail?.address }}</p>
+                    <a href=""><v-icon size="24" class="mr-1">
+                        mdi-directions-fork</v-icon>
+                      Get Directions</a>
                   </div>
                 </div>
               </VWindowItem>
@@ -349,6 +326,7 @@
                 <VBtn block class="mt-5">Request Tour</VBtn>
                 <VBtn variant="outlined" block class="mt-3">Buy Now</VBtn>
                 <VBtn variant="outlined" block class="mt-3">Send Message</VBtn>
+                <a href=""><v-icon size="24" class="mr-1"> mdi-phone</v-icon> (606) 519-3598</a>
               </div>
             </div>
           </div>
@@ -375,64 +353,31 @@
                 </div>
               </div>
               <button class="wishlist">
-                <svg
-                  data-v-5542f78a=""
-                  aria-labelledby="svg-inline--fa-title-BdjCU3hBHwzS"
-                  data-prefix="far"
-                  data-icon="heart"
-                  role="img"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                  class="text-tridelRed fav-heart h-6 w-6 svg-inline--fa fa-heart"
-                >
-                  <title
-                    data-v-5542f78a=""
-                    id="svg-inline--fa-title-BdjCU3hBHwzS"
-                    class=""
-                  >
+                <svg data-v-5542f78a="" aria-labelledby="svg-inline--fa-title-BdjCU3hBHwzS" data-prefix="far"
+                  data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                  class="text-tridelRed fav-heart h-6 w-6 svg-inline--fa fa-heart">
+                  <title data-v-5542f78a="" id="svg-inline--fa-title-BdjCU3hBHwzS" class="">
                     heart icon
                   </title>
-                  <path
-                    data-v-5542f78a=""
-                    fill="currentColor"
+                  <path data-v-5542f78a="" fill="currentColor"
                     d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"
-                    class=""
-                  ></path>
+                    class=""></path>
                 </svg>
-                <svg
-                  data-v-5542f78a=""
-                  aria-labelledby="svg-inline--fa-title-9EAZG4s4WHmu"
-                  data-prefix="fas"
-                  data-icon="heart"
-                  role="img"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                  class="text-tridelRed fav-heart-filled h-6 w-6 svg-inline--fa fa-heart"
-                >
-                  <title
-                    data-v-5542f78a=""
-                    id="svg-inline--fa-title-9EAZG4s4WHmu"
-                    class=""
-                  >
+                <svg data-v-5542f78a="" aria-labelledby="svg-inline--fa-title-9EAZG4s4WHmu" data-prefix="fas"
+                  data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                  class="text-tridelRed fav-heart-filled h-6 w-6 svg-inline--fa fa-heart">
+                  <title data-v-5542f78a="" id="svg-inline--fa-title-9EAZG4s4WHmu" class="">
                     heart icon
                   </title>
-                  <path
-                    data-v-5542f78a=""
-                    fill="currentColor"
+                  <path data-v-5542f78a="" fill="currentColor"
                     d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"
-                    class=""
-                  ></path>
+                    class=""></path>
                 </svg>
               </button>
               <div class="">
-                <span class="loction_tag"
-                  ><v-icon size="16" class=""> mdi-location </v-icon>
-                  {{ condo.location }}</span
-                >
-                <span class="dev_tag"
-                  ><v-icon size="16" class=""> mdi-office-building </v-icon
-                  >Aspen Ridge</span
-                >
+                <span class="loction_tag"><v-icon size="16" class=""> mdi-location </v-icon>
+                  {{ condo.location }}</span>
+                <span class="dev_tag"><v-icon size="16" class=""> mdi-office-building </v-icon>Aspen Ridge</span>
               </div>
               <!--======================================-->
               <!--======================================-->
@@ -444,14 +389,11 @@
             </div>
             <div class="property_body">
               <h2>
-                <RouterLink
-                  :to="{
-                    name: 'landing-condos-preview-detail',
-                    params: { detail: condo.uuid },
-                  }"
-                >
-                  {{ condo.title }}</RouterLink
-                >
+                <RouterLink :to="{
+                  name: 'landing-condos-preview-detail',
+                  params: { detail: condo.uuid },
+                }">
+                  {{ condo.title }}</RouterLink>
               </h2>
               <div class="property_price">
                 <h3><span>$</span> {{ condo.price }}</h3>
@@ -470,6 +412,7 @@
   <!--====================================================================-->
   <FooterComp />
   <!--====================================================================-->
+  
 </template>
 
 <script setup>

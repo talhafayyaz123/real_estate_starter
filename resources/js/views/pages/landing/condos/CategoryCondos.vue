@@ -75,11 +75,12 @@
                   >
                   <span class="dev_tag"
                     ><v-icon size="16" class=""> mdi-office-building </v-icon
-                    >Aspen Ridge</span
+                    >{{condo.developer}}</span
                   >
                 </div>
                 <div class="prop-img">
-                  <img src="@images/img/condos/condo14.jpg" alt="" />
+                  <img v-if="condo.condos_image" :src="`/${condo.condos_image}`"/>
+                  <img v-else src="@images/img/default-img.jpg" alt="" />
                 </div>
               </div>
               <div class="property_body">
