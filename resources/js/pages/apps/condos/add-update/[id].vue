@@ -65,6 +65,17 @@
                 <VTextField v-model="condoAddress" label="Address" />
               </VCol>
 
+              <VCol md="12">
+                <VAvatar
+                  variant="tonal"
+                  v-if="condoData?.condos_image"
+                  class="me-3"
+                  size="120"
+                >
+                  <VImg :src="`/${condoData?.condos_image}`" />
+                </VAvatar>
+              </VCol>
+
               <VCol md="6">
                 <VFileInput
                   v-model="condoImage"
@@ -77,6 +88,7 @@
                   accept="image/png, image/jpeg, image/bmp"
                 />
               </VCol>
+
               <VCol md="6">
                 <VSelect
                   v-model="condoStatus"
@@ -193,9 +205,10 @@ const onSubmit = () => {
       } else {
         formData.append("uuid", condoUuid.value);
         formData.append("_method", "PUT");
+        // formData.append("old_condo_image", condoData.value.condos_image);
         condosListStore.updateCondo(formData, condoUuid.value);
       }
-     
+
       router.push({ path: "/apps/condos/list" });
     }
   });
